@@ -1,8 +1,8 @@
 const booksModel = require("../models/booksSchma");
 
-//------------- create new book -------------
+//------------- create new book -------------  ..? need to fix
 const createNewBook = (req, res) => {
-  const bookId = req.params.bookId;
+  
   const {
     title,
     author,
@@ -48,8 +48,9 @@ const createNewBook = (req, res) => {
 };
 //-------------get All Books-------------
 const getAllBooks =(req,res)=>{
+  const  a =req.token.userId
   booksModel
-  .find()
+  .find({})
   .then((result)=>{
     res.status(200);
     res.json({
@@ -67,8 +68,65 @@ const getAllBooks =(req,res)=>{
     });
   });
 };
+//------------- get Book By category -------------
+const getBookByCategory =(req,res)=>{
+  let categoryId = req.query.category;
+  booksModel
+  .find({ category: categoryId })
+  .then((Books)=>{
+    if(!book.length){
+      return res.status(404).json({
+        success:false,
+        message:`The category: ${categoryId} has no books`
+      })
+    }
+    res.status(200).json({
+      success:true,
+      message:`All the books for the category: ${categoryId}`,
+      books:books
+    })
+  })
+  .catch((err)=>{
+    res.status(500).json({
+      success:false,
+      message:`Server Error`,
+      err:"err.message"
+    })
+  })
+}
+//------------- get Book By author -------------
+//------------- get Book By Id -------------
+const getBookById =(req,res)=>{
+  bookId=req.query.id;
+  console.log(bookId);
+  booksModel
+  .findById(bookId)
+  .populate("category", "title -_id").select('title description -_id') 
+  .exec()
+      .then((result) => {
+      if (!result) {
+        return res.status(404).json({
+          success: false,
+          message: `The book is not found`,
+        });
+      }
+      res.status(200).json({
+        success: true,
+        message: `The book ${bookId} `,
+        book: result,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: err.message,
+      });
+    });
+}
 
-module.exports = { createNewBook,getAllBooks };
+
+module.exports = { createNewBook,getAllBooks,getBookByCategory };
 
 // NewBook,  
 // getAllBooks,
@@ -78,3 +136,4 @@ module.exports = { createNewBook,getAllBooks };
 // deleteBookById,
 // deleteBookByAuthor,
 // newComment
+//const bookId = req.params.bookId;

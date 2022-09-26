@@ -1,9 +1,9 @@
 const categoryModel = require("../models/categorySChema");
 
-//------------- createNewCatogory ------------
+//------------- createNewCatogory ------------  ..? need to fix
 //++  the cause ..>FORBIDEN
 const createNewCatogory = (req, res) => {
-  const catogoryId = req.params.catogoryId;
+
   const { title } = req.body;
   const catogoryModelInstance = new catogoryModel({
     title,
