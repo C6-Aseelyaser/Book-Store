@@ -47,7 +47,28 @@ const createNewBook = (req, res) => {
     });
 };
 //-------------get All Books-------------
-module.exports = { createNewBook };
+const getAllBooks =(req,res)=>{
+  booksModel
+  .find()
+  .then((result)=>{
+    res.status(200);
+    res.json({
+      success:true,
+      message:"All the book",
+      book:result,
+    });
+  })
+  .catch((err)=>{
+    res.status(500);
+    res.json({
+      success:false,
+      message:"Server Error",
+      err:err.message,
+    });
+  });
+};
+
+module.exports = { createNewBook,getAllBooks };
 
 // NewBook,  
 // getAllBooks,
