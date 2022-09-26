@@ -5,7 +5,8 @@ const categoryModel = require("../models/categorySChema");
 const createNewCatogory = (req, res) => {
 
   const { title } = req.body;
-  const catogoryModelInstance = new catogoryModel({
+
+  const catogoryModelInstance = new categoryModel({
     title,
   });
   catogoryModelInstance
@@ -31,6 +32,7 @@ const createNewCatogory = (req, res) => {
 };
 //------------- getAllCategory ------------
 const getAllCategory = (req, res) => {
+  // const category = req.token.userId;
   categoryModel
     .find({})
     .then((result) => {

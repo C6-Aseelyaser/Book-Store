@@ -2,7 +2,6 @@ const booksModel = require("../models/booksSchma");
 
 //------------- create new book -------------  ..? need to fix
 const createNewBook = (req, res) => {
-  const bookId = req.params.bookId;
   const {
     title,
     author,
@@ -25,7 +24,7 @@ const createNewBook = (req, res) => {
     price,
     quantity,
   });
-  articlesModelInstance
+  constbooksModelInstance
     .save()
     .then((result) => {
       res.status(201);
@@ -34,7 +33,7 @@ const createNewBook = (req, res) => {
         message: "Book created",
         book: result,
       });
-      console.log(22);
+      console.log(36);
       console.log(result);
     })
     .catch((err) => {
@@ -48,9 +47,9 @@ const createNewBook = (req, res) => {
 };
 //-------------get All Books-------------
 const getAllBooks =(req,res)=>{
-  // const  a =req.token.userId
+
   booksModel
-  .find({})
+  .find()  //..>{}
   .then((result)=>{
     res.status(200);
     res.json({
@@ -123,7 +122,10 @@ const getBookById =(req,res)=>{
       });
     });
 }
-//------------- get Book By author -------------
+//------------- update Book By Id -------------
+
+//------------- delete Book By Id -------------
+//---------------------------------------------
 module.exports = { createNewBook,getAllBooks,getBookByCategory,getBookById };
 
 // NewBook,  

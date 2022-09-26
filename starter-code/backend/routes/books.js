@@ -6,7 +6,7 @@ const authorization = require("../middlewares/authorization");
 // create books router
 const booksRouter = express.Router();
 booksRouter.post("/",authentication,authorization("CREATE_BOOKS"),createNewBook); 
-booksRouter.get("/",getAllBooks);
+booksRouter.get("/",authentication,getAllBooks);
 booksRouter.get("/search_1",getBookByCategory);
 booksRouter.get("/search_2",getBookById);
 module.exports = booksRouter;

@@ -2,8 +2,7 @@ const jwt = require("jsonwebtoken");
 const authentication = (req, res, next) => {
   //get token sent
   console.log(req.headers.authorization);
-  if (req.headers.authorization === undefined) {
-    console.log(6)
+  if (req.headers.authorization === undefined) { 
     res.status(403);
     res.json({
       success: false,
@@ -22,15 +21,16 @@ const authentication = (req, res, next) => {
 
   jwt.verify(token, secretKey, (err, result) => {
     if (err) {
-      res.status(403), ``;
-      res.json({
-        success: false,
-        message: "The token is invalid or expired",
-      });
+      //isn't sent
+      res.status(403),``
+        res.json({
+          success: false,
+          message: "The token is invalid or expired",
+        });
       return;
     } else {
-      req.token = result;
-      next();
+        req.token = result;
+        next();
     }
   });
 };
