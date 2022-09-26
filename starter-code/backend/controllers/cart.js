@@ -26,11 +26,11 @@ const createNewCart = (req, res) => {
       });
   });
 };
-//------------- create all cart -------------
+//------------- get all cart -------------
 const getAllCart = (req, res) => {
   cartModel
     .find()
-    .populate("book", "price -_id").select(" -_id")
+    .populate("book", "price -_id")
     .exec()
     .then((result) => {
       res.status(200);
@@ -45,12 +45,44 @@ const getAllCart = (req, res) => {
       res.json({
         success: false,
         message: "Server Error",
-        err:err.message,
+        err: err.message,
       });
     });
 };
+//------------- update all cart by id-------------
+const updateCartById = (req, res) => {
+  const cartId = req.params.id;
+  const cartUpdated = req.body;
+  Object.keys(cartUpdated).forEach((element, index) => {
+    cartUpdated[element] == "" && delete cartUpdated[element];
+  });
+  cartModel
+    .findByIdAndUpdate(cartId, req.body, { new: true })
+    .then((result) => {
+      if (result === undefined) {
+        return res.status(404).json({
+          success: false,
+          message: `The Book : ${cartId} is not found`,
+        });
+      }
+      res.status(202).json({
+        success: true,
+        message: `Book updated`,
+        result: result,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: err.message,
+      });
+    });
+};
+
+
 //------------------------------------------
-module.exports = { createNewCart,getAllCart };
+module.exports = { createNewCart, getAllCart,updateCartById};
 
 //CRUD   ..> CART
 // iduser
