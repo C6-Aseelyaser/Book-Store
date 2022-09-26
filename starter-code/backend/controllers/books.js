@@ -70,19 +70,21 @@ const getAllBooks =(req,res)=>{
 //------------- get Book By category -------------
 const getBookByCategory =(req,res)=>{
   let categoryId = req.query.category;
+  console.log(req.query.category)
   booksModel
   .find({ category: categoryId })
   .then((Books)=>{
-    if(!book.length){
+    if(!Books){
       return res.status(404).json({
         success:false,
         message:`The category: ${categoryId} has no books`
       })
     }
+
     res.status(200).json({
       success:true,
       message:`All the books for the category: ${categoryId}`,
-      books:books
+      books:Books
     })
   })
   .catch((err)=>{
@@ -99,7 +101,7 @@ const getBookById =(req,res)=>{
   console.log(bookId);
   booksModel
   .findById(bookId)
-  .populate("category", "title -_id").select('title description -_id') 
+  .populate("category", "title -_id").select(' -_id') 
   .exec()
       .then((result) => {
       if (!result) {
