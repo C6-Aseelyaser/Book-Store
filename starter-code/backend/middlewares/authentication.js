@@ -3,6 +3,7 @@ const authentication = (req, res, next) => {
   //get token sent
   console.log(req.headers.authorization);
   if (req.headers.authorization === undefined) {
+    console.log(6)
     res.status(403);
     res.json({
       success: false,
@@ -21,7 +22,6 @@ const authentication = (req, res, next) => {
 
   jwt.verify(token, secretKey, (err, result) => {
     if (err) {
-      //isn't sent
       res.status(403), ``;
       res.json({
         success: false,

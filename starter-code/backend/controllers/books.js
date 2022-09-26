@@ -1,6 +1,6 @@
 const booksModel = require("../models/booksSchma");
 
-//---------create new book -------------
+//------------- create new book -------------
 const createNewBook = (req, res) => {
   const bookId = req.params.bookId;
   const {
@@ -32,7 +32,7 @@ const createNewBook = (req, res) => {
       res.json({
         success: true,
         message: "Book created",
-        article: result,
+        book: result,
       });
       console.log(22);
       console.log(result);
@@ -46,7 +46,7 @@ const createNewBook = (req, res) => {
       });
     });
 };
-
+//-------------get All Books-------------
 module.exports = { createNewBook };
 
 // NewBook,  
