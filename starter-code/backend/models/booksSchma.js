@@ -11,9 +11,10 @@ const bookSchema  =  new mongoose.Schema(
         year:{type: Number},
         puplish:{type: String},
         price:{type: Number},
-        quantity:{type: Number}
+        rating:{type: Number}
     }
 );
 
 
 module.exports =mongoose.model("book" ,bookSchema);
+//quantity:{type: Number}

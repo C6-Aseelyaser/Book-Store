@@ -71,7 +71,7 @@ try {
   
   const SECERT = process.env.SECERT; 
   const options = {
-    expiresIn: "60m" ,
+    expiresIn: "600m" ,
   };
   const token =await jwt.sign(payload, SECERT, options);
   res.status(200).json({

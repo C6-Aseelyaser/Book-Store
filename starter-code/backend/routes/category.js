@@ -6,7 +6,7 @@ const authorization = require("../middlewares/authorization");
 
 const categoryRouter = express.Router();
 
-categoryRouter.post("/",authentication,authorization("CREATE_CATEGORY"),createNewCatogory);
+categoryRouter.post("/",authentication,authorization("CREATE_CART"),createNewCatogory);
 categoryRouter.get("/",authentication,getAllCategory);
 
 module.exports = categoryRouter;

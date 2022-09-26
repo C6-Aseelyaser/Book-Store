@@ -11,7 +11,7 @@ const createNewBook = (req, res) => {
     year,
     puplish,
     price,
-    quantity,
+    rating
   } = req.body;
   constbooksModelInstance = new booksModel({
     title,
@@ -22,7 +22,7 @@ const createNewBook = (req, res) => {
     year,
     puplish,
     price,
-    quantity,
+    rating
   });
   constbooksModelInstance
     .save()
@@ -143,7 +143,7 @@ const updateBookById = (req, res) => {
       res.status(202).json({
         success: true,
         message: `Book updated`,
-        article: result,
+        result: result,
       });
     })
     .catch((err) => {
