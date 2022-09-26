@@ -46,65 +46,65 @@ const createNewBook = (req, res) => {
     });
 };
 //-------------get All Books-------------
-const getAllBooks =(req,res)=>{
-
+const getAllBooks = (req, res) => {
   booksModel
-  .find()  //..>{}
-  .then((result)=>{
-    res.status(200);
-    res.json({
-      success:true,
-      message:"All the book",
-      book:result,
+    .find() //..>{}
+    .then((result) => {
+      res.status(200);
+      res.json({
+        success: true,
+        message: "All the book",
+        book: result,
+      });
+    })
+    .catch((err) => {
+      res.status(500);
+      res.json({
+        success: false,
+        message: "Server Error",
+        err: err.message,
+      });
     });
-  })
-  .catch((err)=>{
-    res.status(500);
-    res.json({
-      success:false,
-      message:"Server Error",
-      err:err.message,
-    });
-  });
 };
 //------------- get Book By category -------------
-const getBookByCategory =(req,res)=>{
+const getBookByCategory = (req, res) => {
   let categoryId = req.query.category;
-  console.log(req.query.category)
+  console.log(req.query.category);
   booksModel
-  .find({ category: categoryId })
-  .then((Books)=>{
-    if(!Books){
-      return res.status(404).json({
-        success:false,
-        message:`The category: ${categoryId} has no books`
-      })
-    }
+    .find({ category: categoryId })
+    .then((Books) => {
+      if (Books === undefined) {
+        return res.status(404).json({
+          success: false,
+          message: `The category: ${categoryId} has no books`,
+        });
+      }
 
-    res.status(200).json({
-      success:true,
-      message:`All the books for the category: ${categoryId}`,
-      books:Books
+      res.status(200).json({
+        success: true,
+        message: `All the books for the category: ${categoryId}`,
+        books: Books,
+      });
     })
-  })
-  .catch((err)=>{
-    res.status(500).json({
-      success:false,
-      message:`Server Error`,
-      err:"err.message"
-    })
-  })
-}
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: "err.message",
+      });
+    });
+};
 //------------- get Book By Id -------------
-const getBookById =(req,res)=>{
-  bookId=req.query.id;
+const getBookById = (req, res) => {
+  bookId = req.query.id;
   console.log(bookId);
   booksModel
-  .findById(bookId)
-  .populate("category", "title -_id").select(' -_id') 
-  .exec()
-      .then((result) => {
-      if (!result) {
+    .findById(bookId)
+    .populate("category", "title -_id")
+    .select(" -_id")
+    .exec()
+    .then((result) => {
+      if (result=== undefined) {
         return res.status(404).json({
           success: false,
           message: `The book is not found`,
@@ -123,19 +123,74 @@ const getBookById =(req,res)=>{
         err: err.message,
       });
     });
-}
+};
 //------------- update Book By Id -------------
-
+const updateBookById = (req, res) => {
+  const bookId = req.params.id;
+  const updetedBook = req.body;
+  Object.keys(updetedBook).forEach((element,index) => {
+    updetedBook[element] == "" && delete updetedBook[element];
+  });
+  booksModel
+    .findByIdAndUpdate(bookId, req.body, { new: true })
+    .then((result) => {
+      if (result === undefined) {
+        return res.status(404).json({
+          success: false,
+          message: `The Book : ${bookId} is not found`,
+        });
+      }
+      res.status(202).json({
+        success: true,
+        message: `Book updated`,
+        article: result,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: err.message,
+      });
+    });
+};
 //------------- delete Book By Id -------------
+const deleteBookById = (req, res) => {
+  const bookId = req.params.id;
+  booksModel
+    .findByIdAndDelete(bookId)
+    .then((result) => {
+      if (result===undefined) {
+        return res.status(404).json({
+          success: false,
+          message: `The Book: ${bookId} is not found`,
+        });
+      }
+      res.status(200).json({
+        success: true,
+        message: `Book deleted`,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: err.message,
+      });
+    });
+};
 //---------------------------------------------
-module.exports = { createNewBook,getAllBooks,getBookByCategory,getBookById };
-
-// NewBook,  
+module.exports = { createNewBook, getAllBooks, getBookByCategory, getBookById,updateBookById,deleteBookById};
+// pt1
+// NewBook,
 // getAllBooks,
-// getBookssByAuthor,
+// getBookByCategory
 // getBookById,
 // updateBookById,
 // deleteBookById,
+// pt2
+// getBooksByAuthor,
 // deleteBookByAuthor,
 // newComment
+
 //const bookId = req.params.bookId;
