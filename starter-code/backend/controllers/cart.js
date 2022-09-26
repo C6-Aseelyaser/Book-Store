@@ -49,7 +49,7 @@ const getAllCart = (req, res) => {
       });
     });
 };
-//------------- update all cart by id-------------
+//------------- update cart by id-------------
 const updateCartById = (req, res) => {
   const cartId = req.params.id;
   const cartUpdated = req.body;
@@ -79,10 +79,33 @@ const updateCartById = (req, res) => {
       });
     });
 };
-
-
+//------------- delete cart by id-------------
+const deleteCartById = (req, res) => {
+    const cartId = req.params.id;
+    cartModel
+      .findByIdAndDelete(cartId)
+      .then((result) => {
+        if (result===undefined) {
+          return res.status(404).json({
+            success: false,
+            message: `The cart: ${cartId} is not found`,
+          });
+        }
+        res.status(200).json({
+          success: true,
+          message: `cart deleted`,
+        });
+      })
+      .catch((err) => {
+        res.status(500).json({
+          success: false,
+          message: `Server Error`,
+          err: err.message,
+        });
+      });
+  };
 //------------------------------------------
-module.exports = { createNewCart, getAllCart,updateCartById};
+module.exports = { createNewCart, getAllCart, updateCartById,deleteCartById};
 
 //CRUD   ..> CART
 // iduser
