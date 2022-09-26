@@ -32,7 +32,7 @@ const createNewCatogory = (req, res) => {
 //------------- getAllCategory ------------
 const getAllCategory = (req, res) => {
   categoryModel
-    .find()
+    .find({})
     .then((result) => {
       res.status(200);
       res.json({

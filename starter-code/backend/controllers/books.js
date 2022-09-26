@@ -2,7 +2,7 @@ const booksModel = require("../models/booksSchma");
 
 //------------- create new book -------------  ..? need to fix
 const createNewBook = (req, res) => {
-  
+  const bookId = req.params.bookId;
   const {
     title,
     author,
@@ -48,7 +48,7 @@ const createNewBook = (req, res) => {
 };
 //-------------get All Books-------------
 const getAllBooks =(req,res)=>{
-  const  a =req.token.userId
+  // const  a =req.token.userId
   booksModel
   .find({})
   .then((result)=>{
@@ -94,7 +94,6 @@ const getBookByCategory =(req,res)=>{
     })
   })
 }
-//------------- get Book By author -------------
 //------------- get Book By Id -------------
 const getBookById =(req,res)=>{
   bookId=req.query.id;
@@ -124,9 +123,8 @@ const getBookById =(req,res)=>{
       });
     });
 }
-
-
-module.exports = { createNewBook,getAllBooks,getBookByCategory };
+//------------- get Book By author -------------
+module.exports = { createNewBook,getAllBooks,getBookByCategory,getBookById };
 
 // NewBook,  
 // getAllBooks,
