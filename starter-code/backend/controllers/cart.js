@@ -1,5 +1,9 @@
 const cartModel = require("../models/cartSchema");
-
+//CRUD   ..> CART
+// iduser
+// idbook
+// total
+//? update & delete all cart 
 //------------- create new cart -------------
 const createNewCart = (req, res) => {
   const { user, book, quantity } = req.body; //q
@@ -107,7 +111,4 @@ const deleteCartById = (req, res) => {
 //------------------------------------------
 module.exports = { createNewCart, getAllCart, updateCartById,deleteCartById};
 
-//CRUD   ..> CART
-// iduser
-// idbook
-// total
+

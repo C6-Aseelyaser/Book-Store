@@ -1,5 +1,5 @@
 const booksModel = require("../models/booksSchma");
-
+const commentModel = require("../models/commentSchema")
 //------------- create new book -------------  ..? need to fix
 const createNewBook = (req, res) => {
   const {
@@ -179,6 +179,53 @@ const deleteBookById = (req, res) => {
       });
     });
 };
+//------------- create comments -------------
+const newComment = (req, res) => {
+  console.log(req.token)
+  const bookId = req.params.id;
+  console.log(bookId)
+  const { comment } = req.body;
+  const commentsModelInstance = new commentsModel({
+    comment,
+    commenter: req.token.userId,
+  });
+  commentsModelInstance
+    .save()
+    .then((result) => {
+      console.log(result._id)
+      booksModel
+        .findOneAndUpdate(
+          { _id: bookId },
+          { $push: { comments: result._id } }
+        )
+        .then(() => {
+          console.log();
+          res.status(201);
+          res.json({ 
+            success: true,
+            message: "the new comment added",
+            comment:result
+             });
+        })
+        .catch((err) => {
+          res.status(500);
+          res.json({
+            success: false,
+            message: "Error",
+            err: err.message,
+          });
+        });
+    })
+    .catch((err) => {
+      res.status(500);
+      res.json({
+        success: false,
+        message: "Server Error",
+        err: err.message,
+      });
+    });
+};
+
 //---------------------------------------------
 module.exports = { createNewBook, getAllBooks, getBookByCategory, getBookById,updateBookById,deleteBookById};
 // pt1
