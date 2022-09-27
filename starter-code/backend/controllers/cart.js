@@ -3,10 +3,10 @@ const cartModel = require("../models/cartSchema");
 // iduser
 // idbook
 // total
-//? update & delete all cart 
+//? update & delete all cart
 //------------- create new cart -------------
 const createNewCart = (req, res) => {
-  const { user, book, quantity } = req.body; //q
+  const { user, book, quantity } = req.body;
   const cartModelInstance = new cartModel({
     user,
     book,
@@ -30,7 +30,7 @@ const createNewCart = (req, res) => {
       });
   });
 };
-//------------- get all cart -------------
+//------------- get all cart -------------..>dont need get all cart ..jsut getById
 const getAllCart = (req, res) => {
   cartModel
     .find()
@@ -85,30 +85,63 @@ const updateCartById = (req, res) => {
 };
 //------------- delete cart by id-------------
 const deleteCartById = (req, res) => {
-    const cartId = req.params.id;
-    cartModel
-      .findByIdAndDelete(cartId)
-      .then((result) => {
-        if (result===undefined) {
-          return res.status(404).json({
-            success: false,
-            message: `The cart: ${cartId} is not found`,
-          });
-        }
-        res.status(200).json({
-          success: true,
-          message: `cart deleted`,
-        });
-      })
-      .catch((err) => {
-        res.status(500).json({
+  const cartId = req.params.id;
+  cartModel
+    .findByIdAndDelete(cartId)
+    .then((result) => {
+      if (result === undefined) {
+        return res.status(404).json({
           success: false,
-          message: `Server Error`,
-          err: err.message,
+          message: `The cart: ${cartId} is not found`,
         });
+      }
+      res.status(200).json({
+        success: true,
+        message: `cart deleted`,
       });
-  };
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: err.message,
+      });
+    });
+};
+//------------- get cart By Id -------------
+const getCartById = (req, res) => {
+  cartId = req.query.id;
+  console.log(cartId);
+  cartModel
+    .findById(cartId)
+    .populate("book", "price -_id")
+    .exec()
+    .then((result) => {
+      if (result === undefined) {
+        return res.status(404).json({
+          success: false,
+          message: `The cart is not found`,
+        });
+      }
+      res.status(200).json({
+        success: true,
+        message: `The cart ${cartId} `,
+        cart: result,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: err.message,
+      });
+    });
+};
 //------------------------------------------
-module.exports = { createNewCart, getAllCart, updateCartById,deleteCartById};
-
-
+module.exports = {
+  createNewCart,
+  getAllCart,
+  updateCartById,
+  deleteCartById,
+  getCartById,
+};
