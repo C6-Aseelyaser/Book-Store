@@ -1,5 +1,5 @@
 const booksModel = require("../models/booksSchma");
-const commentModel = require("../models/commentSchema")
+const commentModel = require("../models/commentSchema");
 //------------- create new book -------------  ..? need to fix
 const createNewBook = (req, res) => {
   const {
@@ -11,7 +11,7 @@ const createNewBook = (req, res) => {
     year,
     puplish,
     price,
-    rating
+    rating,
   } = req.body;
   constbooksModelInstance = new booksModel({
     title,
@@ -22,7 +22,7 @@ const createNewBook = (req, res) => {
     year,
     puplish,
     price,
-    rating
+    rating,
   });
   constbooksModelInstance
     .save()
@@ -104,7 +104,7 @@ const getBookById = (req, res) => {
     .select(" -_id")
     .exec()
     .then((result) => {
-      if (result=== undefined) {
+      if (result === undefined) {
         return res.status(404).json({
           success: false,
           message: `The book is not found`,
@@ -128,7 +128,7 @@ const getBookById = (req, res) => {
 const updateBookById = (req, res) => {
   const bookId = req.params.id;
   const updetedBook = req.body;
-  Object.keys(updetedBook).forEach((element,index) => {
+  Object.keys(updetedBook).forEach((element, index) => {
     updetedBook[element] == "" && delete updetedBook[element];
   });
   booksModel
@@ -160,7 +160,7 @@ const deleteBookById = (req, res) => {
   booksModel
     .findByIdAndDelete(bookId)
     .then((result) => {
-      if (result===undefined) {
+      if (result === undefined) {
         return res.status(404).json({
           success: false,
           message: `The Book: ${bookId} is not found`,
@@ -180,32 +180,29 @@ const deleteBookById = (req, res) => {
     });
 };
 //------------- create comments -------------
-const newComment = (req, res) => {
-  console.log(req.token)
+const createComment = (req, res) => {
+  console.log(req.token);
   const bookId = req.params.id;
-  console.log(bookId)
+  console.log(bookId);
   const { comment } = req.body;
-  const commentsModelInstance = new commentsModel({
+  const commentModelInstance = new commentModel({
     comment,
     commenter: req.token.userId,
   });
-  commentsModelInstance
+  commentModelInstance
     .save()
     .then((result) => {
-      console.log(result._id)
+      console.log(result._id);
       booksModel
-        .findOneAndUpdate(
-          { _id: bookId },
-          { $push: { comments: result._id } }
-        )
+        .findOneAndUpdate({ _id: bookId }, { $push: { comments: result._id } })
         .then(() => {
           console.log();
           res.status(201);
-          res.json({ 
+          res.json({
             success: true,
             message: "the new comment added",
-            comment:result
-             });
+            comment: result,
+          });
         })
         .catch((err) => {
           res.status(500);
@@ -225,9 +222,16 @@ const newComment = (req, res) => {
       });
     });
 };
-
 //---------------------------------------------
-module.exports = { createNewBook, getAllBooks, getBookByCategory, getBookById,updateBookById,deleteBookById};
+module.exports = {
+  createNewBook,
+  getAllBooks,
+  getBookByCategory,
+  getBookById,
+  updateBookById,
+  deleteBookById,
+  createComment,
+};
 // pt1
 // NewBook,
 // getAllBooks,
