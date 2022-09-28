@@ -12,7 +12,7 @@ const bookSchema  =  new mongoose.Schema(
         puplish:{type: String},
         price:{type: Number},
         rating:{type: Number},
-        comments:[{type: mongoose.Schema.Types.ObjectId, ref:"comment"}],
+        comment:[{type: mongoose.Schema.Types.ObjectId, ref:"comment"}],
     }
 );
 

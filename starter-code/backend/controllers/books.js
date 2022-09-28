@@ -49,12 +49,15 @@ const createNewBook = (req, res) => {
 const getAllBooks = (req, res) => {
   booksModel
     .find() //..>{}
+    .populate("comment")
+    .exec()
     .then((result) => {
       res.status(200);
       res.json({
         success: true,
         message: "All the book",
         book: result,
+
       });
     })
     .catch((err) => {
@@ -196,7 +199,7 @@ const createComment = (req, res) => {
       booksModel
         .findOneAndUpdate({ _id: bookId }, { $push: { comments: result._id } })
         .then(() => {
-          console.log();
+          console.log(202);
           res.status(201);
           res.json({
             success: true,

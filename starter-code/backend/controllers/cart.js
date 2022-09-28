@@ -23,8 +23,8 @@ const createNewCart = (req, res) => {
       .catch((err) => {
         res.status(500);
         res.json({
-          success: false,
-          message: "Server Error",
+          success:false,
+          message:"Server Error",
           err: err.message,
         });
       });
@@ -137,6 +137,40 @@ const getCartById = (req, res) => {
       });
     });
 };
+//here we need to getAllUserCartbyId
+//------------- get All User Cart by Id -------------
+const  getAllUserCartbyId =(req,res)=>{
+  const userId = req.token.userId;
+  console.log(userId)
+  cartModel
+  .find({})
+  .populate("books" , "price -_id")
+  .exec()
+  .then((cart) => {
+    if (cart.length) {
+      res.status(200).json({
+        success: true,
+        message: `user cart`,
+        userId: userId,
+        cart: cart,
+       
+      });
+    } else {
+      res.status(200).json({
+        success: false,
+        message: `empty cart`,
+      });
+    }
+  })
+  .catch((err) => {
+    res.status(500).json({
+      success: false,
+      message: `Server Error`,
+      err: err.message,
+    });
+  });
+}
+
 //------------------------------------------
 module.exports = {
   createNewCart,
@@ -144,4 +178,5 @@ module.exports = {
   updateCartById,
   deleteCartById,
   getCartById,
+  getAllUserCartbyId
 };

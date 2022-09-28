@@ -77,7 +77,7 @@ try {
   res.status(200).json({
     success: true,
     message: "Valid login credentials",
-    result:token  
+    token:token  
   });
 } catch (error) {
     res.status(409);

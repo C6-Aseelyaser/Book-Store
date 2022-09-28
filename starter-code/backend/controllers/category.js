@@ -53,7 +53,7 @@ const getAllCategory = (req, res) => {
     });
 };
 //--------------------------------------------
-module.exports = { createNewCatogory ,getAllCategory};
+module.exports = { createNewCatogory ,getAllCategory,};
 
 
 
