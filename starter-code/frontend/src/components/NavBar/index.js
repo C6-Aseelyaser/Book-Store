@@ -1,8 +1,12 @@
-import React from "react";
+import {useState, useContext} from "react";
 import { useNavigate } from "react-router-dom";
-
+import { usertoken } from "../../App";
+  //------------------------------------------
 const Navigation = () => {
   const navigate = useNavigate();
+  const user = useContext(usertoken);
+  console.log(user);
+  
   return (
     <div className="navBar">
       <div
@@ -22,12 +26,12 @@ const Navigation = () => {
         Login
       </div>
       <div
-        className="bokks"
+        className="home"
         onClick={() => {
-          navigate("/Books");
+          navigate("/home");
         }}
       >
-        Books
+        Home
       </div>
     </div>
   );

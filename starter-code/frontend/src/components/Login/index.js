@@ -1,6 +1,7 @@
-import { useState, useContext,useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import "./style.css";
 import axios from "axios";
+import { usertoken } from "../../App";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -8,10 +9,9 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
+  const user = useContext(usertoken);
+  const navigate = useNavigate();
 
-// useEffect(()=>{
-//   navigate("/dashboard");
-// },[])
   const loginUser = () => {
     axios
       .post("http://localhost:5000/users/login", {
@@ -19,15 +19,14 @@ const Login = () => {
         password,
       })
       .then((results) => {
-console.log(results)
+        console.log(results)
+        console.log(results.data.token);
+        user.setToken(results.data.token);
         setMessage(results.data.message);
-
-
-        // navigate("/dashboard");
+        localStorage.setItem("token", results.data.token);
       })
       .catch((error) => {
         console.log(error);
-
         setMessage(error.response.data.message);
       });
   };
@@ -50,38 +49,18 @@ console.log(results)
           }}
         />
         <div>
-        <label>{message}</label>
+          <label>{message}</label>
         </div>
 
         <button type="submit" className="loginin" onClick={loginUser}>
           Login
         </button>
-
-
       </div>
     </div>
   );
 };
 export default Login;
 
-
-
-
-
-
-
-
-
-
-
-
-// import React from "react";
-
-// const Login = () => {
-//   return <div>Login</div>;
-// };
-// export default Login;
-
-
-
-
+// useEffect(()=>{
+//   navigate("/Home");
+// },[])
