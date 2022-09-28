@@ -33,6 +33,23 @@ const Navigation = () => {
       >
         Home
       </div>
+      <div
+        className="category"
+        onClick={() => {
+          navigate("/category");
+        }}
+      >
+        category
+      </div>
+      <div
+        className="bookInfo"
+        onClick={() => {
+          navigate("/bookInfo");
+        }}
+      >
+        bookInfo
+      </div>
+   
     </div>
   );
 };

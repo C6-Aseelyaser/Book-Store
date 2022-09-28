@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import "./style.css";
 import axios from "axios";
 import { usertoken } from "../../App";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Home() {
   const user = useContext(usertoken);
@@ -46,7 +46,7 @@ function Home() {
     axios
       .get("http://localhost:5000/books", {
         headers: {
-          Authorization: `Barer ${user.token}`,
+          Authorization: `Bearer ${user.token}`,
         },
       })
       .then((results) => {
@@ -65,10 +65,22 @@ function Home() {
     <div className="homepage">
       <div className="category">
         {category.map((categoryElem, index) => {
-          //   console.log(categoryElem);
+          console.log(categoryElem);
+          // to go to other component most use  LINK or useNavigate hook
+          //to be able to use hook or Link most be imported
           return (
             <div>
-              <h2 onClick={getAllcategory}>{categoryElem.title}</h2>
+              <Link to={`/category/${categoryElem._id}`}>
+                
+                {categoryElem.title}
+              </Link>
+              {/* <h2
+                onClick={() => {
+                  navigate("/category");
+                }}
+              >
+                {categoryElem.title}
+              </h2> */}
             </div>
           );
         })}

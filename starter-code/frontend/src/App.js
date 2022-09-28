@@ -4,7 +4,10 @@ import Navigation from "./components/NavBar";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Home from "./components/Home";
+import Category from "./components/category";
+import BookInfo from "./components/Bookinfo";
 import { createContext, useState } from "react";
+import Category from "./components/category";
 export const usertoken = createContext();
 
 
@@ -19,7 +22,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/Home" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/category/:id" element={<Category />} />
+            <Route path="/bookInfo/:id" element={<BookInfo/>}/>
           </Routes>
         </div>
       </div>
