@@ -15,6 +15,7 @@ function BookInfo() {
   // console.log(id);
   // -------------get book by id -------------
   const [books, setBooks] = useState({});
+  const [comment, setComment] = useState("")
   // const [error, setError] = useState(false);
   const getBooksById = () => {
     axios
@@ -59,9 +60,32 @@ function BookInfo() {
             <h2>{books.puplish}</h2>
             <h2>{books.price}</h2>
             <h2>{books.rating}</h2>
+            <input
+          type="text"
+          placeholder="comment"
+          onChange={(e) => {
+            setComment(e.target.value);
+          }}
+        />
+        <button type="submit" className="cart" onClick={BookInfo}>
+          enter 
+        </button>
           </div>
+      <div>
+        <Link to = {`/cart/${books._id}`}>{<button >add to cart</button>}</Link>
+        
+      </div>
       
-      
+
+      {/* <Link to={`/bookInfo/${cateElem._id}`}>
+                {
+                  <img
+                    className="img"
+                    src={`${cateElem.image} `}
+                    alt="img not found"
+                  />
+                }
+              </Link> */}
     </div>
   );
 }
@@ -78,3 +102,7 @@ export default BookInfo;
 //2.you need to make sure that the array is not undefined
 //3.how to make sure 
 //4.&&    ~~>  if in map
+
+
+//addComment 1.need input & button "enter comment" 
+//2.usestate

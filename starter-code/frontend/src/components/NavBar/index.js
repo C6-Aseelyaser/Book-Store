@@ -33,7 +33,7 @@ const Navigation = () => {
       >
         Home
       </div>
-      <div
+      {/* <div
         className="category"
         onClick={() => {
           navigate("/category");
@@ -48,7 +48,7 @@ const Navigation = () => {
         }}
       >
         bookInfo
-      </div>
+      </div> */}
    
     </div>
   );

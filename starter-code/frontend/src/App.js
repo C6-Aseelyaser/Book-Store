@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import Category from "./components/category";
 import BookInfo from "./components/Bookinfo";
+import Cart from "./components/Cart";
 import { createContext, useState } from "react";
 export const usertoken = createContext();
 
@@ -24,6 +25,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/category/:id" element={<Category />} />
             <Route path="/bookInfo/:id" element={<BookInfo/>}/>
+            <Route path="/cart/:id" element={<Cart/>}/>
           </Routes>
         </div>
       </div>
