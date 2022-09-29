@@ -2,11 +2,11 @@ let roleModel = require("../models/roleSchema");
 
 
 //------------create role -----------------
-console.log(5)
+// console.log(5)
 const role = (req, res) => {
   
   const roleId = req.params.roleId;
-  console.log(roleId);
+  // console.log(roleId);
   const { role, permissions } = req.body;
   const roleModelInstance = new roleModel({
     role,
@@ -15,7 +15,7 @@ const role = (req, res) => {
   roleModelInstance
     .save()
     .then((result) => {
-      console.log(result);
+      // console.log(result);
       res.status(201);
       res.json({
         success: true,

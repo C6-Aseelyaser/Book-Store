@@ -53,11 +53,11 @@ try {
     res.status(404).json({ success: false,message: "The email doesn't exist" });
     return;
   }
-  console.log(48)
+  // console.log(48)
   const storedPassword = user.password; 
   const passwordCheck = await bcrypt.compare(password, storedPassword); 
   if (!passwordCheck) {
-    console.log(!passwordCheck)
+    // console.log(!passwordCheck)
     res.status(403).json({success: false, message: "The password you’ve entered is incorrect" });
     return;
   }

@@ -18,8 +18,8 @@ const createNewCatogory = (req, res) => {
         message: "catogory created",
         title: result,
       });
-      console.log(22);
-      console.log(result);
+      // console.log(22);
+      // console.log(result);
     })
     .catch((err) => {
       res.status(500);

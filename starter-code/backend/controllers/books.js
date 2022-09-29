@@ -12,6 +12,7 @@ const createNewBook = (req, res) => {
     puplish,
     price,
     rating,
+ 
   } = req.body;
   constbooksModelInstance = new booksModel({
     title,
@@ -23,6 +24,7 @@ const createNewBook = (req, res) => {
     puplish,
     price,
     rating,
+   
   });
   constbooksModelInstance
     .save()
@@ -33,8 +35,8 @@ const createNewBook = (req, res) => {
         message: "Book created",
         book: result,
       });
-      console.log(36);
-      console.log(result);
+      // console.log(36);
+      // console.log(result);
     })
     .catch((err) => {
       res.status(500);
@@ -72,7 +74,7 @@ const getAllBooks = (req, res) => {
 //------------- get Book By category -------------
 const getBookByCategory = (req, res) => {
   let categoryId = req.query.category;
-  console.log(req.query.category);
+  // console.log(req.query.category);
   booksModel
     .find({ category: categoryId })
     .then((Books) => {
@@ -100,11 +102,11 @@ const getBookByCategory = (req, res) => {
 //------------- get Book By Id -------------
 const getBookById = (req, res) => {
   bookId = req.query.id;
-  console.log(bookId);
+  // console.log(bookId);
   booksModel
     .findById(bookId)
-    .populate("category", "title -_id")
-    .select(" -_id")
+    .populate("category") //, "title -_id"
+    // .select(" -_id")
     .exec()
     .then((result) => {
       if (result === undefined) {
@@ -184,9 +186,9 @@ const deleteBookById = (req, res) => {
 };
 //------------- create comments -------------
 const createComment = (req, res) => {
-  console.log(req.token);
+  // console.log(req.token);
   const bookId = req.params.id;
-  console.log(bookId);
+  // console.log(bookId);
   const { comment } = req.body;
   const commentModelInstance = new commentModel({
     comment,
@@ -195,11 +197,11 @@ const createComment = (req, res) => {
   commentModelInstance
     .save()
     .then((result) => {
-      console.log(result._id);
+      // console.log(result._id);
       booksModel
         .findOneAndUpdate({ _id: bookId }, { $push: { comments: result._id } })
         .then(() => {
-          console.log(202);
+          // console.log(202);
           res.status(201);
           res.json({
             success: true,

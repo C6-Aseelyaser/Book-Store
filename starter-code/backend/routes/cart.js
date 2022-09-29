@@ -1,6 +1,6 @@
 const express = require('express');
 const { getBookById } = require('../controllers/books');
-const { createNewCart,getAllCart,updateCartById,deleteCartById,getCartById,getAllUserCartbyId} = require('../controllers/cart');
+const { createNewCart,getAllCart,updateCartById,deleteCartById,getCartById,getUserCartbyId} = require('../controllers/cart');
 
 const authentication =require('../middlewares/authentication');
 const authorization =require('../middlewares/authorization');
@@ -11,6 +11,6 @@ cartRouter.get("/",authentication,getAllCart);
 cartRouter.put("/:id",authentication,authorization("UPDATE_CART"),updateCartById);
 cartRouter.delete("/:id",authentication,authorization("DELETE_CART"),deleteCartById);
 cartRouter.get("/search_2",getCartById)
-cartRouter.get("/:id",getAllUserCartbyId)
+cartRouter.get("/:id",authentication,getUserCartbyId);
 
 module.exports = cartRouter;

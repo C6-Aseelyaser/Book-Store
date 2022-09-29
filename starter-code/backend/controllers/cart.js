@@ -138,16 +138,17 @@ const getCartById = (req, res) => {
     });
 };
 //here we need to getAllUserCartbyId
-//------------- get All User Cart by Id -------------
-const  getAllUserCartbyId =(req,res)=>{
+//------------- get Cart by Id -------------
+const  getUserCartbyId =(req,res)=>{
   const userId = req.token.userId;
   console.log(userId)
   cartModel
-  .find({})
-  .populate("books" , "price -_id")
+  .find({user:userId})
+  .populate("book" , "-_id")
   .exec()
   .then((cart) => {
-    if (cart.length) {
+    console.log(cart)
+    if (cart.length) {//
       res.status(200).json({
         success: true,
         message: `user cart`,
@@ -178,5 +179,5 @@ module.exports = {
   updateCartById,
   deleteCartById,
   getCartById,
-  getAllUserCartbyId
+  getUserCartbyId
 };
