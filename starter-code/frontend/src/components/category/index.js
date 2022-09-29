@@ -10,7 +10,7 @@ import { usertoken } from "../../App";
 function Category() {
   const user = useContext(usertoken);
   const { id } = useParams();
-  // console.log(params)
+  console.log(id)
   //   -------------get Books By Category-------------
   const [bookCategory, setBookCategory] = useState([]);
   const getBooksByCategory = () => {
@@ -54,6 +54,7 @@ function Category() {
               <h2>{cateElem.description} </h2>
               <h2>{cateElem.price} </h2>
               <h2>{cateElem.rating} </h2>
+              <h2>{cateElem.comment} </h2>
             </div>
           );
         })}

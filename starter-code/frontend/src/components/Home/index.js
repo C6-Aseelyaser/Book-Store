@@ -90,11 +90,21 @@ function Home() {
           //   console.log(booksElem);
           return (
             <div>
-              <img
+              {/* <img
                 className="img"
                 src={`${booksElem.image} `}
                 alt="img not found"
-              />
+              /> */}
+              <Link to={`/bookInfo/${booksElem._id}`}>
+                {
+                  <img
+                    className="img"
+                    src={`${booksElem.image} `}
+                    alt="img not found"
+                  />
+                }
+              </Link>
+              
               <h2>{booksElem.title} </h2>
               <h2>{booksElem.description} </h2>
               <h2>{booksElem.price} </h2>
