@@ -21,34 +21,35 @@ function Category() {
         },
       })
       .then((results) => {
-        console.log(results)
+        // console.log(results);
         setBookCategory(results.data.books);
       })
-      .catch((err)=>{
+      .catch((err) => {
         console.log(err);
-      })
+      });
   };
   useEffect(() => {
     getBooksByCategory();
-   
   }, []);
-
-
 
   //------------- return -------------
   return (
     <div className="category">
       <div>
         {bookCategory.map((cateElem, index) => {
-          //   console.log(categoryElem);
+          // console.log(cateElem);
           return (
             <div>
-                <Link to {`${element._id}>{element.image}`}></Link>
-              <img
-                className="img"
-                src={`${cateElem.image} `}
-                alt="img not found"
-              />
+              <Link to={`/bookInfo/${cateElem._id}`}>
+                {
+                  <img
+                    className="img"
+                    src={`${cateElem.image} `}
+                    alt="img not found"
+                  />
+                }
+              </Link>
+
               <h2>{cateElem.title} </h2>
               <h2>{cateElem.description} </h2>
               <h2>{cateElem.price} </h2>
@@ -62,7 +63,3 @@ function Category() {
 }
 
 export default Category;
-//1. Link to on image
-//2.Routes + app.js  /bookInfo
-//3. on bookInfo comp. import Link 
-//4.

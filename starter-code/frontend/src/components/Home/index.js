@@ -50,7 +50,7 @@ function Home() {
         },
       })
       .then((results) => {
-        console.log(results);
+        // console.log(results);
         // console.log(results.data);
         setBooks(results.data.book);
       })
@@ -65,9 +65,9 @@ function Home() {
     <div className="homepage">
       <div className="category">
         {category.map((categoryElem, index) => {
-          console.log(categoryElem);
-          // to go to other component most use  LINK or useNavigate hook
-          //to be able to use hook or Link most be imported
+          // console.log(categoryElem);
+          // to go to other component must use  LINK or useNavigate hook
+          //to be able to use hook or Link must be imported
           return (
             <div>
               <Link to={`/category/${categoryElem._id}`}>

@@ -7,7 +7,6 @@ import Home from "./components/Home";
 import Category from "./components/category";
 import BookInfo from "./components/Bookinfo";
 import { createContext, useState } from "react";
-import Category from "./components/category";
 export const usertoken = createContext();
 
 
