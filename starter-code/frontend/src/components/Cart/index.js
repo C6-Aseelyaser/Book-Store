@@ -10,9 +10,9 @@ function Cart() {
   const user = useContext(usertoken);
   const { id } = useParams(); //~~>id
 
-  console.log(id);
-  // -------------getAllUserCartbyId-------------
-  const [cart, setCart] = useState({});
+  // console.log(id);
+  // -------------get All User Cart by Id-------------
+  const [cart, setCart] = useState([]);
  
   const getUserCartbyId = () => {
     axios
@@ -22,15 +22,17 @@ function Cart() {
         },
       })
       .then((results) => {
-        console.log(results);
+        console.log(results.data.cart);
+  
         setCart(results.data.cart);
+      
         console.log("cart:",cart);
       }) 
       .catch((err) => {
         console.log(err);
       });
   };
-  console.log("cart2:",cart);
+  // console.log("cart2:",cart);
   useEffect(() => {
     getUserCartbyId();
   }, []);
@@ -39,11 +41,22 @@ function Cart() {
   return (
     <div>
       <div>
-        <h2>{cart.title}</h2>
-        <img className="img" src={`${cart.image}`} alt="img not found"></img>
+        {cart.map((cartElem, i)=>{
+          console.log("cartElem:",cartElem)
+          return(
+            <div>
+              <img className="img" src={`${cartElem.book && cartElem.book.image}`} alt="img not found"></img>
+              <h2>{cartElem.book && cartElem.book.title}</h2>
+              <h2>{cartElem.book.price}</h2>
+              <h2>{cartElem.quantity}</h2>
+            </div>
+          )
+        })}
+        {/* <h2>{cart.book.title }</h2> */}
+        {/* <img className="img" src={`${cartElem.book && cartElem.book.image}`} alt="img not found"></img>
         <h2>{cart.book && cart.book.price}</h2>
         <h2>{cart.quantity}</h2>
-        <h2>{cart.price}</h2>
+        <h2>{cart.price}</h2> */}
       </div>
     </div>
   );

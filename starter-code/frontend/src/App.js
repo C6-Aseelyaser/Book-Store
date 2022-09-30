@@ -20,8 +20,8 @@ function App() {
       <div className="App">
         {/* <h1>Book Store</h1> */}
         <div className="">
-        <Header/>
-        <Slider/>
+        {/* <Header/>
+        <Slider/> */}
           <Navigation />
           <Routes>
             <Route path="/" element={<Register />} />
