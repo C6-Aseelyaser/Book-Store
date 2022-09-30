@@ -1,5 +1,5 @@
 //here i want to show .. when the user click on specific category [history -business - religion - science - math ] it'll bring jsut the books who relative to this category
-import "./style.css";
+import "./category.css";
 import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";

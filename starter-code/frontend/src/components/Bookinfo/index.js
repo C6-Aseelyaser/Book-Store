@@ -15,6 +15,7 @@ function BookInfo() {
   // console.log(id);
   // -------------get book by id -------------
   const [books, setBooks] = useState({});
+  // console.log("books" ,books);
   const [comment, setComment] = useState("")
   // const [error, setError] = useState(false);
   const getBooksById = () => {

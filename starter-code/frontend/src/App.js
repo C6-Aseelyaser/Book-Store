@@ -8,6 +8,7 @@ import Category from "./components/category";
 import BookInfo from "./components/Bookinfo";
 import Cart from "./components/Cart";
 import { createContext, useState } from "react";
+import Header from "./components/Header/Header";
 export const usertoken = createContext();
 
 
@@ -18,6 +19,7 @@ function App() {
       <div className="App">
         <h1>Book Store</h1>
         <div className="">
+        <Header/>
           <Navigation />
           <Routes>
             <Route path="/" element={<Register />} />
