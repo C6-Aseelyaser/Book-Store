@@ -1,6 +1,9 @@
 
 import "./header.css";
+import Navbar from "./Navbar"
+import {useState} from "react";
 const Header = () => {
+// const [toggle, seTtoggle] = useState(false);
   return (
     <header className="header">
         <div className ="header-top">
@@ -29,8 +32,11 @@ const Header = () => {
             </div>
             <div className="header-middle-cart-wrapper">
                 <i className="bi bi-cart2"></i>
+            
             </div>
+           
         </div>
+        <Navbar/>
     </header>
   );
 }

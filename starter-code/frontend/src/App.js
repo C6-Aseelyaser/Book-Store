@@ -9,6 +9,7 @@ import BookInfo from "./components/Bookinfo";
 import Cart from "./components/Cart";
 import { createContext, useState } from "react";
 import Header from "./components/Header/Header";
+import Slider from "./components/Slider/slider"
 export const usertoken = createContext();
 
 
@@ -17,9 +18,10 @@ function App() {
   return (
     <usertoken.Provider value={{ token, setToken }}>
       <div className="App">
-        <h1>Book Store</h1>
+        {/* <h1>Book Store</h1> */}
         <div className="">
         <Header/>
+        <Slider/>
           <Navigation />
           <Routes>
             <Route path="/" element={<Register />} />
