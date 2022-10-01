@@ -11,7 +11,7 @@ function Cart() {
   const { id } = useParams(); //~~>id
 
   // console.log(id);
-  // -------------get All User Cart by Id-------------
+  // -------------get User Cart by Id-------------
   const [cart, setCart] = useState([]);
  
   const getUserCartbyId = () => {

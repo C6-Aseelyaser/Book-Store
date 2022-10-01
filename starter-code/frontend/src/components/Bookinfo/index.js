@@ -73,7 +73,7 @@ function BookInfo() {
         </button>
           </div>
       <div>
-        <Link to = {`/cart/${books._id}`}>{<button >add to cart</button>}</Link>
+        <Link to = {`/cart/${books._id}`}>{<button >show cart</button>}</Link>
         
       </div>
       
