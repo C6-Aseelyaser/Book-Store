@@ -9,16 +9,16 @@ const Footer = () => {
         </div>
         <div className="footer-social-media-icons">
           <div className="footer-social-media-icon">
-            <i style={{ color: "red" }} className="bi bi-instagram"></i>
+            <i style={{ color: "#cb2027"}} className="bi bi-instagram"></i>
           </div>
           <div className="footer-social-media-icon">
-            <i style={{ color: "blue" }} className="bi bi-facebook"></i>
+            <i style={{  color: "#3B5998"}} className="bi bi-facebook"></i>
           </div>
           <div className="footer-social-media-icon">
-            <i style={{ color: "red" }} className="bi bi-youtube"></i>
+            <i style={{  color: "#bb0000" }} className="bi bi-youtube"></i>
           </div>
           <div className="footer-social-media-icon">
-            <i style={{ color: "skyblue" }} className="bi bi-twitter"></i>
+            <i style={{  color: "#55ACEE" }} className="bi bi-twitter"></i>
           </div>
           <div className="footer-social-media-icon">
             <i style={{ color: "darkblue" }} className="bi bi-telegram"></i>

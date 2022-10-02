@@ -5,6 +5,7 @@ import axios from "axios";
 import { usertoken } from "../../App";
 import { useNavigate, Link } from "react-router-dom";
 import Rating from "./Rating";
+import Popupbook from "../Popupbook/Popupbook";
 function Home() {
   const user = useContext(usertoken);
   const navigate = useNavigate();
@@ -13,6 +14,15 @@ function Home() {
 
   const [userId, setUserId] = useState("");
   const [slideIndex, setSlideIndex] = useState(0);
+  const [openPopup, setOpenPopup] = useState(false);
+  const [bookdata, setBookdata] = useState(null);
+ //------------- handleOpenPopup -------------
+ const handleOpenPopup = (books) => {
+  setOpenPopup(true);
+  setBookdata(books);
+  console.log(books);
+ }
+  //------------- handleClick -------------
   const handleClick = (direction) => {
     if (direction === "left") {
       setSlideIndex(slideIndex - 1);
@@ -118,7 +128,7 @@ function Home() {
 
               <div className="book-slide-item-price">${booksElem.price} </div>
               <div className="book-slider-icons-wrapper">
-                <i className="bi bi-eye-fill"></i>
+                <i onClick={()=>{handleOpenPopup(booksElem)}} className="bi bi-eye-fill"></i>
                 <i onClick={()=>{}} className="bi bi-cart-plus"></i>
               </div>
 
@@ -136,6 +146,7 @@ function Home() {
           className="bi bi-chevron-right book-slider-arrow-right"
         ></i>
       )}
+      {openPopup && <Popupbook bookdata={bookdata} setOpenPopup={setOpenPopup}/>}
     </div>
   );
 }

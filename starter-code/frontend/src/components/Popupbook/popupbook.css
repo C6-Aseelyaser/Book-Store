@@ -1,0 +1,30 @@
+.popupbook-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.popupbook-content{
+    width: 80%;
+    height: 90%;
+    background-color: grey;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+}
+.popup-icon{
+    top: 0;
+    right: 10px;
+    color: crimson;
+    cursor: pointer;
+    font-size: 50px;
+}

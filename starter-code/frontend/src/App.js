@@ -13,6 +13,7 @@ import Header from "./components/Header/Header";
 import Services from "./components/Servicses/Services";
 // import AddToCart from "./components/AddToCart/AddToCart";
 import Footer from "./components/Footer/Footer";
+import Popupbook from "./components/Popupbook/Popupbook";
 export const usertoken = createContext();
 
  //------------- App -------------
@@ -28,6 +29,7 @@ function App() {
         {/* <Slider/> */}
         <Services/>
         <Footer/>
+        <Popupbook/>
           <Navigation />
           <Routes>
             <Route path="/" element={<Register />} />
