@@ -30,24 +30,22 @@ function BookInfo() {
   };
   useEffect(() => {
     getBooksById();
-
   }, []);
   // -------------create New Cart ~~>[add book to cart]-------------
   const [addtoCart, setAddtoCart] = useState([]); //..>?
-  const [quantity, setQuantity] = useState("");
-  const [book, setBook] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  // const [book, setBook] = useState("");
 
   const createNewCart = () => {
     axios
       .post(
         "http://localhost:5000/cart",
         {
-          
-          book,
-          quantity
+          book: id,
+          quantity,
         },
         {
-          headers: {
+          headers: {  
             Authorization: `Bearer ${user.token}`,
           },
         }
@@ -102,6 +100,7 @@ function BookInfo() {
         )
       })}
      </div> */}
+  
     </div>
   );
 }

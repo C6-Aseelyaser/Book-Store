@@ -4,6 +4,7 @@ import Navbar from "./Navbar"
 import {useState} from "react";
 const Header = () => {
 // const [toggle, seTtoggle] = useState(false);
+const [search, setSearch]=useState([])
   return (
     <header className="header">
         <div className ="header-top">
@@ -26,8 +27,8 @@ const Header = () => {
                 <i className="bi bi-book"></i>
                 <b>store</b>
             </div>
-            <div className="header-middle-search-box">
-                <input className="header-middle-search-input" type="search" placeholder="search in book store ..."></input>
+            <div className="header-middle-search-box"> 
+                <input onChange={(e) => {setSearch(e.target.value) }} className="header-middle-search-input" type="search" placeholder="search in book store ..."></input>
                 <i className="bi bi-search"></i>
             </div>
             <div className="header-middle-cart-wrapper">
@@ -42,3 +43,8 @@ const Header = () => {
 }
 
 export default Header
+
+
+// for search
+// 1.[in frontEnd] input onchange &need ~~> this.state
+// 2.[in backEnd]  func. operate search

@@ -10,9 +10,9 @@ import Cart from "./components/Cart";
 import { createContext, useState } from "react";
 import Header from "./components/Header/Header";
 // import Slider from "./components/Slider/slider";
-import Services from "./components/Servicses/Services";
+// import Services from "./components/Servicses/Services";
 // import AddToCart from "./components/AddToCart/AddToCart";
-import Footer from "./components/Footer/Footer";
+// import Footer from "./components/Footer/Footer";
 import Popupbook from "./components/Popupbook/Popupbook";
 export const usertoken = createContext();
 
@@ -27,8 +27,8 @@ function App() {
         <div className="">
         <Header/>
         {/* <Slider/> */}
-        <Services/>
-        <Footer/>
+        {/* <Services/> */}
+        {/* <Footer/> */}
         <Popupbook/>
           <Navigation />
           <Routes>
@@ -38,7 +38,7 @@ function App() {
             <Route path="/category/:id" element={<Category />} />
             <Route path="/bookInfo/:id" element={<BookInfo/>}/>
             <Route path="/cart/:id" element={<Cart/>}/>
-            <Route path="/cart" element={<BookInfo/>}/>
+            <Route path="/cart" element={<BookInfo/>}/>  
           </Routes>
         </div>
       </div>
