@@ -12,6 +12,7 @@ const createNewBook = (req, res) => {
     puplish,
     price,
     rating,
+    comment
  
   } = req.body;
   constbooksModelInstance = new booksModel({
@@ -24,6 +25,7 @@ const createNewBook = (req, res) => {
     puplish,
     price,
     rating,
+    comment
    
   });
   constbooksModelInstance
@@ -60,6 +62,28 @@ const getAllBooks = (req, res) => {
         message: "All the book",
         book: result,
 
+      });
+    })
+    .catch((err) => {
+      res.status(500);
+      res.json({
+        success: false,
+        message: "Server Error",
+        err: err.message,
+      });
+    });
+};
+//-------------search Books-------------
+//search on title of the book
+const searchBooks = (req, res) => {
+  booksModel
+    .find(title ) //find title + regex
+    .then((result) => {
+      res.status(200);
+      res.json({
+        success: true,
+        message: "search result",
+        book: result,
       });
     })
     .catch((err) => {
@@ -236,6 +260,7 @@ module.exports = {
   updateBookById,
   deleteBookById,
   createComment,
+  searchBooks
 };
 // pt1
 // NewBook,

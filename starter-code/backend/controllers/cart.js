@@ -6,35 +6,45 @@ const cartModel = require("../models/cartSchema");
 //? update & delete all cart
 //------------- create new cart -------------
 const createNewCart = (req, res) => {
-  const { user, book, quantity } = req.body;
+  const {  book, quantity } = req.body;
+  
+  // console.log(req.token)
   const cartModelInstance = new cartModel({
-    user,
+    user:req.token.userId,
     book,
     quantity,
   });
-  cartModelInstance.save().then((result) => {
-    res.status(201);
-    res
-      .json({
-        success: true,
-        message: "cart created",
-        cart: result,
-      })
-      .catch((err) => {
-        res.status(500);
+  cartModelInstance
+    .save()
+    .then((result) => {
+      if (result) {
+        res.status(200);
         res.json({
-          success:false,
-          message:"Server Error",
-          err: err.message,
+          success: true,
+          message: "cart created",
+          cart: result,
         });
+      }else  {
+        throw Error;
+      }
+    })
+    .catch((err) => {
+      res.status(500);
+      res.json({
+        success: false,
+        message: "Server Error",
+        err: err.message,
       });
-  });
+    });
 };
+
+
+
 //------------- get all cart -------------..>dont need get all cart ..jsut getById
 const getAllCart = (req, res) => {
   cartModel
     .find()
-    .populate("book", "price -_id")
+    .populate("book") //, "price -_id"
     .exec()
     .then((result) => {
       res.status(200);
@@ -45,7 +55,7 @@ const getAllCart = (req, res) => {
       });
     })
     .catch((err) => {
-      res.staus(500);
+      res.status(500);
       res.json({
         success: false,
         message: "Server Error",
@@ -111,10 +121,10 @@ const deleteCartById = (req, res) => {
 //------------- get cart By Id -------------
 const getCartById = (req, res) => {
   cartId = req.query.id;
-  console.log(cartId);
+  // console.log(cartId);
   cartModel
     .findById(cartId)
-    .populate("book", "price -_id")
+    .populate("book") //, "price -_id"
     .exec()
     .then((result) => {
       if (result === undefined) {
@@ -139,38 +149,38 @@ const getCartById = (req, res) => {
 };
 //here we need to getAllUserCartbyId
 //-------------getUserCartbyId -------------
-const  getUserCartbyId =(req,res)=>{
+const getUserCartbyId = (req, res) => {
   const userId = req.token.userId;
-  console.log(userId)
+  // console.log(userId)
   cartModel
-  .find({user:userId})
-  .populate("book" ) //, "-_id"
-  .exec()
-  .then((cart) => {
-    console.log(cart)
-    if (cart.length) {//
-      res.status(200).json({
-        success: true,
-        message: `user cart`,
-        userId: userId,
-        cart: cart,
-       
-      });
-    } else {
-      res.status(200).json({
+    .find({ user: userId })
+    .populate("book") //, "-_id"
+    .exec()
+    .then((cart) => {
+      // console.log(cart)
+      if (cart.length) {
+        //
+        res.status(200).json({
+          success: true,
+          message: `user cart`,
+          userId: userId,
+          cart: cart,
+        });
+      } else {
+        res.status(200).json({
+          success: false,
+          message: `not found`,
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({
         success: false,
-        message: `not found`,
+        message: `Server Error`,
+        err: err.message,
       });
-    }
-  })
-  .catch((err) => {
-    res.status(500).json({
-      success: false,
-      message: `Server Error`,
-      err: err.message,
     });
-  });
-}
+};
 
 //------------------------------------------
 module.exports = {
@@ -179,5 +189,5 @@ module.exports = {
   updateCartById,
   deleteCartById,
   getCartById,
-  getUserCartbyId
+  getUserCartbyId,
 };

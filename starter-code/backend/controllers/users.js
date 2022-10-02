@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 
 const { options } = require("../routes/books");
 //-------------------register-------------------
-console.log(8);
+// console.log(8);
 const register = (req, res) => {
   const { firstName, lastName, age, country, email, password,role } = req.body;
 
@@ -22,7 +22,7 @@ const register = (req, res) => {
   usersModelInstance
     .save()
     .then((result) => {
-      console.log(result);
+      // console.log(result);
       res.status(201);
       res.json({
         success: true,
@@ -38,7 +38,7 @@ const register = (req, res) => {
 };
 
 //-------------------login-------------------
-console.log(40)
+// console.log(40)
 const login = async (req, res) => {
   const { email, password } = req.body;  
 // console.log(40)
