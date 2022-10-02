@@ -4,6 +4,7 @@ import axios from "axios";
 import { usertoken } from "../../App";
 import { useNavigate } from "react-router-dom";
 
+//------------- login -------------
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,7 +12,6 @@ const Login = () => {
 
   const user = useContext(usertoken);
   const navigate = useNavigate();
-
   const loginUser = () => {
     axios
       .post("http://localhost:5000/users/login", {
@@ -19,8 +19,8 @@ const Login = () => {
         password,
       })
       .then((results) => {
-        console.log(results)
-        console.log(results.data.token);
+        // console.log(results)
+        // console.log(results.data.token);
         user.setToken(results.data.token);
         setMessage(results.data.message);
         localStorage.setItem("token", results.data.token);
@@ -30,7 +30,7 @@ const Login = () => {
         setMessage(error.response.data.message);
       });
   };
-
+   //------------- return -------------
   return (
     <div className="loginContainer">
       <div className="login">
@@ -51,7 +51,6 @@ const Login = () => {
         <div>
           <label>{message}</label>
         </div>
-
         <button type="submit" className="loginin" onClick={loginUser}>
           Login
         </button>

@@ -9,19 +9,25 @@ import BookInfo from "./components/Bookinfo";
 import Cart from "./components/Cart";
 import { createContext, useState } from "react";
 import Header from "./components/Header/Header";
-import Slider from "./components/Slider/slider"
+// import Slider from "./components/Slider/slider";
+import Services from "./components/Servicses/Services";
+// import AddToCart from "./components/AddToCart/AddToCart";
+import Footer from "./components/Footer/Footer";
 export const usertoken = createContext();
 
-
+ //------------- App -------------
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
+   //------------- return -------------
   return (
     <usertoken.Provider value={{ token, setToken }}>
       <div className="App">
         {/* <h1>Book Store</h1> */}
         <div className="">
-        {/* <Header/>
-        <Slider/> */}
+        <Header/>
+        {/* <Slider/> */}
+        <Services/>
+        <Footer/>
           <Navigation />
           <Routes>
             <Route path="/" element={<Register />} />
@@ -30,6 +36,7 @@ function App() {
             <Route path="/category/:id" element={<Category />} />
             <Route path="/bookInfo/:id" element={<BookInfo/>}/>
             <Route path="/cart/:id" element={<Cart/>}/>
+            <Route path="/cart" element={<BookInfo/>}/>
           </Routes>
         </div>
       </div>

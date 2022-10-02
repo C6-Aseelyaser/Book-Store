@@ -1,17 +1,14 @@
-//here i want to show .. when the user click on specific category [history -business - religion - science - math ] it'll bring jsut the books who relative to this category
 import "./category.css";
 import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { usertoken } from "../../App";
 
-// first must make onClick for every specific category .. this onClick must put it on Home
-
 function Category() {
   const user = useContext(usertoken);
   const { id } = useParams();
-  console.log(id)
-  //   -------------get Books By Category-------------
+  // console.log(id)
+  //-------------get Books By Category-------------
   const [bookCategory, setBookCategory] = useState([]);
   const getBooksByCategory = () => {
     axios
@@ -31,7 +28,6 @@ function Category() {
   useEffect(() => {
     getBooksByCategory();
   }, []);
-
   //------------- return -------------
   return (
     <div className="category">
@@ -49,7 +45,6 @@ function Category() {
                   />
                 }
               </Link>
-
               <h2>{cateElem.title} </h2>
               <h2>{cateElem.description} </h2>
               <h2>{cateElem.price} </h2>
@@ -62,5 +57,4 @@ function Category() {
     </div>
   );
 }
-
 export default Category;

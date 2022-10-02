@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./style.css";
 import axios from "axios";
 
+ //------------- register -------------
+
 const Register = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -33,6 +35,7 @@ const Register = () => {
       });
   };
 
+ //------------- return -------------
   return (
     <div className="registerContainer">
       <div className="register">

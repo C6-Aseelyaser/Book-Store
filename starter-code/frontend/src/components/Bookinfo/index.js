@@ -1,8 +1,3 @@
-//   when click on anybook it will bring the user to bookinfo
-//   this will be in Bookinfo copmponents
-//1. Link to ..> on image
-//2.Routes + app.js  /bookInfo
-//3. on bookInfo comp. import Link
 import "./style.css";
 import axios from "axios";
 import { useState, useEffect, useContext } from "react";
@@ -16,7 +11,7 @@ function BookInfo() {
   // -------------get book by id -------------
   const [books, setBooks] = useState({});
   // console.log("books" ,books);
-  const [comment, setComment] = useState("")
+  const [comment, setComment] = useState("");
   // const [error, setError] = useState(false);
   const getBooksById = () => {
     axios
@@ -33,35 +28,56 @@ function BookInfo() {
         console.log(err);
       });
   };
-
   useEffect(() => {
     getBooksById();
+
+  }, []);
+  // -------------create New Cart ~~>[add book to cart]-------------
+  const [addtoCart, setAddtoCart] = useState([]); //..>?
+  const [quantity, setQuantity] = useState("");
+  const [book, setBook] = useState("");
+
+  const createNewCart = () => {
+    axios
+      .post(
+        "http://localhost:5000/cart",
+        {
+          
+          book,
+          quantity
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      )
+      .then((results) => {
+        console.log(results);
+        // setAddtoCart(results.data.cart)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    createNewCart();
   }, []);
 
   // -------------return-------------
-
   return (
     <div>
-       {/* console.log(1213); */}
-      {/* {books && books.map((Ele, index) => {  //books undefined
-        // console.log(bookInfoElem);
-
-        return ( */}
-          <div>
-            <h2 key="booktitle">{books.title}</h2>
-            <img
-              className="img"
-              src={`${books.image}`}
-              alt="img not found"
-            ></img>
-            <h2>{books.author}</h2>
-            <h2>{books.description}</h2>
-            <h2>{books.category && books.category.title}</h2>
-            <h2>{books.year}</h2>
-            <h2>{books.puplish}</h2>
-            <h2>{books.price}</h2>
-            <h2>{books.rating}</h2>
-            <input
+      <div>
+        <h2 key="booktitle">{books.title}</h2>
+        <img className="img" src={`${books.image}`} alt="img not found"></img>
+        <h2>{books.author}</h2>
+        <h2>{books.description}</h2>
+        <h2>{books.category && books.category.title}</h2>
+        <h2>{books.year}</h2>
+        <h2>{books.puplish}</h2>
+        <h2>{books.price}</h2>
+        <h2>{books.rating}</h2>
+        <input
           type="text"
           placeholder="comment"
           onChange={(e) => {
@@ -69,41 +85,24 @@ function BookInfo() {
           }}
         />
         <button type="submit" className="cart" onClick={BookInfo}>
-          enter 
+          enter
         </button>
-          </div>
-      <div>
-        <Link to = {`/cart/${books._id}`}>{<button >show cart</button>}</Link>
-        
       </div>
-      
+      <div>
+        <button className="added-to-cart" onClick={createNewCart}>
+          added to cart
+        </button>
+        <Link to={`/cart/${books._id}`}>{<button>show cart</button>}</Link>
+      </div>
+      {/*----------return createNewCart ----------*/}
+      {/* <div>
+      {addtoCart.map((add,i)=>{
+        return (
 
-      {/* <Link to={`/bookInfo/${cateElem._id}`}>
-                {
-                  <img
-                    className="img"
-                    src={`${cateElem.image} `}
-                    alt="img not found"
-                  />
-                }
-              </Link> */}
+        )
+      })}
+     </div> */}
     </div>
   );
 }
 export default BookInfo;
-//button ..> add to cart  ~~> that add book to cart
-//new components cart ~~>
-//1.that show the books who added to cart
-//2."message: Added to your cart"
-//3. show cart subtotal
-
-
-
-//1. books undefined 
-//2.you need to make sure that the array is not undefined
-//3.how to make sure 
-//4.&&    ~~>  if in map
-
-
-//addComment 1.need input & button "enter comment" 
-//2.usestate

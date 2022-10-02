@@ -1,21 +1,21 @@
 // import {useState} from 'react'
 // import "./slider.css";
-// // import book1 from "../../../public/Images/book1.jpeg";
-// // import book2 from "../../../public/Images/book2.png";
-// // import book3 from "../../../public/Images/book3.jpeg";
+// import book1 from "../../../public/Images/book1.jpeg";
+// import book2 from "../../../public/Images/book2.png";
+// import book3 from "../../../public/Images/book3.jpeg";
 
 // const  Slider=()=> {
 //     const [slideIndex, setslideIndex] = useState(0);
 //     const handleClick =(direction)=>{
 //         if (direction==="left"){
-//             setslideIndex(slideIndex-1);
+//             setslideIndex(slideIndex > 0 ? slideIndex-1:2);
 //         }else{
-//             setslideIndex(slideIndex+1);
+//             setslideIndex(slideIndex < 2 ? slideIndex+1 :0);
 //         }
 //     } 
 //   return (
 //     <div className="slider-container">
-//         {slideIndex !== 0 && <i onClick={()=>handleClick("left")}className="bi bi-chevron-double-left arrow-left"></i>}
+//         {<i onClick={()=>handleClick("left")}className="bi bi-chevron-double-left arrow-left"></i>}
 //         <div style={{transform:`translateX(${slideIndex* -100}vw)`}} className='slider-wrapper'> 
 //             <div className='slide first-slide'>
 //                 <div className='slide-img-wrapper'>
@@ -45,7 +45,7 @@
 //                 </div>
 //             </div>
 //         </div>
-//         {slideIndex !== 2 &&  <i onClick={()=>handleClick("right")}className="bi bi-chevron-double-right arrow-right"></i>}
+//         {<i onClick={()=>handleClick("right")}className="bi bi-chevron-double-right arrow-right"></i>}
        
 //     </div>
 //   )

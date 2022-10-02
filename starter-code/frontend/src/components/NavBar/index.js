@@ -1,12 +1,12 @@
-import {useState, useContext} from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { usertoken } from "../../App";
-  //------------------------------------------
+//------------- Navigation -------------
 const Navigation = () => {
   const navigate = useNavigate();
   const user = useContext(usertoken);
   console.log(user);
-  
+  //------------- return -------------
   return (
     <div className="navBar">
       <div
@@ -49,7 +49,6 @@ const Navigation = () => {
       >
         bookInfo
       </div> */}
-   
     </div>
   );
 };
