@@ -3,19 +3,22 @@ import { useState, useContext, useEffect } from "react";
 import "./style.css";
 import axios from "axios";
 import { usertoken } from "../../App";
+
 import { useNavigate, Link } from "react-router-dom";
 import Rating from "./Rating";
 import Popupbook from "../Popupbook/Popupbook";
-function Home() {
+import BookInfo from "../Bookinfo";
+function Home({bookdata,setBookdata}) {
   const user = useContext(usertoken);
   const navigate = useNavigate();
-
+  // const UserContext = createContext();
   const [category, setCategory] = useState([]);
 
   const [userId, setUserId] = useState("");
   const [slideIndex, setSlideIndex] = useState(0);
   const [openPopup, setOpenPopup] = useState(false);
-  const [bookdata, setBookdata] = useState(null);
+
+ 
  //------------- handleOpenPopup -------------
  const handleOpenPopup = (books) => {
   setOpenPopup(true);
@@ -59,7 +62,7 @@ function Home() {
     getAllBooks();
   }, []);
   //-------------get All Books-------------
-  const [books, setBooks] = useState([]);
+  // const [books, setBooks] = useState([]);
   const getAllBooks = () => {
     axios
       .get("http://localhost:5000/books", {
@@ -70,7 +73,7 @@ function Home() {
       .then((results) => {
         // console.log(results);
         // console.log(results.data);
-        setBooks(results.data.book);
+        setBookdata(results.data.book);
       })
       .catch((err) => {
         console.log(err);
@@ -105,7 +108,7 @@ function Home() {
         style={{ transform: `translateX(${slideIndex * -340}px)` }}
         className="book-slider-wrapper"
       >
-        {books.map((booksElem, index) => {
+        {bookdata?.map((booksElem, index) => {
           //   console.log(booksElem);
           return (
             <div key={booksElem.id} className="book-slide-item">
@@ -146,7 +149,9 @@ function Home() {
         ></i>
       )}
       {openPopup && <Popupbook bookdata={bookdata} setOpenPopup={setOpenPopup}/>}
+      
     </div>
+   
   );
 }
 

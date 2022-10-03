@@ -60,7 +60,7 @@ function BookInfo() {
       });
   };
   useEffect(() => {
-    createNewCart();
+
   }, []);
 
   // -------------return-------------

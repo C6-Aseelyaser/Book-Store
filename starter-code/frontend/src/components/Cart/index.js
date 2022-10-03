@@ -52,11 +52,17 @@ function Cart() {
       )
       .then((results) => {
         console.log(results);
-        getUserCartbyId();
-        // getUserCartbyId.map((element, index) => {
-        //   return (getUserCartbyId())
-        // });
-       })
+        // getUserCartbyId();
+        const newArray = cart.map((element, index) => {
+          if (element._id === _id) {
+            console.log(element);
+            console.log(results);
+            element.quantity = quantity;
+          }
+          return element;
+        });
+        setCart(newArray);
+      })
       .catch((err) => {
         console.log(err);
       });
@@ -74,26 +80,30 @@ function Cart() {
       .then((results) => {
         console.log(results);
         getUserCartbyId();
-        // getUserCartbyId.filter((element, index) => {
-        //   return (getUserCartbyId())
-        // });
+        // cart.filter((elem,i)=>{
+        
+        // })
       })
       .catch((err) => {
         console.log(err);
       });
   };
   // -------------return-------------
-
+      const totalCart = cart.reduce((acc, cur) => {
+        console.log(acc)
+        console.log(cur)
+          return acc + cur.book.price * cur.quantity 
+        },0) 
   return (
     <div className="cart">
       <div className="cart-title">Your Shopping Cart</div>
       <div className="cart-wrapper">
         <div className="cart-items">
-          {cart.map((cartElem, i) => {
+          {cart?.map((cartElem, i) => {
             //destructering ~~>{book,quantitiy}
             // console.log("cartElem:", cartElem);
             return (
-              <div key={cartElem.id} className="cart-item">
+              <div key={cartElem._id} className="cart-item">
                 <img
                   className="cart-item-img"
                   src={`${cartElem.book && cartElem.book.image}`}
@@ -135,13 +145,12 @@ function Cart() {
                   <div className="cart-items-price">
                     ${cartElem.book.price * cartElem.quantity}
                   </div>
-                  <button
+                  <i
                     onClick={() => {
                       deleteCartById(cartElem._id);
                     }}
-                  >
-                    <i className="bi bi-trash-fill"></i>
-                  </button>
+                    className="bi bi-trash-fill"
+                  ></i>
                 </div>
                 {/* <h2>{cartElem.book && cartElem.book.title}</h2>
                 <h2>{cartElem.book && cartElem.book.price}</h2>
@@ -150,19 +159,14 @@ function Cart() {
             );
           })}
         </div>
-     {/* {cart.reduce((acc,cur)=>{
-    return (
-      acc +cur.cartElem.book.price  * cur.cartElem.quantity , 0
-    )
-  })} */}
+
         <div className="cart-order-summery">
           <div className="order-summery-title"> YOUR ORDER </div>
           <div className="your-order-item">
             <span> SubTotal </span>
             {/* console.log("cartElem:", cartElem); */}
 
-            <span>0?
-              </span> 
+            <span>{totalCart}</span>
           </div>
           <div className="your-order-item">
             <span> Cost </span>
@@ -172,11 +176,10 @@ function Cart() {
             <span> Discount </span>
             <span>0</span>
           </div>
-          <div className="your-order-item" >
+          <div className="your-order-item">
             <span> Total </span>
-            <span> 0?
-              </span> 
-            </div>
+            <span>{totalCart}</span>
+          </div>
         </div>
       </div>
     </div>

@@ -9,32 +9,33 @@ import BookInfo from "./components/Bookinfo";
 import Cart from "./components/Cart";
 import { createContext, useState } from "react";
 import Header from "./components/Header/Header";
-// import Slider from "./components/Slider/slider";
+import Slider from "./components/Slider/slider";
 // import Services from "./components/Servicses/Services";
 // import AddToCart from "./components/AddToCart/AddToCart";
 // import Footer from "./components/Footer/Footer";
-import Popupbook from "./components/Popupbook/Popupbook";
+// import Popupbook from "./components/Popupbook/Popupbook";
 export const usertoken = createContext();
 
  //------------- App -------------
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
+  const [bookdata, setBookdata] = useState(null);
    //------------- return -------------
   return (
     <usertoken.Provider value={{ token, setToken }}>
       <div className="App">
         {/* <h1>Book Store</h1> */}
         <div className="">
-        <Header/>
-        {/* <Slider/> */}
+        <Header setBookdata={setBookdata}/>
+        <Slider/>
         {/* <Services/> */}
         {/* <Footer/> */}
-        <Popupbook/>
+        {/* <Popupbook/> */}
           <Navigation />
           <Routes>
             <Route path="/" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={<Home bookdata={bookdata} setBookdata={setBookdata} />} />
             <Route path="/category/:id" element={<Category />} />
             <Route path="/bookInfo/:id" element={<BookInfo/>}/>
             <Route path="/cart/:id" element={<Cart/>}/>
