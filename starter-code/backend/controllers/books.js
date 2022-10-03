@@ -76,8 +76,13 @@ const getAllBooks = (req, res) => {
 //-------------search Books-------------
 //search on title of the book
 const searchBooks = (req, res) => {
+  let bookTitle = req.query.title
+  // const regex =new RegExp(title /abc/ ,"gi"  /Flags/ [^A-Za-z_0-9])
+ 
+  const regex = new RegExp(bookTitle, 'gi');
+  console.log(regex)
   booksModel
-    .find(title ) //find title + regex
+    .find({title:{$regex:regex}})
     .then((result) => {
       res.status(200);
       res.json({
