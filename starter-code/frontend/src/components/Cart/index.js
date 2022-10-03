@@ -53,6 +53,8 @@ function Cart() {
       .then((results) => {
         console.log(results);
         getUserCartbyId();
+        // getUserCartbyId.filter((element, index) => {
+        //   return setCart(results);
       })
       .catch((err) => {
         console.log(err);
@@ -71,6 +73,9 @@ function Cart() {
       .then((results) => {
         console.log(results);
         getUserCartbyId();
+        // deleteCartById.filter((element, index) => {
+        //   return (getUserCartbyId())
+        // });
       })
       .catch((err) => {
         console.log(err);
@@ -100,11 +105,10 @@ function Cart() {
                 }}
               /> */}
               <button
-
                 onClick={() => {
-                 let quantity=cartElem.quantity+1
-                 console.log(quantity)
-                  updateCartById(cartElem._id ,quantity);
+                  let quantity = cartElem.quantity + 1;
+                  console.log(quantity);
+                  updateCartById(cartElem._id, quantity);
                 }}
               >
                 {" "}
@@ -112,7 +116,7 @@ function Cart() {
               </button>
               <button
                 onClick={() => {
-                  updateCartById(cartElem._id );
+                  updateCartById(cartElem._id);
                 }}
               >
                 {" "}

@@ -76,7 +76,6 @@ function Home() {
         console.log(err);
       });
   };
-
   //-----------------------------------------------------------
   // make onClick for Specific category
   return (

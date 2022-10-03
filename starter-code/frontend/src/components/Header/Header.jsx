@@ -2,9 +2,23 @@
 import "./header.css";
 import Navbar from "./Navbar"
 import {useState} from "react";
+import axios from "axios"
+import { Link } from "react-router-dom";
 const Header = () => {
-// const [toggle, seTtoggle] = useState(false);
-const [search, setSearch]=useState([])
+const [toggle, seTtoggle] = useState(false);
+
+   //------------- search Books -------------
+   const [search, setSearch] = useState([]);
+   const searchBooks=()=>{
+    axios.get("http://localhost:5000/books/searchbook")
+    .then((results)=>{
+      console.log(results);
+      // setSearch(results.data.book);
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+   }
   return (
     <header className="header">
         <div className ="header-top">
@@ -13,7 +27,7 @@ const [search, setSearch]=useState([])
             </div>
             <div className="header-top-phone">
             <i className="bi bi-telephone-fill"></i>
-                123456</div>
+                123-456-789</div>
             <div className="header-top-text">welcome to online book store 
             </div>
             <div className="header-top-link">
@@ -31,10 +45,10 @@ const [search, setSearch]=useState([])
                 <input onChange={(e) => {setSearch(e.target.value) }} className="header-middle-search-input" type="search" placeholder="search in book store ..."></input>
                 <i className="bi bi-search"></i>
             </div>
-            <div className="header-middle-cart-wrapper">
+            <Link to="/cart" className="header-middle-cart-wrapper">
                 <i className="bi bi-cart2"></i>
             
-            </div>
+            </Link>
            
         </div>
         <Navbar/>

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { usertoken } from "../../App";
+import Rating from "../Home/Rating";
 
 function BookInfo() {
   const user = useContext(usertoken);
@@ -21,7 +22,7 @@ function BookInfo() {
         },
       })
       .then((results) => {
-        console.log(results);
+        // console.log(results);
         setBooks(results.data.book);
       })
       .catch((err) => {
@@ -45,13 +46,13 @@ function BookInfo() {
           quantity,
         },
         {
-          headers: {  
+          headers: {
             Authorization: `Bearer ${user.token}`,
           },
         }
       )
       .then((results) => {
-        console.log(results);
+        // console.log(results);
         // setAddtoCart(results.data.cart)
       })
       .catch((err) => {
@@ -64,44 +65,91 @@ function BookInfo() {
 
   // -------------return-------------
   return (
-    <div>
-      <div>
-        <h2 key="booktitle">{books.title}</h2>
-        <img className="img" src={`${books.image}`} alt="img not found"></img>
-        <h2>{books.author}</h2>
-        <h2>{books.description}</h2>
+    <div className="book">
+      <div className="book-content">
+        <img
+          className="book-content-img"
+          src={`${books.image}`}
+          alt="img not found"
+        ></img>
+        <div className="book-content-info">
+          <h1 className="book-title">{books.title}</h1>
+          <div className="book-author">
+            by <span>{books.author}</span> (Author)
+          </div>
+          <Rating rating={books.rating} />
+          <div className="book-add-to-cart">
+            <input
+              min="1"
+              max="100"
+              type="number"
+              className="book-add-to-cart-input"
+            />
+            <button className="book-add-to-cart-btn" onClick={createNewCart}>
+              <i className="bi bi-cart-plus"></i>
+              Add To Cart
+            </button>
+          </div>
+        </div>
+
+        <h2></h2>
+        {/* <h2>{books.description}</h2>
         <h2>{books.category && books.category.title}</h2>
         <h2>{books.year}</h2>
         <h2>{books.puplish}</h2>
-        <h2>{books.price}</h2>
-        <h2>{books.rating}</h2>
-        <input
-          type="text"
-          placeholder="comment"
-          onChange={(e) => {
-            setComment(e.target.value);
-          }}
-        />
-        <button type="submit" className="cart" onClick={BookInfo}>
-          enter
-        </button>
+        <h2>{books.price}</h2> */}
+        <h2></h2>
       </div>
+      <p className="book-description">{books.description}</p>
+     <div className="book-icons">
+     <div className="book-icon">
+        <small>price : </small>
+        <i className="bi bi-currency-dollar"></i>
+        <b>{books.price}</b>
+      </div>
+      <div className="book-icon">
+        <small>year : </small>
+        <i className="bi bi-calendar3"></i>
+        <b>{books.year}</b>
+      </div>
+      <div className="book-icon">
+        <small>puplisher : </small>
+        <i className="bi bi-book-half"></i>
+        <b>{books.puplish}</b>
+      </div>
+     </div>
       <div>
-        <button className="added-to-cart" onClick={createNewCart}>
-          added to cart
-        </button>
+        {/* <button className="book-add-to-cart-btn" onClick={createNewCart}>
+        Add To Cart
+        </button> */}
         <Link to={`/cart/${books._id}`}>{<button>show cart</button>}</Link>
       </div>
-      {/*----------return createNewCart ----------*/}
-      {/* <div>
+    </div>
+  );
+}
+export default BookInfo;
+{
+  /* <input
+type="text"
+placeholder="comment"
+onChange={(e) => {
+  setComment(e.target.value);
+}}
+/>
+<button type="submit" className="cart" onClick={BookInfo}>
+enter
+</button> */
+}
+
+{
+  /*----------return createNewCart ----------*/
+}
+{
+  /* <div>
       {addtoCart.map((add,i)=>{
         return (
 
         )
       })}
-     </div> */}
-  
-    </div>
-  );
+     </div> */
 }
-export default BookInfo;

@@ -39,9 +39,9 @@ const Popupbook = (bookdata, setOpenPopup) => {
             Add To Cart
           </button>
         </div>
-        {/* <div className="popupbook-content-info-link">
+        <div className="popupbook-content-info-link">
             See More Detatils
-        </div> */}
+        </div>
       </div>
     </div>
   );
