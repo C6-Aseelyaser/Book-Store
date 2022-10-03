@@ -53,9 +53,10 @@ function Cart() {
       .then((results) => {
         console.log(results);
         getUserCartbyId();
-        // getUserCartbyId.filter((element, index) => {
-        //   return setCart(results);
-      })
+        // getUserCartbyId.map((element, index) => {
+        //   return (getUserCartbyId())
+        // });
+       })
       .catch((err) => {
         console.log(err);
       });
@@ -73,7 +74,7 @@ function Cart() {
       .then((results) => {
         console.log(results);
         getUserCartbyId();
-        // deleteCartById.filter((element, index) => {
+        // getUserCartbyId.filter((element, index) => {
         //   return (getUserCartbyId())
         // });
       })
@@ -82,61 +83,115 @@ function Cart() {
       });
   };
   // -------------return-------------
+
   return (
-    <div>
-      <div>
-        {cart.map((cartElem, i) => {
-          //destructering ~~>{book,quantitiy}
-          // console.log("cartElem:", cartElem);
-          return (
-            <div>
-              <img
-                className="img"
-                src={`${cartElem.book && cartElem.book.image}`}
-                alt="img not found"
-              ></img>
-              <h2>{cartElem.book && cartElem.book.title}</h2>
-              <h2>{cartElem.book && cartElem.book.price}</h2>
-              <h2>{cartElem.quantity}</h2>
-              {/* <input
-                type="text"
-                onChange={(e) => {
-                  setupdatequantity(e.target.value);
-                }}
-              /> */}
-              <button
-                onClick={() => {
-                  let quantity = cartElem.quantity + 1;
-                  console.log(quantity);
-                  updateCartById(cartElem._id, quantity);
-                }}
-              >
-                {" "}
-                +{" "}
-              </button>
-              <button
-                onClick={() => {
-                  updateCartById(cartElem._id);
-                }}
-              >
-                {" "}
-                -{" "}
-              </button>
-              <button
-                onClick={() => {
-                  deleteCartById(cartElem._id);
-                }}
-              >
-                {" "}
-                remove{" "}
-              </button>
+    <div className="cart">
+      <div className="cart-title">Your Shopping Cart</div>
+      <div className="cart-wrapper">
+        <div className="cart-items">
+          {cart.map((cartElem, i) => {
+            //destructering ~~>{book,quantitiy}
+            // console.log("cartElem:", cartElem);
+            return (
+              <div key={cartElem.id} className="cart-item">
+                <img
+                  className="cart-item-img"
+                  src={`${cartElem.book && cartElem.book.image}`}
+                  alt="img not found"
+                ></img>
+                <div className="cart-item-info">
+                  <div className="cart-item-book-title">
+                    <b>Title: </b>
+                    {cartElem.book && cartElem.book.title}
+                  </div>
+                  {/* <div className="cart-item-book-author">
+                    <b>Author: </b>
+                    {cartElem.author && cartElem.book.author}
+                  </div> */}
+                </div>
+                <div>
+                  {" "}
+                  <div className="cart-item-quantity">
+                    <button
+                      onClick={() => {
+                        let quantity = cartElem.quantity + 1;
+                        console.log(quantity);
+                        updateCartById(cartElem._id, quantity);
+                      }}
+                    >
+                      <i className="bi bi-plus-lg"></i>
+                    </button>
+                    <b> {cartElem.quantity} </b>
+                    <button
+                      onClick={() => {
+                        let quantity = cartElem.quantity - 1;
+                        console.log(quantity);
+                        updateCartById(cartElem._id, quantity);
+                      }}
+                    >
+                      <i className="bi bi-dash-lg"></i>
+                    </button>
+                  </div>
+                  <div className="cart-items-price">
+                    ${cartElem.book.price * cartElem.quantity}
+                  </div>
+                  <button
+                    onClick={() => {
+                      deleteCartById(cartElem._id);
+                    }}
+                  >
+                    <i className="bi bi-trash-fill"></i>
+                  </button>
+                </div>
+                {/* <h2>{cartElem.book && cartElem.book.title}</h2>
+                <h2>{cartElem.book && cartElem.book.price}</h2>
+                <h2>{cartElem.quantity}</h2> */}
+              </div>
+            );
+          })}
+        </div>
+     {/* {cart.reduce((acc,cur)=>{
+    return (
+      acc +cur.cartElem.book.price  * cur.cartElem.quantity , 0
+    )
+  })} */}
+        <div className="cart-order-summery">
+          <div className="order-summery-title"> YOUR ORDER </div>
+          <div className="your-order-item">
+            <span> SubTotal </span>
+            {/* console.log("cartElem:", cartElem); */}
+
+            <span>0?
+              </span> 
+          </div>
+          <div className="your-order-item">
+            <span> Cost </span>
+            <span>0</span>
+          </div>
+          <div className="your-order-item">
+            <span> Discount </span>
+            <span>0</span>
+          </div>
+          <div className="your-order-item" >
+            <span> Total </span>
+            <span> 0?
+              </span> 
             </div>
-          );
-        })}
-        {/*----------return update ----------*/}
-        <div className="update-cart-by-id"></div>
+        </div>
       </div>
     </div>
   );
 }
 export default Cart;
+{
+  /* <div className="update-cart-by-id"></div> */
+}
+
+{
+  /* <input
+                type="text"
+                onChange={(e) => {
+                  setupdatequantity(e.target.value);
+                }}
+              /> */
+}

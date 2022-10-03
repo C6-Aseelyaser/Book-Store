@@ -46,6 +46,7 @@ const [toggle, seTtoggle] = useState(false);
                 <i className="bi bi-search"></i>
             </div>
             <Link to="/cart" className="header-middle-cart-wrapper">
+                <b className="cart-notificatiion"> 1</b>
                 <i className="bi bi-cart2"></i>
             
             </Link>
