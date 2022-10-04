@@ -9,7 +9,7 @@ const Footer = () => {
         </div>
         <div className="footer-social-media-icons">
           <div className="footer-social-media-icon">
-            <i style={{ color: "#cb2027"}} className="bi bi-instagram"></i>
+            <i style={{ color: "green"}} className="bi bi-whatsapp"></i>
           </div>
           <div className="footer-social-media-icon">
             <i style={{  color: "#3B5998"}} className="bi bi-facebook"></i>
@@ -20,20 +20,20 @@ const Footer = () => {
           <div className="footer-social-media-icon">
             <i style={{  color: "#55ACEE" }} className="bi bi-twitter"></i>
           </div>
-          <div className="footer-social-media-icon">
+          {/* <div className="footer-social-media-icon">
             <i style={{ color: "darkblue" }} className="bi bi-telegram"></i>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="footer-links-wrapper">
         <div className="footer-links-item">
           <h3 className="footer-links-item-title">Links</h3>
           <ul className="footer-links">
-            <li className="footer-link">Home</li>
-            <li className="footer-link">Authors</li>
+            <li className="footer-link">Refund policy</li>
+            <li className="footer-link">Stores Location</li>
             <li className="footer-link">About Us</li>
             <li className="footer-link">Contact Us</li>
-            <li className="footer-link">Register</li>
+            <li className="footer-link">Terms of Service</li>
           </ul>
         </div>
         <div className="footer-links-item">

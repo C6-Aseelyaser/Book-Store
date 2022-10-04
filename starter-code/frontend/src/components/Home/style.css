@@ -17,14 +17,14 @@
     align-items: center;
     justify-content: center;
     color: var(--main-color);
-    background-color: #222;
+    background-color: teal;
     border-radius: 5px;
     position: absolute;
     top: 0;
     bottom: 0;
     margin: auto;
     cursor: pointer;
-    z-index: 32px;
+    z-index: 2px;/*32*/
     font-size: 32px;
 }
 .book-slider-arrow-left{
@@ -39,9 +39,10 @@
     transition: all .5s ease;
 }
 .book-slide-item{
-    bottom: 1px solid;
-    background-color: snow; /*snow*/
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: snow; 
     margin: 0 10px;
+    width: 340px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -62,7 +63,8 @@
 }
 .book-slider-icons-wrapper{
     border-top: 1px solid gray;
-    width: 100%;text-align: center;
+    width: 100%;
+    text-align: center;
     padding-top: 5px;
 }
 .book-slider-icons-wrapper i{
@@ -75,6 +77,7 @@
 .rating{
     color: rgb(254,171,17);
 }
+
 .rating i{
     /* font-weight: 500; */
     margin: 0 1px;

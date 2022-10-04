@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Rating(rating) {
+function Rating({rating}) {
   return (
     <div className="rating">
       {

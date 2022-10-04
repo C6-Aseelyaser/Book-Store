@@ -12,7 +12,7 @@ import Header from "./components/Header/Header";
 import Slider from "./components/Slider/slider";
 import Services from "./components/Servicses/Services";
 // import AddToCart from "./components/AddToCart/AddToCart";
-// import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer";
 // import Popupbook from "./components/Popupbook/Popupbook";
 export const usertoken = createContext();
 
@@ -28,8 +28,8 @@ function App() {
         <div className="">
         <Header setBookdata={setBookdata}/>
         <Slider/>
-        <Services/>
-        {/* <Footer/> */}
+     
+
         {/* <Popupbook/> */}
           <Navigation />
           <Routes>
@@ -42,6 +42,8 @@ function App() {
             <Route path="/cart" element={<BookInfo/>}/>
             <Route path="*" element={<p>Not Found</p>} />  
           </Routes>
+          <Services/>
+        <Footer/>
         </div>
       </div>
     </usertoken.Provider>

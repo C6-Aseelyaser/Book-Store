@@ -12,7 +12,7 @@ const  Slider=()=> {
     } 
   return (
     <div className="slider-container">
-    <i onClick={()=>handleClick("left")}className="bi bi-chevron-double-left arrow-left"></i>
+    <i onClick={()=>handleClick("left")}className="bi bi-chevron-left arrow-left"></i>
         <div style={{transform:`translateX(${slideIndex* -100}vw)`}} className='slider-wrapper'> 
             <div className='slide first-slide'>
                 <div className='slide-img-wrapper'>
@@ -42,7 +42,7 @@ const  Slider=()=> {
                 </div>
             </div>
         </div>
-         <i onClick={()=>handleClick("right")}className="bi bi-chevron-double-right arrow-right"></i>
+         <i onClick={()=>handleClick("right")}className="bi bi-chevron-right arrow-right"></i>
 
     </div>
   )

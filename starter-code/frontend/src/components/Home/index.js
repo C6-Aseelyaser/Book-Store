@@ -97,12 +97,12 @@ function Home({bookdata,setBookdata}) {
           );
         })}
       </div>
-      {slideIndex >= 0 && (
+      
         <i
           onClick={() => handleClick("left")}
           className="bi bi-chevron-left book-slider-arrow-left"
         ></i>
-      )}
+      
 
       <div
         style={{ transform: `translateX(${slideIndex * -340}px)` }}
@@ -130,7 +130,7 @@ function Home({bookdata,setBookdata}) {
 
               <div className="book-slide-item-price">${booksElem.price} </div>
               <div className="book-slider-icons-wrapper">
-                <i onClick={()=>{handleOpenPopup(booksElem)}} className="bi bi-eye-fill"></i>
+                {/* <i onClick={()=>{handleOpenPopup(booksElem)}} className="bi bi-eye-fill"></i> */}
                 <i onClick={()=>{}} className="bi bi-cart-plus"></i>
               </div>
 
@@ -142,12 +142,12 @@ function Home({bookdata,setBookdata}) {
           );
         })}
       </div>
-      {slideIndex <= 1 && (
+      
         <i
           onClick={() => handleClick("right")}
           className="bi bi-chevron-right book-slider-arrow-right"
         ></i>
-      )}
+
       {openPopup && <Popupbook bookdata={bookdata} setOpenPopup={setOpenPopup}/>}
       
     </div>
