@@ -78,11 +78,11 @@ const Login = () => {
         </Link>
       </div>
 
-      <div className="login">
+  
         <div>
           <label>{message}</label>
         </div>
-      </div>
+
     </div>
   );
 };

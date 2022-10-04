@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./style.css";
 import axios from "axios";
-
+import { useNavigate, Link } from "react-router-dom";
 //------------- register -------------
 
 const Register = () => {
@@ -37,65 +37,66 @@ const Register = () => {
 
   //------------- return -------------
   return (
-    <div className="register">
-      <div className="registerContainer">
-        <b>Create Account</b>
-        <p>Please fill it to create an account.</p>
-        <div className="registerContainer-inputs">
-          <input
-            className="registerContainer-input"
-            type="text"
-            placeholder="First Name"
-            onChange={(e) => {
-              setFirstName(e.target.value);
-            }}
-          />
-          <input
-            className="registerContainer-input"
-            type="text"
-            placeholder="Last Name"
-            onChange={(e) => {
-              setLastName(e.target.value);
-            }}
-          />
-          <input
-            className="registerContainer-input"
-            type="number"
-            placeholder="Age"
-            onChange={(e) => {
-              setAge(e.target.value);
-            }}
-          />
-          <input
-            className="registerContainer-input"
-            type="text"
-            placeholder="Country"
-            onChange={(e) => {
-              setCountry(e.target.value);
-            }}
-          />
-          <input
-            className="registerContainer-input"
-            type="text"
-            placeholder="Email"
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-          />
-          <input
-            className="registerContainer-input"
-            type="password"
-            placeholder="Password"
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-        </div>
-        <div className="registerContainer-button">
-          <button type="submit" className="registerbtn" onClick={registerClick}>
-            Register
-          </button>
-        </div>
+    <div className="form-wrapper">
+      <h1 className="form-title">Create New Account</h1>
+      <form className="form">
+        <input
+          className="registerContainer-input"
+          type="text"
+          placeholder="First Name"
+          onChange={(e) => {
+            setFirstName(e.target.value);
+          }}
+        />
+        <input
+          className="registerContainer-input"
+          type="text"
+          placeholder="Last Name"
+          onChange={(e) => {
+            setLastName(e.target.value);
+          }}
+        />
+        <input
+          className="registerContainer-input"
+          type="number"
+          placeholder="Age"
+          onChange={(e) => {
+            setAge(e.target.value);
+          }}
+        />
+        <input
+          className="registerContainer-input"
+          type="text"
+          placeholder="Country"
+          onChange={(e) => {
+            setCountry(e.target.value);
+          }}
+        />
+        <input
+          className="registerContainer-input"
+          type="text"
+          placeholder="Email"
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+        <input
+          className="registerContainer-input"
+          type="password"
+          placeholder="Password"
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        />
+        <button type="submit" className="form-btn" onClick={registerClick}>
+          Register
+        </button>
+      </form>
+      <div className="form-footer">
+        Alresdy have an account?{" "}
+        <Link to="/login" className="Form-Link">
+          Register
+        </Link>
       </div>
     </div>
   );
