@@ -30,7 +30,9 @@
   font-weight: 500;
   color: var(--main-color);
 }
-
+.header-top-link{
+  text-decoration: none;
+}
 .header-top-phone i,
 .header-top-link i {
   margin-right: 4px;

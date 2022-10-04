@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./style.css";
 import axios from "axios";
 
- //------------- register -------------
+//------------- register -------------
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -11,7 +11,7 @@ const Register = () => {
   const [country, setCountry] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("6336a074755caeb97c2afab3"); 
+  const [role, setRole] = useState("6336a074755caeb97c2afab3");
   const [message, setMessage] = useState("");
 
   const registerClick = () => {
@@ -35,59 +35,69 @@ const Register = () => {
       });
   };
 
- //------------- return -------------
+  //------------- return -------------
   return (
-    <div className="registerContainer">
-      <div className="register">
-        <h1>Register</h1>
-        <input
-          type="text"
-          placeholder="First Name"
-          onChange={(e) => {
-            setFirstName(e.target.value);
-          }}
-        />
-        <input
-          type="text"
-          placeholder="Last Name"
-          onChange={(e) => {
-            setLastName(e.target.value);
-          }}
-        />
-        <input
-          type="text"
-          placeholder="Age"
-          onChange={(e) => {
-            setAge(e.target.value);
-          }}
-        />
-        <input
-          type="text"
-          placeholder="Country"
-          onChange={(e) => {
-            setCountry(e.target.value);
-          }}
-        />
-        <input
-          type="text"
-          placeholder="Email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />
-        <button type="submit" className="registerbtn" onClick={registerClick}>
-          Register
-        </button>
+    <div className="register">
+      <div className="registerContainer">
+        <b>Create Account</b>
+        <p>Please fill it to create an account.</p>
+        <div className="registerContainer-inputs">
+          <input
+            className="registerContainer-input"
+            type="text"
+            placeholder="First Name"
+            onChange={(e) => {
+              setFirstName(e.target.value);
+            }}
+          />
+          <input
+            className="registerContainer-input"
+            type="text"
+            placeholder="Last Name"
+            onChange={(e) => {
+              setLastName(e.target.value);
+            }}
+          />
+          <input
+            className="registerContainer-input"
+            type="number"
+            placeholder="Age"
+            onChange={(e) => {
+              setAge(e.target.value);
+            }}
+          />
+          <input
+            className="registerContainer-input"
+            type="text"
+            placeholder="Country"
+            onChange={(e) => {
+              setCountry(e.target.value);
+            }}
+          />
+          <input
+            className="registerContainer-input"
+            type="text"
+            placeholder="Email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+          <input
+            className="registerContainer-input"
+            type="password"
+            placeholder="Password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+        </div>
+        <div className="registerContainer-button">
+          <button type="submit" className="registerbtn" onClick={registerClick}>
+            Register
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 export default Register;
-

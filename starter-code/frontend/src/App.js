@@ -19,15 +19,15 @@ export const usertoken = createContext();
  //------------- App -------------
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
+  const [isLoggedIn, setIsLoggedIn] = useState(token ? true : false);
   const [bookdata, setBookdata] = useState(null);
    //------------- return -------------
   return (
-    <usertoken.Provider value={{ token, setToken }}>
+    <usertoken.Provider value={{ token, setToken, isLoggedIn, setIsLoggedIn  }}>
       <div className="App">
-        {/* <h1>Book Store</h1> */}
         <div className="">
         <Header setBookdata={setBookdata}/>
-        <Slider/>
+        {/* <Slider/> */}
         {/* <Services/> */}
         {/* <Footer/> */}
         {/* <Popupbook/> */}
@@ -39,7 +39,8 @@ function App() {
             <Route path="/category/:id" element={<Category />} />
             <Route path="/bookInfo/:id" element={<BookInfo/>}/>
             <Route path="/cart/:id" element={<Cart/>}/>
-            <Route path="/cart" element={<BookInfo/>}/>  
+            <Route path="/cart" element={<BookInfo/>}/>
+            <Route path="*" element={<p>Not Found</p>} />  
           </Routes>
         </div>
       </div>
@@ -52,3 +53,4 @@ export default App;
   /* <Route path="/Admin" element={<AddBook />} /> */
 }
 // import AddBook from "./components/Admin";
+{/* <h1>Book Store</h1> */}
