@@ -1,13 +1,14 @@
+import { Link } from "react-router-dom";
 
-const Navbar =({toggle})=>{
-    return ( <nav  className="navbar">
+const Navbar =({toggle,setToggle})=>{
+    return ( <nav style={{left: toggle && "0"}} className="navbar">
         <ul className="navbar-links">
-        <li className="navbar-link">Home</li>
-        <li className="navbar-link">Category</li>
-        <li className="navbar-link">Authors</li>
-        <li className="navbar-link">About us</li>
-        <li className="navbar-link">contact us</li>
-        <li className="navbar-link">Register</li>
+        <Link to="/category/:id" onClick={()=>setToggle(false)} className="navbar-link">Home</Link>  
+        <li onClick={()=>setToggle(false)}  className="navbar-link">Category</li>
+        <li onClick={()=>setToggle(false)}  className="navbar-link">Authors</li>
+        <li onClick={()=>setToggle(false)}  className="navbar-link">About us</li>
+        <li onClick={()=>setToggle(false)}  className="navbar-link">contact us</li>
+        <li onClick={()=>setToggle(false)}  className="navbar-link">Register</li>
         </ul>
     </nav>);
 }

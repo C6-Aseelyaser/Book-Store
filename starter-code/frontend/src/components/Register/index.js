@@ -13,6 +13,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("6336a074755caeb97c2afab3");
   const [message, setMessage] = useState("");
+  
 
   const registerClick = () => {
     axios
@@ -58,7 +59,7 @@ const Register = () => {
         />
         <input
           className="registerContainer-input"
-          type="number"
+          type="text"
           placeholder="Age"
           onChange={(e) => {
             setAge(e.target.value);
@@ -95,7 +96,7 @@ const Register = () => {
       <div className="form-footer">
         Alresdy have an account?{" "}
         <Link to="/login" className="Form-Link">
-          Register
+          Login
         </Link>
       </div>
     </div>

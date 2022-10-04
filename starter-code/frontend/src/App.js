@@ -10,7 +10,7 @@ import Cart from "./components/Cart";
 import { createContext, useState } from "react";
 import Header from "./components/Header/Header";
 import Slider from "./components/Slider/slider";
-// import Services from "./components/Servicses/Services";
+import Services from "./components/Servicses/Services";
 // import AddToCart from "./components/AddToCart/AddToCart";
 // import Footer from "./components/Footer/Footer";
 // import Popupbook from "./components/Popupbook/Popupbook";
@@ -27,8 +27,8 @@ function App() {
       <div className="App">
         <div className="">
         <Header setBookdata={setBookdata}/>
-        {/* <Slider/> */}
-        {/* <Services/> */}
+        <Slider/>
+        <Services/>
         {/* <Footer/> */}
         {/* <Popupbook/> */}
           <Navigation />

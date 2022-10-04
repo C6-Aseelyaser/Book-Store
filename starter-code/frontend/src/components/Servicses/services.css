@@ -4,15 +4,16 @@
    align-items: center;
    justify-content: space-around;
 }
-
+/*need more styling*/
 .service-item{
     padding: 7px;
     font-size: 21px;
+    display:flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     color: #2c3e50;
-    border: 1px solid grey;
+    border: 1px solid gray;
     width:21%;
     border-radius: 60px;
 }
@@ -27,13 +28,13 @@
     }
     .service-item{
         width: 45%;
-        margin: button 20px;
+        margin-bottom:20px;
     }
 }
 @media(max-width:520px){
     .service-item{
         width: 90%;
-        margin: button 25px;
+        margin-bottom:  25px;
     }
     .service-item i {
         font-size: 50px;

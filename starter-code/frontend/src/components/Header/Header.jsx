@@ -6,7 +6,7 @@ import axios from "axios"
 import { Link } from "react-router-dom";
 import { usertoken } from "../../App";
 const Header = ({setBookdata}) => {
-const [toggle, seTtoggle] = useState(false);
+const [toggle, setToggle] = useState(false);
 
 
 //useContext
@@ -29,7 +29,7 @@ const bookdata = useContext(usertoken);
   return (
     <header className="header">
         <div className ="header-top">
-            <div className="header-top-menu">
+            <div onClick={()=>{setToggle(prev => !prev)}} className="header-top-menu">
                 <i className="bi bi-list"></i>
             </div>
             <div className="header-top-phone">
@@ -49,7 +49,7 @@ const bookdata = useContext(usertoken);
                 <b>store</b>
             </div>
             <div className="header-middle-search-box"> 
-                <input onChange={(e) => {setSearch(e.target.value) }} className="header-middle-search-input" type="search" placeholder="search in book store ..."></input>
+                <input onChange={(e) => {setSearch(e.target.value) }} className="header-middle-search-input" type="search" placeholder="search in book store..."></input>
                 <i onClick={searchBooks} className="bi bi-search"></i>
             </div>
             <Link to="/cart" className="header-middle-cart-wrapper">
@@ -59,7 +59,7 @@ const bookdata = useContext(usertoken);
             </Link>
            
         </div>
-        <Navbar/>
+        <Navbar toggle={toggle} setToggle={setToggle}/>
     </header>
   );
 }
