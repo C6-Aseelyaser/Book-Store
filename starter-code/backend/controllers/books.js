@@ -1,6 +1,6 @@
 const booksModel = require("../models/booksSchma");
 const commentModel = require("../models/commentSchema");
-//------------- create new book -------------  ..? need to fix
+//------------- create new book ------------- 
 const createNewBook = (req, res) => {
   const {
     title,

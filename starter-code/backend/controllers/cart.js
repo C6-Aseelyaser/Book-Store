@@ -1,9 +1,5 @@
 const cartModel = require("../models/cartSchema");
-//CRUD   ..> CART
-// iduser
-// idbook
-// total
-//? update & delete all cart
+
 //------------- create new cart -------------
 const createNewCart = (req, res) => {
   const {  book, quantity } = req.body;
@@ -52,16 +48,17 @@ const getAllCart = (req, res) => {
         success: true,
         message: "All the cart",
         cart: result,
+      })
+      .catch((err) => {
+        res.status(500);
+        res.json({
+          success: false,
+          message: "Server Error",
+          err: err.message,
+        });
       });
     })
-    .catch((err) => {
-      res.status(500);
-      res.json({
-        success: false,
-        message: "Server Error",
-        err: err.message,
-      });
-    });
+ 
 };
 //------------- update cart by id-------------
 const updateCartById = (req, res) => {
