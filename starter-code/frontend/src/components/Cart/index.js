@@ -89,6 +89,7 @@ function Cart() {
       });
   };
   // -------------return-------------
+  console.log(cart)
       const totalCart = cart.reduce((acc, cur) => {
         console.log(acc)
         console.log(cur)
@@ -133,6 +134,7 @@ function Cart() {
                     </button>
                     <b> {cartElem.quantity} </b>
                     <button
+                    disabled={cartElem.quantity<=1}
                       onClick={() => {
                         let quantity = cartElem.quantity - 1;
                         console.log(quantity);
@@ -166,19 +168,19 @@ function Cart() {
             <span> SubTotal </span>
             {/* console.log("cartElem:", cartElem); */}
 
-            <span>{totalCart}</span>
+            <span>${totalCart}</span>
           </div>
           <div className="your-order-item">
             <span> Cost </span>
-            <span>0</span>
+            <span>$2.5</span>
           </div>
           <div className="your-order-item">
             <span> Discount </span>
-            <span>0</span>
+            <span>%10</span>
           </div>
           <div className="your-order-item">
             <span> Total </span>
-            <span>{totalCart}</span>
+            <span>$ {totalCart+2.5*0.1}</span>
           </div>
         </div>
       </div>

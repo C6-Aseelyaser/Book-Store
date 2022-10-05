@@ -43,11 +43,11 @@ const bookdata = useContext(usertoken);
             </Link>
         </div>
         <div className="header-middle">
-            <div className="header-middle-logo">
+            <Link to="/home" className="header-middle-logo">
                 <b>Book</b>
                 <i className="bi bi-book"></i>
                 <b>store</b>
-            </div>
+            </Link>
             <div className="header-middle-search-box"> 
                 <input onChange={(e) => {setSearch(e.target.value) }} className="header-middle-search-input" type="search" placeholder="search in book store..."></input>
                 <i onClick={searchBooks} className="bi bi-search"></i>
@@ -57,6 +57,7 @@ const bookdata = useContext(usertoken);
                 <i className="bi bi-cart2"></i>
             
             </Link>
+           
            
         </div>
         <Navbar toggle={toggle} setToggle={setToggle}/>

@@ -11,9 +11,9 @@
 }
 .cart-wrapper {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-start;/*center*/
 }
-.cart.items {
+.cart-items {
   width: 70%;
 }
 .cart-item {
@@ -22,7 +22,7 @@
   padding: 5px;
   position: relative;
   margin-bottom: 21px;
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid gray;
 }
 .cart-item-img {
   width: 140px;
@@ -56,6 +56,9 @@
   color:white;
   bottom: none;
   border-radius: 4px;
+}
+.cart-item-quantity button:disabled{
+  cursor: not-allowed;
 }
 .cart-item-quantity b {
   font-size: 24px;

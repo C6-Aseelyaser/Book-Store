@@ -11,15 +11,15 @@
     height: 300px;
     object-fit: contain;
     padding: 20px;
-    box-shadow: 0 0 1px 2px gray;
-    background-color: gray;
+    box-shadow: 0 0 1px 2px snow;
+    background-color: snow;
     margin-right: 20px;
 }
 .book-content-info{
     width: 60%;
 }
 .book-title{
-    font-size: 30px;
+    font-size:32px;
 }
 .book-author{
     color: black;
@@ -28,14 +28,14 @@
     font-weight: 600;
 }
 .book-author span {
-    color: grey
+    color: gray;
 }
 .book-add-to-cart{
     margin: 30px 0;
 }
 .book-add-to-cart-input{
     margin-right: 15px;
-    font-size: 15px;
+    font-size: 25px;/*15*/
     font-weight: 600;
     padding: 5px 10px;
 }
@@ -43,7 +43,7 @@
     border: 1px solid green;
     border-radius: 7px;
     padding: 5px 10px;
-    background-color: white;
+    background-color: transparent;
     color:green;
     font-size: 21px;
     font-weight: 600;
@@ -60,7 +60,8 @@
 }
 .book-icons{
     margin: 30px 0;
-    display: flex;align-items: center;
+    display: flex;
+    align-items: center;
 }
 .book-icon{
     display: flex;
@@ -69,9 +70,11 @@
     flex-direction: column;
     margin-right: 50px;
     font-size: 21px;
-    color: gray;
+    color: teal; /*gray*/
 }
-
+ .book-icon small{
+    font-weight: 600;
+ }
 .book-icon i {
     font-size: 32px;
     margin: 5px 0;
@@ -92,7 +95,7 @@
     .book-content{
         flex-direction: column;
     }
-    book-content-img{
+    .book-content-img{
         width: 100%;
     }
     .book-content-info{

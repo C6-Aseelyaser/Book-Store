@@ -16,7 +16,7 @@ const  Slider=()=> {
         <div style={{transform:`translateX(${slideIndex* -100}vw)`}} className='slider-wrapper'> 
             <div className='slide first-slide'>
                 <div className='slide-img-wrapper'>
-                    <img src= './images/book1.jpeg'  alt=""/>
+                    <img src= './sliderimg/imge1 (1).jpg'  alt=""/>
                 </div>
                 <div className='slide-info-wrapper'>
                     <h1 className='slide-info-title'>Book Store</h1>
@@ -25,7 +25,7 @@ const  Slider=()=> {
             </div>
             <div className='slide second-slide'>
                 <div className='slide-img-wrapper'>
-                    <img src= './images/book2.jpg' alt=""/>
+                    <img src= './sliderimg/imge1 (2).jpg' alt=""/>
                 </div>
                 <div className='slide-info-wrapper'>
                     <h1 className='slide-info-title'>the Books For Everyone </h1>
@@ -34,7 +34,7 @@ const  Slider=()=> {
             </div>
             <div className='slide third-slide'>
                 <div className='slide-img-wrapper'>
-                    <img src= './images/book3.jpeg' alt=""/>
+                    <img src= './sliderimg/imge1 (3).jpg' alt=""/>
                 </div>
                 <div className='slide-info-wrapper'>
                     <h1 className='slide-info-title'>Chek Out The New Titles</h1>

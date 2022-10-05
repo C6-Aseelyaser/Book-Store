@@ -11,39 +11,56 @@ import { createContext, useState } from "react";
 import Header from "./components/Header/Header";
 import Slider from "./components/Slider/slider";
 import Services from "./components/Servicses/Services";
-// import AddToCart from "./components/AddToCart/AddToCart";
+import AddToCart from "./components/AddToCart/AddToCart";
 import Footer from "./components/Footer/Footer";
-// import Popupbook from "./components/Popupbook/Popupbook";
+import Popupbook from "./components/Popupbook/Popupbook";
 export const usertoken = createContext();
 
- //------------- App -------------
+//------------- App -------------
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [isLoggedIn, setIsLoggedIn] = useState(token ? true : false);
   const [bookdata, setBookdata] = useState(null);
-   //------------- return -------------
+  //------------- return -------------
   return (
-    <usertoken.Provider value={{ token, setToken, isLoggedIn, setIsLoggedIn  }}>
+    <usertoken.Provider value={{ token, setToken, isLoggedIn, setIsLoggedIn }}>
       <div className="App">
         <div className="">
-        <Header setBookdata={setBookdata}/>
-        <Slider/>
-     
+          {/* <Header setBookdata={setBookdata}/>
+        <Slider/> */}
 
-        {/* <Popupbook/> */}
+          
           <Navigation />
           <Routes>
-            <Route path="/" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/home" element={<Home bookdata={bookdata} setBookdata={setBookdata} />} />
-            <Route path="/category/:id" element={<Category />} />
-            <Route path="/bookInfo/:id" element={<BookInfo/>}/>
-            <Route path="/cart/:id" element={<Cart/>}/>
-            <Route path="/cart" element={<BookInfo/>}/>
-            <Route path="*" element={<p>Not Found</p>} />  
+            <Route path="/" element={ <><Register /><Footer /></>} />
+            <Route path="/login" element={<> <Header/> <Login/> <Services /><Footer /></>} />
+            <Route
+              path="/home"
+              element={
+                <>
+                  {" "}
+                  <Header setBookdata={setBookdata} />
+                  <Slider />
+                  <Home bookdata={bookdata} setBookdata={setBookdata} />{" "}
+                  {/* <Popupbook/> */}
+                  <Services />
+                  <Footer />
+                </>
+              }
+            />
+            <Route path="/category/:id" element={<><Header/> <Category /> <Services /><Footer /></>} />
+            <Route path="/bookInfo/:id" element={<><Header/><BookInfo /><Services /><Footer /> </> }/>
+            <Route path="/cart/:id" element={<><Cart /> </>} />
+            <Route
+              path="/cart"
+              element={
+                <><Header/> <BookInfo bookdata={bookdata} setBookdata={setBookdata} /> <Services /><Footer /> </>
+              }
+            />
+            <Route path="*" element={<p>Not Found</p>} />
           </Routes>
-          <Services/>
-        <Footer/>
+         
+          
         </div>
       </div>
     </usertoken.Provider>
@@ -55,4 +72,6 @@ export default App;
   /* <Route path="/Admin" element={<AddBook />} /> */
 }
 // import AddBook from "./components/Admin";
-{/* <h1>Book Store</h1> */}
+{
+  /* <h1>Book Store</h1> */
+}

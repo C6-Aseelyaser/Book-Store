@@ -59,10 +59,8 @@ const Footer = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
             eligendi excepturi ea neque! Totam minus est dolores quas,
             consequatur asperiores sit labore. A exercitationem tempore nisi,
-            similique inventore earum dolore? Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Nulla doloribus possimus veritatis
-            earum repellat voluptate ab distinctio ipsa, ad repellendus sit. At
-            non, soluta et quos voluptates mollitia pariatur eos?
+
+          
           </p>
         </div>
       </div>

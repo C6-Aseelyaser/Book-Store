@@ -3,7 +3,7 @@ import "./popupbook.css";
 import Rating from "../Home/Rating";
 import BookInfo from "../Bookinfo";
 
-const Popupbook = (bookdata, setOpenPopup) => {
+const Popupbook = ({bookdata, setOpenPopup}) => {
   //
   return (
     <div clsssName="popupbook-container">
@@ -48,3 +48,4 @@ const Popupbook = (bookdata, setOpenPopup) => {
 };
 
 export default Popupbook;
+ 

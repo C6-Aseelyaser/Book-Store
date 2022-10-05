@@ -29,6 +29,7 @@
 }
 .book-slider-arrow-left{
     left: 10px;
+    z-index: 100;
 }
 .book-slider-arrow-right{
     right: 10px;
@@ -40,21 +41,29 @@
 }
 .book-slide-item{
     border: 1px solid rgba(0, 0, 0, 0.5);
+    max-width: 250px;
+    height: 450px;
     background-color: snow; 
-    margin: 0 10px;
+    margin: 0 7px;
     width: 340px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
     padding: 10px;
+    text-decoration: none;
 }
 .book-slide-item-img{
+    top: 0;
+    bottom: 0;
+    margin: auto;
     width: 60%;
     object-fit: contain;
+    align-items: center;
 }
 .book-slide-item-title{
     font-size: 18px;
+    color: black;
 }
 .book-slide-item-price{
     color: crimson;

@@ -8,7 +8,7 @@ import { useNavigate, Link } from "react-router-dom";
 import Rating from "./Rating";
 import Popupbook from "../Popupbook/Popupbook";
 import BookInfo from "../Bookinfo";
-function Home({bookdata,setBookdata}) {
+function Home({ bookdata, setBookdata }) {
   const user = useContext(usertoken);
   const navigate = useNavigate();
   // const UserContext = createContext();
@@ -18,13 +18,12 @@ function Home({bookdata,setBookdata}) {
   const [slideIndex, setSlideIndex] = useState(0);
   const [openPopup, setOpenPopup] = useState(false);
 
- 
- //------------- handleOpenPopup -------------
- const handleOpenPopup = (books) => {
-  setOpenPopup(true);
-  setBookdata(books);
-  console.log(books);
- }
+  //------------- handleOpenPopup -------------
+  const handleOpenPopup = (bookdata) => {
+    setOpenPopup(true);
+    setBookdata(bookdata);
+    console.log(bookdata);
+  };
   //------------- handleClick -------------
   const handleClick = (direction) => {
     if (direction === "left") {
@@ -97,12 +96,11 @@ function Home({bookdata,setBookdata}) {
           );
         })}
       </div>
-      
-        <i
-          onClick={() => handleClick("left")}
-          className="bi bi-chevron-left book-slider-arrow-left"
-        ></i>
-      
+
+      <i
+        onClick={() => handleClick("left")}
+        className="bi bi-chevron-left book-slider-arrow-left"
+      ></i>
 
       <div
         style={{ transform: `translateX(${slideIndex * -340}px)` }}
@@ -111,7 +109,8 @@ function Home({bookdata,setBookdata}) {
         {bookdata?.map((booksElem, index) => {
           //   console.log(booksElem);
           return (
-            <div key={booksElem.id} className="book-slide-item">
+        
+            <Link to={`/bookInfo/${booksElem._id}`} key={booksElem.id} className="book-slide-item">
               <Link to={`/bookInfo/${booksElem._id}`}>
                 {
                   <img
@@ -130,28 +129,27 @@ function Home({bookdata,setBookdata}) {
 
               <div className="book-slide-item-price">${booksElem.price} </div>
               <div className="book-slider-icons-wrapper">
-                {/* <i onClick={()=>{handleOpenPopup(booksElem)}} className="bi bi-eye-fill"></i> */}
-                <i onClick={()=>{}} className="bi bi-cart-plus"></i>
+                <i onClick={()=>{handleOpenPopup(booksElem)}} className="bi bi-eye-fill"></i>
+                <i onClick={() => {}} className="bi bi-cart-plus"></i>
               </div>
 
-              
               {/* <h2>{booksElem.description} </h2>
               <h2>{booksElem.price} </h2>
               <h2 className="book-slide-item-rating"> </h2> */}
-            </div>
+            </Link>
           );
         })}
       </div>
-      
-        <i
-          onClick={() => handleClick("right")}
-          className="bi bi-chevron-right book-slider-arrow-right"
-        ></i>
 
-      {openPopup && <Popupbook bookdata={bookdata} setOpenPopup={setOpenPopup}/>}
-      
+      <i
+        onClick={() => handleClick("right")}
+        className="bi bi-chevron-right book-slider-arrow-right"
+      ></i>
+
+      {openPopup && (
+        <Popupbook bookdata={bookdata} setOpenPopup={setOpenPopup} />
+      )}
     </div>
-   
   );
 }
 

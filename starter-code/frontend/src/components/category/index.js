@@ -30,31 +30,36 @@ function Category() {
   }, []);
   //------------- return -------------
   return (
-    <div className="category">
-      <div>
+    <section className="categories">
+      <div className="category-book-wrapper" >
+        <div className="category-wrapper">
         {bookCategory.map((cateElem, index) => {
           // console.log(cateElem);
           return (
-            <div>
+            <div className="book-in-category">
+
               <Link to={`/bookInfo/${cateElem._id}`}>
                 {
                   <img
-                    className="img"
+                  className="book-img-category"
                     src={`${cateElem.image} `}
                     alt="img not found"
                   />
                 }
               </Link>
+    
+             
               <h2>{cateElem.title} </h2>
-              <h2>{cateElem.description} </h2>
+              {/* <h2>{cateElem.description} </h2> */}
               <h2>{cateElem.price} </h2>
               <h2>{cateElem.rating} </h2>
               <h2>{cateElem.comment} </h2>
-            </div>
+              </div>
           );
         })}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 export default Category;

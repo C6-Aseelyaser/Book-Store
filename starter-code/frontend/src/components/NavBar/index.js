@@ -17,7 +17,7 @@ const Navigation = () => {
   //------------- return -------------
   return (
     <div className="navBar">
-                <div
+                {/* <div
             className="navLink"
             onClick={() => {
               navigate("/");
@@ -64,11 +64,12 @@ const Navigation = () => {
             Go back{" "}
           </div>
 
-          <div className="navLink" onClick={LogOut}>
-            Log out{" "}
-          </div>
+
         </div>
-      )}
+      )} */}
+                {/* <div className="navLink" onClick={LogOut}>
+            Log out{" "}
+          </div> */}
     </div>
   );
 };

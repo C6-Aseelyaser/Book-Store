@@ -4,7 +4,7 @@ import { useState, useEffect, useContext } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { usertoken } from "../../App";
 import Rating from "../Home/Rating";
-
+// import {bookdata} from "../../App"
 function BookInfo() {
   const user = useContext(usertoken);
   const { id } = useParams();
@@ -33,6 +33,7 @@ function BookInfo() {
     getBooksById();
   }, []);
   // -------------create New Cart ~~>[add book to cart]-------------
+  console.log(user.token)
   const [addtoCart, setAddtoCart] = useState([]); //..>?
   const [quantity, setQuantity] = useState(1);
   // const [book, setBook] = useState("");
@@ -52,7 +53,7 @@ function BookInfo() {
         }
       )
       .then((results) => {
-        // console.log(results);
+        console.log(results);
         // setAddtoCart(results.data.cart)
       })
       .catch((err) => {

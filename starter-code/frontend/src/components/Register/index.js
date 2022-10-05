@@ -94,7 +94,7 @@ const Register = () => {
         </button>
       </form>
       <div className="form-footer">
-        Alresdy have an account?{" "}
+        Already have an account?{" "}
         <Link to="/login" className="Form-Link">
           Login
         </Link>
