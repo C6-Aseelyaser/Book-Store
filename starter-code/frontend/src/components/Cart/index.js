@@ -67,7 +67,7 @@ function Cart() {
         console.log(err);
       });
   };
-  // -------------delete cart by id------------- //delete book from cart
+  // -------------delete cart by id------------- 
   // const [deleted , setDelete] = useState([])
   const deleteCartById = (_id) => {
     console.log(_id);
@@ -80,9 +80,11 @@ function Cart() {
       .then((results) => {
         console.log(results);
         getUserCartbyId();
-        // cart.filter((elem,i)=>{
+     const deletedBook=cart.filter((elem,i)=>{
+      return _id !== elem._id
+        })
+
         
-        // })
       })
       .catch((err) => {
         console.log(err);
@@ -119,10 +121,8 @@ function Cart() {
                     <b>Author: </b>
                     {cartElem.author && cartElem.book.author}
                   </div> */}
-                </div>
-                <div>
-                  {" "}
-                  <div className="cart-item-quantity">
+
+<div className="cart-item-quantity">
                     <button
                       onClick={() => {
                         let quantity = cartElem.quantity + 1;
@@ -143,10 +143,15 @@ function Cart() {
                     >
                       <i className="bi bi-dash-lg"></i>
                     </button>
-                  </div>
-                  <div className="cart-items-price">
+                    <div className="cart-items-price">
                     ${cartElem.book.price * cartElem.quantity}
                   </div>
+                  </div>
+                </div>
+                <div>
+                  {" "}
+                 
+      
                   <i
                     onClick={() => {
                       deleteCartById(cartElem._id);

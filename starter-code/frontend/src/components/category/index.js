@@ -3,6 +3,8 @@ import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { usertoken } from "../../App";
+import Rating from "../Home/Rating";
+
 
 function Category() {
   const user = useContext(usertoken);
@@ -10,6 +12,7 @@ function Category() {
   // console.log(id)
   //-------------get Books By Category-------------
   const [bookCategory, setBookCategory] = useState([]);
+
   const getBooksByCategory = () => {
     axios
       .get(`http://localhost:5000/books/search_1?category=${id}`, {
@@ -49,11 +52,15 @@ function Category() {
               </Link>
     
              
-              <h2>{cateElem.title} </h2>
+              <h2  className="book-title-category">{cateElem.title} </h2>
               {/* <h2>{cateElem.description} </h2> */}
-              <h2>{cateElem.price} </h2>
-              <h2>{cateElem.rating} </h2>
+              <h2  className="book-img-price"> ${cateElem.price} </h2>
+              {/* <h2>{cateElem.rating} </h2> */}
+              <Rating rating={cateElem.rating}/>
               <h2>{cateElem.comment} </h2>
+              <div className="book-slider-icons-wrapper">
+                <i onClick={() => {}} className="bi bi-cart-plus"></i>
+              </div>
               </div>
           );
         })}

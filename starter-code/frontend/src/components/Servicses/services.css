@@ -6,6 +6,8 @@
 }
 /*need more styling*/
 .service-item{
+    width: 100px;
+    height: 200px;
     padding: 7px;
     font-size: 21px;
     display:flex;

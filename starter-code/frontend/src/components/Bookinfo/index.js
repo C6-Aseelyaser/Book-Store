@@ -55,6 +55,7 @@ function BookInfo() {
       .then((results) => {
         console.log(results);
         // setAddtoCart(results.data.cart)
+      
       })
       .catch((err) => {
         console.log(err);
@@ -80,16 +81,17 @@ function BookInfo() {
           </div>
           <Rating rating={books.rating} />
           <div className="book-add-to-cart">
-            <input
+            {/* <input
               min="1"
               max="100"
               type="number"
               className="book-add-to-cart-input"
-            />
+            /> */}
             <button className="book-add-to-cart-btn" onClick={createNewCart}>
               <i className="bi bi-cart-plus"></i>
               Add To Cart
             </button>
+            <Link to={`/cart/${books._id}`}>{<button className="show-cart">  <i className="bi bi-cart"></i>show cart</button>} </Link>
           </div>
         </div>
 
@@ -123,7 +125,7 @@ function BookInfo() {
         {/* <button className="book-add-to-cart-btn" onClick={createNewCart}>
         Add To Cart
         </button> */}
-        <Link to={`/cart/${books._id}`}>{<button>show cart</button>}</Link>
+
       </div>
     </div>
   );

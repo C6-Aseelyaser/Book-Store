@@ -31,7 +31,11 @@ function Home({ bookdata, setBookdata }) {
     } else {
       setSlideIndex(slideIndex + 1);
     }
+
   };
+
+
+
   // console.log(category);
   // console.log(setCategory);
   // console.log(userId);
@@ -82,7 +86,7 @@ function Home({ bookdata, setBookdata }) {
   // make onClick for Specific category
   return (
     <div className="book-slider-container">
-      <div className="bookcategory-slider-wrapper">
+      {/* <div className="bookcategory-slider-wrapper">
         {category.map((categoryElem, index) => {
           // console.log(categoryElem);
           // to go to other component must use  LINK or useNavigate hook
@@ -95,7 +99,7 @@ function Home({ bookdata, setBookdata }) {
             </div>
           );
         })}
-      </div>
+      </div> */}
 
       <i
         onClick={() => handleClick("left")}
@@ -129,7 +133,7 @@ function Home({ bookdata, setBookdata }) {
 
               <div className="book-slide-item-price">${booksElem.price} </div>
               <div className="book-slider-icons-wrapper">
-                <i onClick={()=>{handleOpenPopup(booksElem)}} className="bi bi-eye-fill"></i>
+                {/* <i onClick={()=>{handleOpenPopup(booksElem)}} className="bi bi-eye-fill"></i> */}
                 <i onClick={() => {}} className="bi bi-cart-plus"></i>
               </div>
 

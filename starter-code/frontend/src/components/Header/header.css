@@ -41,6 +41,7 @@
 /* Header Middle*/
 
 .header-middle {
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -62,7 +63,7 @@
 }
 
 .header-middle-search-box {
-  width: 700%;
+  width: 70%;
   background-color: white;
   height: 60px;
   border-radius: 50px;
@@ -100,7 +101,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 117px;
+  font-size: 18px;
 }
 .header-middle-cart-wrapper i {
   font-size:44px;

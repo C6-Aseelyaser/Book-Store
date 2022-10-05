@@ -14,8 +14,9 @@ const Register = () => {
   const [role, setRole] = useState("6336a074755caeb97c2afab3");
   const [message, setMessage] = useState("");
   
-
-  const registerClick = () => {
+  const navigate = useNavigate();
+  const registerClick = (e) => {
+    e.preventDefault();
     axios
       .post("http://localhost:5000/users/", {
         firstName,
@@ -29,6 +30,7 @@ const Register = () => {
       .then((results) => {
         console.log(results);
         setMessage(results.data.message);
+        navigate("/home");
       })
       .catch((error) => {
         console.log(error);
@@ -89,7 +91,7 @@ const Register = () => {
             setPassword(e.target.value);
           }}
         />
-        <button type="submit" className="form-btn" onClick={registerClick}>
+        <button type="submit" className="form-btn" onClick={registerClick}  /**here ~~> go to home  */>
           Register
         </button>
       </form>

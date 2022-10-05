@@ -6,6 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 //------------- login -------------
 const Login = () => {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -13,7 +14,8 @@ const Login = () => {
 
   const user = useContext(usertoken);
   const navigate = useNavigate();
-  const loginUser = () => {
+  const loginUser = (e) => {
+    e.preventDefault();
     axios
       .post("http://localhost:5000/users/login", {
         email,
@@ -26,6 +28,10 @@ const Login = () => {
         setMessage(results.data.message);
         localStorage.setItem("token", results.data.token);
         user.setIsLoggedIn(true);
+          navigate("/home");
+    
+     
+      
       })
       .catch((error) => {
         console.log(error);

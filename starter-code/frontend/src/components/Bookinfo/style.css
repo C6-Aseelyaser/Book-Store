@@ -50,6 +50,15 @@
     cursor: pointer;
     transition: all .3s ease-in-out;
 }
+.show-cart{
+    border-radius: 7px;
+    padding: 5px 10px;
+    background-color: transparent;
+    font-size: 21px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
 .book-add-to-cart-btn:hover{
     background-color: aquamarine;
 }

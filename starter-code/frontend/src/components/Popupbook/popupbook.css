@@ -22,7 +22,8 @@
     position: relative;
 }
 .popup-icon{
-    position: absolute;
+    position: absolute
+    ;
     top: 0;
     right: 10px;
     color: crimson;

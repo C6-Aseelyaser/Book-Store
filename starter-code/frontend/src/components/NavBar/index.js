@@ -67,13 +67,26 @@ const Navigation = () => {
 
         </div>
       )} */}
-                {/* <div className="navLink" onClick={LogOut}>
-            Log out{" "}
-          </div> */}
     </div>
   );
 };
 export default Navigation;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
   /* <div
         className="category"

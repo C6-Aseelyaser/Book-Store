@@ -45,8 +45,12 @@
     font-size: 21px;
 } */
 .cart-item-quantity {
+  display: flex;
   font-size: 24px;
   margin-bottom: 5px;
+
+
+
 }
 .cart-item-quantity button {
   cursor: pointer;

@@ -35,8 +35,8 @@ const bookdata = useContext(usertoken);
             <div className="header-top-phone">
             <i className="bi bi-telephone-fill"></i>
                 123-456-789</div>
-            <div className="header-top-text">welcome to online book store 
-            </div>
+            {/* <div className="header-top-text">welcome to online book store 
+            </div> */}
             <Link to="/login"className="header-top-link">
                 <i className="bi bi-person-fill"></i>
                 Login
@@ -49,11 +49,11 @@ const bookdata = useContext(usertoken);
                 <b>store</b>
             </Link>
             <div className="header-middle-search-box"> 
-                <input onChange={(e) => {setSearch(e.target.value) }} className="header-middle-search-input" type="search" placeholder="search in book store..."></input>
+                <input onChange={(e) => {setSearch(e.target.value) }} className="header-middle-search-input" type="text" placeholder="search in book store..."></input>
                 <i onClick={searchBooks} className="bi bi-search"></i>
             </div>
-            <Link to="/cart" className="header-middle-cart-wrapper">
-                <b className="cart-notificatiion"> 1</b>
+            <Link to="/cart/:id" className="header-middle-cart-wrapper">
+                <b className="cart-notificatiion">1</b>  
                 <i className="bi bi-cart2"></i>
             
             </Link>
