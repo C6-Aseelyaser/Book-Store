@@ -6,32 +6,32 @@ import { usertoken } from "../../App";
 
 function Cart() {
   const user = useContext(usertoken);
+  // console.log(user)
   const { id } = useParams(); //~~>id
 
   // const {quantity}=
   // console.log(id);
   // -------------get User Cart by Id-------------
-  const [cart, setCart] = useState([]);
-  const getUserCartbyId = () => {
-    axios
-      .get(`http://localhost:5000/cart/${id}`, {
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      })
-      .then((results) => {
-        // console.log("resultsCart", results.data.cart);
-        setCart(results.data.cart);
-        // console.log("cart:",cart);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-  // console.log("cart2:",cart);
-  useEffect(() => {
-    getUserCartbyId();
-  }, []);
+  // const [cart, setCart] = useState([]);
+  // const getUserCartbyId = () => {
+  //   axios
+  //     .get(`http://localhost:5000/cart/${id}`, {
+  //       headers: {
+  //         Authorization: `Bearer ${user.token}`,
+  //       },
+  //     })
+  //     .then((results) => {
+
+  //     user.setCart(results.data.cart)
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
+  // // console.log("cart2:",cart);
+  // useEffect(() => {
+  //   getUserCartbyId();
+  // }, []);
   // -------------update cart by id------------- //fillter + total
   const [updatequantity, setupdatequantity] = useState(1); //?
   //console.log(37);
@@ -53,7 +53,7 @@ function Cart() {
       .then((results) => {
         console.log(results);
         // getUserCartbyId();
-        const newArray = cart.map((element, index) => {
+        const newArray = user.cart.map((element, index) => {
           if (element._id === _id) {
             console.log(element);
             console.log(results);
@@ -61,7 +61,7 @@ function Cart() {
           }
           return element;
         });
-        setCart(newArray);
+        user.setCart(newArray);
       })
       .catch((err) => {
         console.log(err);
@@ -79,18 +79,19 @@ function Cart() {
       })
       .then((results) => {
         console.log(results);
-        getUserCartbyId();
-        const deletedBook = cart.filter((elem, i) => {
+        // getUserCartbyId();
+        const deletedBook = user.cart.filter((elem, i) => {
           return _id !== elem._id;
-        });
+        })
+        user.setCart(deletedBook)
       })
       .catch((err) => {
         console.log(err);
       });
   };
   // -------------return-------------
-  console.log(cart);
-  const totalCart = cart.reduce((acc, cur) => {
+  // console.log(cart);
+  const totalCart = user.cart.reduce((acc, cur) => {
     // console.log(acc);
     // console.log(cur);
     return acc + cur.book.price * cur.quantity;
@@ -100,7 +101,7 @@ function Cart() {
       <div className="cart-title">Your Shopping Cart</div>
       <div className="cart-wrapper">
         <div className="cart-items">
-          {cart?.map((cartElem, i) => {
+          {user.cart?.map((cartElem, i) => {
             //destructering ~~>{book,quantitiy}
             // console.log("cartElem:", cartElem);
             return (

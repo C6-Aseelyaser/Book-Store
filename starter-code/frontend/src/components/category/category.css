@@ -8,19 +8,11 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
+    gap: 18px;
+
 }
-/* .book-in-category{
-    width: 400px;
-    height: 365px;
-    border: 1px solid gray;
-    padding: 15px;
-    margin: 5px;
-    margin-bottom: 20px;
-    border-radius: 7px;
-    background-color: white;
-    text-align: center;
-} */
+
 .book-in-category{
     border: 1px solid rgba(0, 0, 0, 0.5);
     max-width: 350px;
@@ -41,3 +33,15 @@
     object-fit: cover;
     /* border-radius: 7px; */
 }
+
+/* .book-in-category{
+    width: 400px;
+    height: 365px;
+    border: 1px solid gray;
+    padding: 15px;
+    margin: 5px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    background-color: white;
+    text-align: center;
+} */

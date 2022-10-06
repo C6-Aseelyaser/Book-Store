@@ -23,9 +23,11 @@ function App() {
   const [bookdata, setBookdata] = useState(null);
   const [cart, setCart] = useState([]);
   const [addtoCart, setAddtoCart] = useState([]); 
+  const [sliderToggle, setSliderToggle] = useState( true)
+
   //------------- return -------------
   return (
-    <usertoken.Provider value={{ token, setToken, isLoggedIn, setIsLoggedIn }}>
+    <usertoken.Provider value={{ token, setToken, isLoggedIn, setIsLoggedIn ,cart, setCart,sliderToggle, setSliderToggle }}>
       <div className="App">
         <div className="">
           {/* <Header setBookdata={setBookdata}/>
@@ -34,15 +36,15 @@ function App() {
           
           <Navigation />
           <Routes>
-            <Route path="/" element={ <><Register /><Footer /></>} />
-            <Route path="/login" element={<> <Login/> <Footer /></>} />
+            <Route path="/" element={ <><Register /><Services /><Footer /></>} />
+            <Route path="/login" element={<> <Login/> <Services /><Footer /></>} />
             <Route
               path="/home"
               element={
                 <>
                   {" "}
                   <Header setBookdata={setBookdata} />
-                  <Slider />
+                 { sliderToggle && (<Slider sliderToggle={sliderToggle}  setSliderToggle={setSliderToggle} /> ) }
                   <Home bookdata={bookdata} setBookdata={setBookdata} />{" "}
                   {/* <Popupbook/> */}
                   <Services />

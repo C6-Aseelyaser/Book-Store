@@ -4,7 +4,6 @@ import "./slider.css";
 
 const  Slider=()=> {
     const [slideIndex, setslideIndex] = useState(0);
-    const [sliderToggle, setSliderToggle] = useState(false)
     const handleClick =(direction)=>{
         if (direction==="left"){
             setslideIndex(slideIndex > 0 ? slideIndex-1:2);
@@ -18,7 +17,7 @@ const  Slider=()=> {
         <div style={{transform:`translateX(${slideIndex* -100}vw)`}} className='slider-wrapper'> 
             <div className='slide first-slide'>
                 <div className='slide-img-wrapper'>
-                    <img src= './sliderimg/imge1 (1).jpg'  alt=""/>
+                    <img src= './sliderimg/slideimg6.jpg'  alt=""/>
                 </div>
                 <div className='slide-info-wrapper'>
                     <h1 className='slide-info-title'>Book Store</h1>
@@ -45,7 +44,6 @@ const  Slider=()=> {
             </div>
         </div>
         {slideIndex !== 2 && <i onClick={()=>handleClick("right")}className="bi bi-chevron-right arrow-right"></i>} 
-        <Header sliderToggle={sliderToggle} setSliderToggle={setSliderToggle} />
     </div>
   )
 }

@@ -30,7 +30,7 @@ function Category() {
   };
   useEffect(() => {
     getBooksByCategory();
-  }, []);
+  }, [ id]);
   //------------- return -------------
   return (
     <section className="categories">

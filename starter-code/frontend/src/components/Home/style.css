@@ -5,7 +5,7 @@
     position: relative;
     overflow-x: hidden;
     margin-bottom: 60px;
-    background-color: white;
+    background-color: teal;
     padding: 10px 20px 20px 20px;
 }
 
@@ -43,7 +43,7 @@
     border: 1px solid rgba(0, 0, 0, 0.5);
     max-width: 250px;
     height: 450px;
-    background-color: snow; 
+    background-color: #efefee; 
     margin: 0 7px;
     width: 340px;
     display: flex;

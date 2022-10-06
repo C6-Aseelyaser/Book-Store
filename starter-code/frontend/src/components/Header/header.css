@@ -30,8 +30,19 @@
   font-weight: 500;
   color: var(--main-color);
 }
+/* .header-top-links-inout{
+  grid-column-gap: 16px;
+  grid-gap: 16px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+} */
 .header-top-link{
   text-decoration: none;
+  /* grid-column-gap: 16px;
+  grid-gap: 16px;
+  margin-bottom: 1rem; */
+  padding: 3px;
+  gap: 16px;
 }
 .header-top-phone i,
 .header-top-link i {
@@ -201,6 +212,10 @@
     width:100%;
     padding:30px;
   }
+  .header-top-link{
+    font-size: 22px;
+    padding: 4px;
+  }
 }
 @media (max-width: 520px) {
     .header-middle,
@@ -209,5 +224,13 @@
     }
     .header-top-phone{
         font-size: 20px;
+    }
+
+    .header-top-link{
+      font-size: 15px;
+      padding: 1px;
+    }
+    .header-middle-search-input{
+      font-size: 18px;
     }
 } 

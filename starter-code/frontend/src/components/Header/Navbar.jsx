@@ -3,7 +3,7 @@ import { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import { usertoken } from "../../App";
 
-const Navbar = ({ toggle, setToggle }) => {
+const Navbar = ({ toggle, setToggle  }) => {
   const user = useContext(usertoken);
   const [category, setCategory] = useState([]);
 
@@ -27,6 +27,7 @@ const Navbar = ({ toggle, setToggle }) => {
   };
   useEffect(() => {
     getAllcategory();
+
   }, []);
   return (
     <nav style={{ left: toggle && "0" }} className="navbar">
