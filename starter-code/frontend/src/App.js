@@ -21,6 +21,8 @@ function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [isLoggedIn, setIsLoggedIn] = useState(token ? true : false);
   const [bookdata, setBookdata] = useState(null);
+  const [cart, setCart] = useState([]);
+  const [addtoCart, setAddtoCart] = useState([]); 
   //------------- return -------------
   return (
     <usertoken.Provider value={{ token, setToken, isLoggedIn, setIsLoggedIn }}>
@@ -33,7 +35,7 @@ function App() {
           <Navigation />
           <Routes>
             <Route path="/" element={ <><Register /><Footer /></>} />
-            <Route path="/login" element={<> <Header/> <Login/> <Services /><Footer /></>} />
+            <Route path="/login" element={<> <Login/> <Footer /></>} />
             <Route
               path="/home"
               element={
@@ -50,9 +52,9 @@ function App() {
             />
             <Route path="/category/:id" element={<><Header/> <Category /> <Services /><Footer /></>} />
             <Route path="/bookInfo/:id" element={<><Header/><BookInfo /><Services /><Footer /> </> }/>
-            <Route path="/cart/:id" element={<><Cart /> </>} />
+            <Route path="/cart/:id" element={<><Header/><Cart /><Services /><Footer />  </>} />
             <Route
-              path="/cart"
+      path="/cart"
               element={
                 <><Header/> <BookInfo bookdata={bookdata} setBookdata={setBookdata} /> <Services /><Footer /> </>
               }

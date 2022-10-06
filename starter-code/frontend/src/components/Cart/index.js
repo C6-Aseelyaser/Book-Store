@@ -67,7 +67,7 @@ function Cart() {
         console.log(err);
       });
   };
-  // -------------delete cart by id------------- 
+  // -------------delete cart by id-------------
   // const [deleted , setDelete] = useState([])
   const deleteCartById = (_id) => {
     console.log(_id);
@@ -80,23 +80,21 @@ function Cart() {
       .then((results) => {
         console.log(results);
         getUserCartbyId();
-     const deletedBook=cart.filter((elem,i)=>{
-      return _id !== elem._id
-        })
-
-        
+        const deletedBook = cart.filter((elem, i) => {
+          return _id !== elem._id;
+        });
       })
       .catch((err) => {
         console.log(err);
       });
   };
   // -------------return-------------
-  console.log(cart)
-      const totalCart = cart.reduce((acc, cur) => {
-        console.log(acc)
-        console.log(cur)
-          return acc + cur.book.price * cur.quantity 
-        },0) 
+  console.log(cart);
+  const totalCart = cart.reduce((acc, cur) => {
+    // console.log(acc);
+    // console.log(cur);
+    return acc + cur.book.price * cur.quantity;
+  }, 0);
   return (
     <div className="cart">
       <div className="cart-title">Your Shopping Cart</div>
@@ -122,7 +120,7 @@ function Cart() {
                     {cartElem.author && cartElem.book.author}
                   </div> */}
 
-<div className="cart-item-quantity">
+                    <div>                  <div className="cart-item-quantity">
                     <button
                       onClick={() => {
                         let quantity = cartElem.quantity + 1;
@@ -134,7 +132,7 @@ function Cart() {
                     </button>
                     <b> {cartElem.quantity} </b>
                     <button
-                    disabled={cartElem.quantity<=1}
+                      disabled={cartElem.quantity <= 1}
                       onClick={() => {
                         let quantity = cartElem.quantity - 1;
                         console.log(quantity);
@@ -143,15 +141,13 @@ function Cart() {
                     >
                       <i className="bi bi-dash-lg"></i>
                     </button>
-                    <div className="cart-items-price">
-                    ${cartElem.book.price * cartElem.quantity}
+
                   </div>
-                  </div>
-                </div>
-                <div>
+                  <div className="cart-items-price">
+                      ${cartElem.book.price * cartElem.quantity}
+                    </div>
+                    <div>
                   {" "}
-                 
-      
                   <i
                     onClick={() => {
                       deleteCartById(cartElem._id);
@@ -159,6 +155,9 @@ function Cart() {
                     className="bi bi-trash-fill"
                   ></i>
                 </div>
+                    </div>
+                </div>
+
                 {/* <h2>{cartElem.book && cartElem.book.title}</h2>
                 <h2>{cartElem.book && cartElem.book.price}</h2>
                 <h2>{cartElem.quantity}</h2> */}
@@ -185,7 +184,7 @@ function Cart() {
           </div>
           <div className="your-order-item">
             <span> Total </span>
-            <span>$ {totalCart+2.5*0.1}</span>
+            <span>$ {totalCart + 2.5 * 0.1}</span>
           </div>
         </div>
       </div>

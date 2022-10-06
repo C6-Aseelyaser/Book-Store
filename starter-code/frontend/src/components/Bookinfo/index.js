@@ -34,7 +34,7 @@ function BookInfo() {
   }, []);
   // -------------create New Cart ~~>[add book to cart]-------------
   console.log(user.token)
-  const [addtoCart, setAddtoCart] = useState([]); //..>?
+  const [addtoCart, setAddtoCart] = useState([]); 
   const [quantity, setQuantity] = useState(1);
   // const [book, setBook] = useState("");
 
@@ -91,8 +91,9 @@ function BookInfo() {
               <i className="bi bi-cart-plus"></i>
               Add To Cart
             </button>
-            <Link to={`/cart/${books._id}`}>{<button className="show-cart">  <i className="bi bi-cart"></i>show cart</button>} </Link>
+          
           </div>
+          
         </div>
 
         <h2></h2>
@@ -120,7 +121,9 @@ function BookInfo() {
         <i className="bi bi-book-half"></i>
         <b>{books.puplish}</b>
       </div>
+      
      </div>
+     <Link to={`/cart/${books._id}`}>{<button className="show-cart">  <i className="bi bi-cart"></i>show cart</button>} </Link>
       <div>
         {/* <button className="book-add-to-cart-btn" onClick={createNewCart}>
         Add To Cart

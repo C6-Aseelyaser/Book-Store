@@ -1,8 +1,10 @@
 import {useState} from 'react'
+import Header from '../Header/Header';
 import "./slider.css";
 
 const  Slider=()=> {
     const [slideIndex, setslideIndex] = useState(0);
+    const [sliderToggle, setSliderToggle] = useState(false)
     const handleClick =(direction)=>{
         if (direction==="left"){
             setslideIndex(slideIndex > 0 ? slideIndex-1:2);
@@ -43,7 +45,7 @@ const  Slider=()=> {
             </div>
         </div>
         {slideIndex !== 2 && <i onClick={()=>handleClick("right")}className="bi bi-chevron-right arrow-right"></i>} 
-
+        <Header sliderToggle={sliderToggle} setSliderToggle={setSliderToggle} />
     </div>
   )
 }

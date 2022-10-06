@@ -54,12 +54,15 @@
     text-decoration: none;
 }
 .book-slide-item-img{
-    top: 0;
-    bottom: 0;
+    /* top: 0;
+    bottom: 0; */
     /* margin: auto; */
-    width: 60%;
-    object-fit: contain;
+    /* width: 60%; */
+    /* object-fit: contain; */
     /* align-items: center; */
+    width: 90%;
+    height: 65%;
+    object-fit: contain;
 }
 .book-slide-item-title{
     font-size: 18px;

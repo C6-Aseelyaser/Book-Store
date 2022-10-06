@@ -7,8 +7,8 @@
     margin-bottom: 20px;
 }
 .book-content-img{
-    width: 30%;
-    height: 300px;
+    width: 30%;/*30%*/
+    height: 40%;/*300px*/
     object-fit: contain;
     padding: 20px;
     box-shadow: 0 0 1px 2px snow;
@@ -51,16 +51,21 @@
     transition: all .3s ease-in-out;
 }
 .show-cart{
+    border: 1px solid black;
     border-radius: 7px;
     padding: 5px 10px;
     background-color: transparent;
+    color:black;
     font-size: 21px;
     font-weight: 600;
     cursor: pointer;
     transition: all .3s ease-in-out;
 }
 .book-add-to-cart-btn:hover{
-    background-color: aquamarine;
+    background-color: snow;
+}
+.show-cart:hover{
+    background-color: snow;
 }
 .book-description{
     width: 80%;

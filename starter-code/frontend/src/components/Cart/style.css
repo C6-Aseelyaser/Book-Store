@@ -31,7 +31,7 @@
 }
 .cart-item-info {
   padding: 10px;
-  width: calc(100% -140px);
+  width: 75%; /*calc(100% -140px)*/
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,12 +45,9 @@
     font-size: 21px;
 } */
 .cart-item-quantity {
-  display: flex;
+  /* display: flex; */
   font-size: 24px;
   margin-bottom: 5px;
-
-
-
 }
 .cart-item-quantity button {
   cursor: pointer;
@@ -104,7 +101,7 @@
     flex-direction: column;
   }
   .cart-items {
-    width: 100px;
+    width: 100%; /*100px*/
   }
   .cart-order-summery {
     width: 320px;
