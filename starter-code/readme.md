@@ -7,16 +7,10 @@
 
 ---
 
-<p align="center"> the project is about "Online BookStore App". this app is displays books as an online products.
-  **App Features**
-  -provides information about the book [Rating , Year , Puplish , price , description , image ,authors ].
-  -User search capability.
-  -purchasing possibilities.
-  -Services [SAME DAY FREE DELIVERY,Gift Card,CASH & CARD ON DELIVERY,7 Days Return.
-  
+<p align="center"> the project is about "Online BookStore App". this app displays books as an online products. app features :provides information about the book [Rating , Year , Puplish , price , description , image ,authors ], User search capability, purchasing possibilities and Services [SAME DAY FREE DELIVERY,Gift Card,CASH & CARD ON DELIVERY,7 Days Return].
   **All tihs features give the user facilities **
-  -saving time.
-  -easy to search & purchase.
+  1-to saving time.
+  2-easy to search & purchase.
     <br> 
 <a href=''>Demo</a>
     <br> 
