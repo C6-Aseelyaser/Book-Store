@@ -3,7 +3,7 @@
  <img width=200px height=200px src="https://www.meraki-academy.org/assets/img/logov02.svg" alt="Project logo"></a>
 </p>
 
-<h3 align="center">MERAKI</h3>
+<h3 align="center">Book Store</h3>
 
 ---
 
