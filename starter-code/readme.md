@@ -1,13 +1,22 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://www.meraki-academy.org/assets/img/logov02.svg" alt="Project logo"></a>
+ <img width=200px height=200px src="[https://www.meraki-academy.org/assets/img/logov02.svg](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJaSnLF3SVM4xUBfDH1Vis66f6S6PsXg2SOg&usqp=CAU)" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Book Store</h3>
 
 ---
 
-<p align="center"> An awesome Project to descripe README 
+<p align="center"> the project is about "Online BookStore App". this app is displays books as an online products.
+  **App Features**
+  -provides information about the book [Rating , Year , Puplish , price , description , image ,authors ].
+  -User search capability.
+  -purchasing possibilities.
+  -Services [SAME DAY FREE DELIVERY,Gift Card,CASH & CARD ON DELIVERY,7 Days Return.
+  
+  **All tihs features give the user facilities **
+  -saving time.
+  -easy to search & purchase.
     <br> 
 <a href=''>Demo</a>
     <br> 
