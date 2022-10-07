@@ -1,10 +1,5 @@
 /* global style*/
 
-:root{
-    --main-color:#efefef;
-    --primary-color:#1976d2;
-}
-
 *{
     box-sizing: border-box;
     padding: 0;
@@ -24,4 +19,3 @@ input:focus{
     outline: none;
 }
 
-/* #A63446   #FFFC99 */

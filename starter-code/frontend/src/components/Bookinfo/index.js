@@ -4,7 +4,6 @@ import { useState, useEffect, useContext } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { usertoken } from "../../App";
 import Rating from "../Home/Rating";
-// import {bookdata} from "../../App"
 function BookInfo() {
   const user = useContext(usertoken);
   const { id } = useParams();
@@ -13,7 +12,6 @@ function BookInfo() {
   const [books, setBooks] = useState({});
   // console.log("books" ,books);
   const [comment, setComment] = useState("");
-  // const [error, setError] = useState(false);
   const getBooksById = () => {
     axios
       .get(`http://localhost:5000/books/search_2?id=${id}`, {
@@ -55,16 +53,13 @@ function BookInfo() {
       .then((results) => {
         console.log(results);
         // setAddtoCart(results.data.cart)
-      
       })
       .catch((err) => {
         console.log(err);
       });
   };
   useEffect(() => {
-
   }, []);
-
   // -------------return-------------
   return (
     <div className="book">
@@ -81,28 +76,12 @@ function BookInfo() {
           </div>
           <Rating rating={books.rating} />
           <div className="book-add-to-cart">
-            {/* <input
-              min="1"
-              max="100"
-              type="number"
-              className="book-add-to-cart-input"
-            /> */}
             <button className="book-add-to-cart-btn" onClick={createNewCart}>
               <i className="bi bi-cart-plus"></i>
               Add To Cart
             </button>
-          
           </div>
-          
         </div>
-
-        <h2></h2>
-        {/* <h2>{books.description}</h2>
-        <h2>{books.category && books.category.title}</h2>
-        <h2>{books.year}</h2>
-        <h2>{books.puplish}</h2>
-        <h2>{books.price}</h2> */}
-        <h2></h2>
       </div>
       <p className="book-description">{books.description}</p>
      <div className="book-icons">
@@ -125,37 +104,9 @@ function BookInfo() {
      </div>
      <Link to={`/cart/${books._id}`}>{<button className="show-cart">  <i className="bi bi-cart"></i>show cart</button>} </Link>
       <div>
-        {/* <button className="book-add-to-cart-btn" onClick={createNewCart}>
-        Add To Cart
-        </button> */}
-
       </div>
     </div>
   );
 }
 export default BookInfo;
-{
-  /* <input
-type="text"
-placeholder="comment"
-onChange={(e) => {
-  setComment(e.target.value);
-}}
-/>
-<button type="submit" className="cart" onClick={BookInfo}>
-enter
-</button> */
-}
 
-{
-  /*----------return createNewCart ----------*/
-}
-{
-  /* <div>
-      {addtoCart.map((add,i)=>{
-        return (
-
-        )
-      })}
-     </div> */
-}

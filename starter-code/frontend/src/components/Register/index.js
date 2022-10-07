@@ -3,7 +3,6 @@ import "./style.css";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 //------------- register -------------
-
 const Register = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -15,6 +14,7 @@ const Register = () => {
   const [message, setMessage] = useState("");
   
   const navigate = useNavigate();
+  //------------- register Click -------------
   const registerClick = (e) => {
     e.preventDefault();
     axios
@@ -37,7 +37,6 @@ const Register = () => {
         setMessage(error.response.data.message);
       });
   };
-
   //------------- return -------------
   return (
     <div className="form-wrapper">
@@ -91,7 +90,7 @@ const Register = () => {
             setPassword(e.target.value);
           }}
         />
-        <button type="submit" className="form-btn" onClick={registerClick}  /**here ~~> go to home  */>
+        <button type="submit" className="form-btn" onClick={registerClick}>
           Register
         </button>
       </form>

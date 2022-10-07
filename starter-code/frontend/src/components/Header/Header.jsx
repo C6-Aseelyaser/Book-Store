@@ -5,16 +5,14 @@ import axios from "axios";
 import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import { usertoken } from "../../App";
 
-const Header = ({ setBookdata}) => {
+const Header = ({ setBookdata }) => {
   const [toggle, setToggle] = useState(false);
   const [search, setSearch] = useState("");
   const bookdata = useContext(usertoken);
   const user = useContext(usertoken);
-  const navigate =useNavigate()
+  const navigate = useNavigate();
   console.log(user);
   const { id } = useParams();
-  // const UserContext = createContext(setBookdata)
-
   //------------- search Books -------------
   const searchBooks = () => {
     axios
@@ -28,7 +26,7 @@ const Header = ({ setBookdata}) => {
         console.log(err);
       });
   };
-
+  //------------- get User Cart by Id-------------
   const getUserCartbyId = () => {
     axios
       .get(`http://localhost:5000/cart/${id}`, {
@@ -48,13 +46,12 @@ const Header = ({ setBookdata}) => {
     getUserCartbyId();
   }, []);
   // -------------LogOut-------------
-  const logout =()=>{
+  const logout = () => {
     localStorage.clear();
     user.setToken(null);
     user.setIsLoggedIn(false);
     navigate("/");
-  }
-  
+  };
   //------------------------------------------
   return (
     <header className="header">
@@ -65,27 +62,21 @@ const Header = ({ setBookdata}) => {
           }}
           className="header-top-menu"
         >
-          {/* , setSliderToggle(false) */}
           <i className="bi bi-list"></i>
         </div>
         <div className="header-top-phone">
           <i className="bi bi-telephone-fill"></i>
           123-456-789
         </div>
-        {/* <div className="header-top-text">welcome to online book store 
-            </div> */}
-<div className="header-top-links-inout">
-        <Link to="/login" className="header-top-link">
-          <i className="bi bi-person"></i>
-          Login
-        </Link> 
-        
-        <Link to="/"  className="header-top-link">
-                logout
-            </Link>
-            </div>
-                    {/* <div className="header-top-link" onClick={logout} >Logout</div> */}
-
+        <div className="header-top-links-inout">
+          <Link to="/login" className="header-top-link">
+            <i className="bi bi-person"></i>
+            Login
+          </Link>
+          <Link to="/" className="header-top-link">
+            logout
+          </Link>
+        </div>
       </div>
       <div className="header-middle">
         <Link to="/home" className="header-middle-logo">
@@ -119,6 +110,5 @@ const Header = ({ setBookdata}) => {
     </header>
   );
 };
-
 export default Header;
 // onClick={() => setSliderToggle(false) }

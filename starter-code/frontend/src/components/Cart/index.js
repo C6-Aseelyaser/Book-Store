@@ -7,10 +7,7 @@ import { usertoken } from "../../App";
 function Cart() {
   const user = useContext(usertoken);
   // console.log(user)
-  const { id } = useParams(); //~~>id
-
-  // const {quantity}=
-  // console.log(id);
+  const { id } = useParams();
   // -------------get User Cart by Id-------------
   // const [cart, setCart] = useState([]);
   // const getUserCartbyId = () => {
@@ -68,7 +65,6 @@ function Cart() {
       });
   };
   // -------------delete cart by id-------------
-  // const [deleted , setDelete] = useState([])
   const deleteCartById = (_id) => {
     console.log(_id);
     axios
@@ -82,8 +78,8 @@ function Cart() {
         // getUserCartbyId();
         const deletedBook = user.cart.filter((elem, i) => {
           return _id !== elem._id;
-        })
-        user.setCart(deletedBook)
+        });
+        user.setCart(deletedBook);
       })
       .catch((err) => {
         console.log(err);
@@ -116,63 +112,52 @@ function Cart() {
                     <b>Title: </b>
                     {cartElem.book && cartElem.book.title}
                   </div>
-                  {/* <div className="cart-item-book-author">
-                    <b>Author: </b>
-                    {cartElem.author && cartElem.book.author}
-                  </div> */}
-
-                    <div>                  <div className="cart-item-quantity">
-                    <button
-                      onClick={() => {
-                        let quantity = cartElem.quantity + 1;
-                        console.log(quantity);
-                        updateCartById(cartElem._id, quantity);
-                      }}
-                    >
-                      <i className="bi bi-plus-lg"></i>
-                    </button>
-                    <b> {cartElem.quantity} </b>
-                    <button
-                      disabled={cartElem.quantity <= 1}
-                      onClick={() => {
-                        let quantity = cartElem.quantity - 1;
-                        console.log(quantity);
-                        updateCartById(cartElem._id, quantity);
-                      }}
-                    >
-                      <i className="bi bi-dash-lg"></i>
-                    </button>
-
-                  </div>
-                  <div className="cart-items-price">
+                  <div>
+                    {" "}
+                    <div className="cart-item-quantity">
+                      <button
+                        onClick={() => {
+                          let quantity = cartElem.quantity + 1;
+                          console.log(quantity);
+                          updateCartById(cartElem._id, quantity);
+                        }}
+                      >
+                        <i className="bi bi-plus-lg"></i>
+                      </button>
+                      <b> {cartElem.quantity} </b>
+                      <button
+                        disabled={cartElem.quantity <= 1}
+                        onClick={() => {
+                          let quantity = cartElem.quantity - 1;
+                          console.log(quantity);
+                          updateCartById(cartElem._id, quantity);
+                        }}
+                      >
+                        <i className="bi bi-dash-lg"></i>
+                      </button>
+                    </div>
+                    <div className="cart-items-price">
                       ${cartElem.book.price * cartElem.quantity}
                     </div>
                     <div>
-                  {" "}
-                  <i
-                    onClick={() => {
-                      deleteCartById(cartElem._id);
-                    }}
-                    className="bi bi-trash-fill"
-                  ></i>
-                </div>
+                      {" "}
+                      <i
+                        onClick={() => {
+                          deleteCartById(cartElem._id);
+                        }}
+                        className="bi bi-trash-fill"
+                      ></i>
                     </div>
+                  </div>
                 </div>
-
-                {/* <h2>{cartElem.book && cartElem.book.title}</h2>
-                <h2>{cartElem.book && cartElem.book.price}</h2>
-                <h2>{cartElem.quantity}</h2> */}
               </div>
             );
           })}
         </div>
-
         <div className="cart-order-summery">
           <div className="order-summery-title"> YOUR ORDER </div>
           <div className="your-order-item">
             <span> SubTotal </span>
-            {/* console.log("cartElem:", cartElem); */}
-
             <span>${totalCart}</span>
           </div>
           <div className="your-order-item">
@@ -193,15 +178,4 @@ function Cart() {
   );
 }
 export default Cart;
-{
-  /* <div className="update-cart-by-id"></div> */
-}
 
-{
-  /* <input
-                type="text"
-                onChange={(e) => {
-                  setupdatequantity(e.target.value);
-                }}
-              /> */
-}

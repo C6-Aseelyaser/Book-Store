@@ -27,7 +27,6 @@ const Navbar = ({ toggle, setToggle  }) => {
   };
   useEffect(() => {
     getAllcategory();
-
   }, []);
   return (
     <nav style={{ left: toggle && "0" }} className="navbar">

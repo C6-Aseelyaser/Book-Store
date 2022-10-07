@@ -29,9 +29,6 @@ const Login = () => {
         localStorage.setItem("token", results.data.token);
         user.setIsLoggedIn(true);
           navigate("/home");
-    
-     
-      
       })
       .catch((error) => {
         console.log(error);
@@ -83,17 +80,7 @@ const Login = () => {
           Register
         </Link>
       </div>
-
-  
-        {/* <div>
-          <label>{message}</label>
-        </div> */}
-
     </div>
   );
 };
 export default Login;
-
-// useEffect(()=>{
-//   navigate("/Home");
-// },[])

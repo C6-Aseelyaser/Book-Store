@@ -4,7 +4,6 @@
   display: flex;
   position: relative;
   overflow: hidden;
-
 }
 .arrow-right,
 .arrow-left {
@@ -59,7 +58,6 @@
   height: 100%;
   object-fit: contain;
 }
-
 .slide-info-wraper {
   width: 50%;
   margin-right: 40px;
@@ -80,7 +78,6 @@
   justify-content: center;}
 
 /* media Queries*/
-
 @media (max-width: 720px) {
   .slide-info-wrapper {
     margin-right: 20px;

@@ -9,20 +9,17 @@ const Footer = () => {
         </div>
         <div className="footer-social-media-icons">
           <div className="footer-social-media-icon">
-            <i style={{ color: "green"}} className="bi bi-whatsapp"></i>
+            <i style={{ color: "green" }} className="bi bi-whatsapp"></i>
           </div>
           <div className="footer-social-media-icon">
-            <i style={{  color: "#3B5998"}} className="bi bi-facebook"></i>
+            <i style={{ color: "#3B5998" }} className="bi bi-facebook"></i>
           </div>
           <div className="footer-social-media-icon">
-            <i style={{  color: "#bb0000" }} className="bi bi-youtube"></i>
+            <i style={{ color: "#bb0000" }} className="bi bi-youtube"></i>
           </div>
           <div className="footer-social-media-icon">
-            <i style={{  color: "#55ACEE" }} className="bi bi-twitter"></i>
+            <i style={{ color: "#55ACEE" }} className="bi bi-twitter"></i>
           </div>
-          {/* <div className="footer-social-media-icon">
-            <i style={{ color: "darkblue" }} className="bi bi-telegram"></i>
-          </div> */}
         </div>
       </div>
       <div className="footer-links-wrapper">
@@ -56,13 +53,19 @@ const Footer = () => {
         <div className="footer-links-item">
           <h3 className="footer-links-item-title">About Us</h3>
           <p className="footer-description">
-          The bookStore.com Books homepage helps you explore Earth's Biggest Bookstore without ever leaving the comfort of your couch. Here you'll find current best sellers in books, new releases in books, deals in books, Kindle eBooks, Audible audiobooks, and so much more. We have popular genres like Literature & Fiction, Children's Books, Mystery & Thrillers, Cooking, Comics & Graphic Novels, Romance, Science Fiction & Fantasy, and Amazon programs such as Best Books of the Month, the Amazon Book Review, and Amazon Charts to help you discover your next great read.
-          
+            The bookStore.com Books homepage helps you explore Earth's Biggest
+            Bookstore without ever leaving the comfort of your couch. Here
+            you'll find current best sellers in books, new releases in books,
+            deals in books, Kindle eBooks, Audible audiobooks, and so much more.
+            We have popular genres like Literature & Fiction, Children's Books,
+            Mystery & Thrillers, Cooking, Comics & Graphic Novels, Romance,
+            Science Fiction & Fantasy, and Amazon programs such as Best Books of
+            the Month, the Amazon Book Review, and Amazon Charts to help you
+            discover your next great read.
           </p>
         </div>
       </div>
     </footer>
   );
 };
-
 export default Footer;

@@ -12,7 +12,7 @@
 .book-slider-arrow-left,
 .book-slider-arrow-right{
     width: 50px;
-    height: 50px;/*80*/
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +24,7 @@
     bottom: 0;
     margin: auto;
     cursor: pointer;
-    z-index: 2px;/*32*/
+    z-index: 2px;
     font-size: 32px;
 }
 .book-slider-arrow-left{
@@ -54,12 +54,7 @@
     text-decoration: none;
 }
 .book-slide-item-img{
-    /* top: 0;
-    bottom: 0; */
-    /* margin: auto; */
-    /* width: 60%; */
-    /* object-fit: contain; */
-    /* align-items: center; */
+ 
     width: 90%;
     height: 65%;
     object-fit: contain;
@@ -85,15 +80,11 @@
     margin: 0 5px;
     color: rgb(24, 23, 23);
 }
-/* rating */
 .rating{
     color: rgb(254,171,17);
 }
-
 .rating i{
-    /* font-weight: 500; */
     margin: 0 1px;
     display: inline;
-    /* font-size: 21px; */
 }
 

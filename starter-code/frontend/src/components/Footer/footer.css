@@ -2,7 +2,6 @@
   padding: 10px 30px;
   background-color: var(--primary-color);
 }
-/*footer-social-media*/
 .footer-social-media {
   display: flex;
   align-items: center;
@@ -34,7 +33,6 @@
 .footer-social-media-icon i {
   font-size: 32px;
 }
-/*footer-links-wrapper*/
 .footer-links-wrapper {
   padding: 20px;
   display: flex;

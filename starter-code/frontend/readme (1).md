@@ -1,4 +1,4 @@
-<p align="center">
+<!-- <p align="center">
 <a href="https://www.meraki-academy.org" target="_blank" rel="noopener noreferrer">
  <img width="400px" height="100px" src="https://www.meraki-academy.org/assets/img/logov02.svg" alt="Project logo">
  </a>
@@ -13,7 +13,7 @@
     <br> 
 <a href=''>Demo</a>
     <br> 
-</p>
+</p> -->
 
 ## 📝 Table of Contents
 
