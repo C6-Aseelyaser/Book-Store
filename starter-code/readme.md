@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="![image](https://user-images.githubusercontent.com/109412028/194551317-5d989fdc-63d3-48a8-88c0-ec9852524104.png)" alt="Project logo"></a>
+ <img width=200px height=200px src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJaSnLF3SVM4xUBfDH1Vis66f6S6PsXg2SOg&usqp=CAU" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Book Store</h3>
