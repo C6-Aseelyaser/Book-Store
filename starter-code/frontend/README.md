@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# 1 logo:
+<p>
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJaSnLF3SVM4xUBfDH1Vis66f6S6PsXg2SOg&usqp=CAU" alt="Project logo"></a>
+</p>
+## --------------------------------------------------------------
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 2 Project Name:
+<h3 >Book Store</h3>
 
-## Available Scripts
+## --------------------------------------------------------------
+# 3 Deploy Link:
+## --------------------------------------------------------------
+# 4 About:
 
-In the project directory, you can run:
+<link rel="icon" href="%PUBLIC_URL%/images (1).png" />
+<p > the project is about "Online BookStore App". this app displays books as an online products. app features :provides information about the book [Rating , Year , Puplish , price , description , image ,authors ], User search capability, purchasing possibilities and Services [SAME DAY FREE DELIVERY,Gift Card,CASH & CARD ON DELIVERY,7 Days Return]. all tihs features give the user facilities to saving time , easy to search & purchase.
+    <br> 
+<a href=''>Demo</a>
+    <br> 
+</p>
 
-### `npm start`
+## --------------------------------------------------------------
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 5 Getting Started :
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-Visual Studio Code follow this link (https://code.visualstudio.com/) to install
+-Git bash follow this link (https://git-scm.com/) to install
+-Github follow this link (https://code.visualstudio.com/)
+-mongo DB Compass follow this link (https://www.mongodb.com/) to install
+-Express JS follow this link (https://expressjs.com/) to install
+-node js follow this link (https://nodejs.org/en/) to install
+-Postman follow this link (https://www.postman.com/)  to install
 
-### `npm test`
+## --------------------------------------------------------------
+# 6 Usage :
+-points and image
+## --------------------------------------------------------------
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# 7 Built Using 8:
+  ## A : Prerequisites
+- [Visual Studio Code](https://code.visualstudio.com/) -VS code
+- [Mongo DB Compass](https://www.mongodb.com/) - Database
+- [Express JS](https://expressjs.com/) - Server Framework
+- [React JS](https://https://reactjs.org/) - Web Framework
+- [Node JS](https://nodejs.org/en/) - Server Environment
+- [Postman](https://www.postman.com/) 
 
-### `npm run build`
+ ## B : Installing:
+ 1.Clone the repo to your local machine using git bash. ~~> https://github.com/C6-Aseelyaser/MERAKI_Academy_Project_4
+ 2.Install packeges repeat this step in backend and frontend folder ~~> npm i
+ 3.Run server using git bash inside backend folder ~~> npm run dev
+ 4.Run application using git bash inside frontend folder ~~> npm run start
+ 5.Installing packages 
+    -axios ~~> npm i axios
+    -Route ~~> npm i react-router-dom
+    -bcrypt ~~> npm i bcrybt
+    -dotenv ~~> npm i dotenv
+    -express ~~> npm i express
+    -jsonwebtoken ~~> npm i jsonwebtoken
+    -mongoose ~~> npm i mongoose
+*now the app is ready to use*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## --------------------------------------------------------------
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# 8 User Story:
+<a href='https://trello.com/c/lzuZ41V1/27-imagepng
+'>Trello</a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## --------------------------------------------------------------
 
-### `npm run eject`
+# 9 Data Flow:
+<img width=200px height=200px src='./sliderimg/digram.jpg' alt="Diagram"></a>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## --------------------------------------------------------------
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# 10 Guided By:
+This project is guided by ©️ **[MERAKI Academy](https://www.meraki-academy.org)**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## --------------------------------------------------------------
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
 ### Deployment
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
