@@ -5,7 +5,7 @@
     position: relative;
     overflow-x: hidden;
     margin-bottom: 60px;
-    background-color: teal;
+    background-color: var(--primary-color);
     padding: 10px 20px 20px 20px;
 }
 
@@ -17,7 +17,7 @@
     align-items: center;
     justify-content: center;
     color: var(--main-color);
-    background-color: teal;
+    background-color: var(--primary-color);
     border-radius: 5px;
     position: absolute;
     top: 0;
@@ -43,7 +43,7 @@
     border: 1px solid rgba(0, 0, 0, 0.5);
     max-width: 250px;
     height: 450px;
-    background-color: #efefee; 
+    background-color: var(--main-color); 
     margin: 0 7px;
     width: 340px;
     display: flex;
@@ -74,7 +74,7 @@
     font-size: 21px;
 }
 .book-slider-icons-wrapper{
-    border-top: 1px solid gray;
+    border-top: 1px solid var(--primary-color);
     width: 100%;
     text-align: center;
     padding-top: 5px;

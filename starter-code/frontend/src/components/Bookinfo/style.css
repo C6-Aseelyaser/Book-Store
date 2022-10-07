@@ -84,7 +84,7 @@
     flex-direction: column;
     margin-right: 50px;
     font-size: 21px;
-    color: teal; /*gray*/
+    color: var(--primary-color); /*gray*/
 }
  .book-icon small{
     font-weight: 600;

@@ -10,7 +10,7 @@
 .form-title{
     font-size: 27px;
     margin-bottom: 15px;
-    color:teal;
+    color:var(--primary-color);
 }
 .form{
     display: flex;
@@ -19,14 +19,14 @@
     position:relative;
 }
 .form input{
-    border: 2px solid teal;
+    border: 2px solid var(--primary-color);
     padding: 10px;
     font-size: 21px;
     margin-bottom: 15px;
 }
 .form-btn{
     width: 100%;
-    background-color: teal;
+    background-color: var(--primary-color);
     color:white;
     cursor: pointer;
     font-weight: 700;
@@ -44,7 +44,7 @@
     top: 83px;
     right: 10px;
     font-size: 21px;
-    color: teal;
+    color: var(--primary-color);
     /* rgb(3,168,168)  */
     z-index: 2;
     cursor: pointer;

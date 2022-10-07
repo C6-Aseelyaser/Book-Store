@@ -56,10 +56,7 @@ const Footer = () => {
         <div className="footer-links-item">
           <h3 className="footer-links-item-title">About Us</h3>
           <p className="footer-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-            eligendi excepturi ea neque! Totam minus est dolores quas,
-            consequatur asperiores sit labore. A exercitationem tempore nisi,
-
+          The bookStore.com Books homepage helps you explore Earth's Biggest Bookstore without ever leaving the comfort of your couch. Here you'll find current best sellers in books, new releases in books, deals in books, Kindle eBooks, Audible audiobooks, and so much more. We have popular genres like Literature & Fiction, Children's Books, Mystery & Thrillers, Cooking, Comics & Graphic Novels, Romance, Science Fiction & Fantasy, and Amazon programs such as Best Books of the Month, the Amazon Book Review, and Amazon Charts to help you discover your next great read.
           
           </p>
         </div>

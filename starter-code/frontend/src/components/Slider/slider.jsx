@@ -21,16 +21,16 @@ const  Slider=()=> {
                 </div>
                 <div className='slide-info-wrapper'>
                     <h1 className='slide-info-title'>Book Store</h1>
-                    <p className='slide-info-desc'>It's not jsut reading. it's living the adventure.</p>
+                    <p className='slide-info-desc'>“Books are a uniquely portable magic.” </p>
                 </div>
             </div>
             <div className='slide second-slide'>
                 <div className='slide-img-wrapper'>
-                    <img src= './sliderimg/imge1 (2).jpg' alt=""/>
+                    <img src= './sliderimg/slideimg7.jpg' alt=""/>
                 </div>
                 <div className='slide-info-wrapper'>
-                    <h1 className='slide-info-title'>the Books For Everyone </h1>
-                    <p className='slide-info-desc'>you can read at home or at the bookstore.</p>
+                    <h1 className='slide-info-title'> The Reading </h1>
+                    <p className='slide-info-desc'>“Any book that helps a child to form a habit of reading, to make reading one of his needs, is good for him.” </p>
                 </div>
             </div>
             <div className='slide third-slide'>
@@ -38,8 +38,8 @@ const  Slider=()=> {
                     <img src= './sliderimg/imge1 (3).jpg' alt=""/>
                 </div>
                 <div className='slide-info-wrapper'>
-                    <h1 className='slide-info-title'>Chek Out The New Titles</h1>
-                    <p className='slide-info-desc'>we send you the book you want at home.</p>
+                    <h1 className='slide-info-title'>A Friend!!</h1>
+                    <p className='slide-info-desc'>“You know you have read a good book when you turn the last page and feel a little as if you have lost a friend.”</p>
                 </div>
             </div>
         </div>

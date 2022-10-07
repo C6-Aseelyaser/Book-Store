@@ -1,7 +1,7 @@
  .header {
   height: 250px;
   width: 100%;
-  background-color: var(--primary-color);
+  background-color: var(--primary-color);/*var(--primary-color)*/
   position: relative;
 }
 
@@ -28,7 +28,7 @@
 .header-top-link {
   font-size: 27px;
   font-weight: 500;
-  color: var(--main-color);
+  color:snow;
 }
 /* .header-top-links-inout{
   grid-column-gap: 16px;

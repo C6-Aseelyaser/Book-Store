@@ -7,12 +7,12 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-bottom: 1px solid #efefef;
+  border-bottom: 1px solid var(--main-color);
   padding: 10px;
   padding-bottom: 20px;
 }
 .footer-social-media-text {
-  color: #efefef;
+  color: var(--main-color);
   font-size: 24px;
   font-weight: 500;
 }
@@ -22,7 +22,7 @@
 }
 .footer-social-media-icon {
   margin: 0 15px;
-  background-color: #efefef;
+  background-color: var(--main-color);
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -58,14 +58,14 @@
 }
 .footer-link {
   font-size: 20px;
-  color: #efefef;
+  color:var(--main-color);
   margin-bottom: 10px;
   cursor: pointer;
 }
 .footer-address-item {
   margin-bottom: 20px;
   font-size: 21px;
-  color: #efefef;
+  color: var(--main-color);
 }
 .footer-address-item i {
   font-size: 27px;
@@ -73,7 +73,7 @@
 }
 .footer-description {
   font-size: 17px;
-  color: #efefef;
+  color: var(--main-color);
 }
 
 /*Media Quieries*/

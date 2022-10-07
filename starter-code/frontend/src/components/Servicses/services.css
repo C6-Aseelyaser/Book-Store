@@ -15,7 +15,7 @@
     justify-content: center;
     flex-direction:column ;/*column*/
     color: #2c3e50;
-    border: 1px solid gray;
+    border: 1px solid var(--primary-color);
     width:21%;
     border-radius: 60px;
     text-align: center;
