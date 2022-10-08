@@ -114,8 +114,7 @@ function BookInfo() {
       
      </div>
      <Link to={`/cart/${books._id}`}>{<button className="show-cart">  <i className="bi bi-cart"></i>show cart</button>} </Link>
-      <div>
-      </div>
+
     </div>
   );
 }
