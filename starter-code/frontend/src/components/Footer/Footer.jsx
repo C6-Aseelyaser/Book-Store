@@ -60,8 +60,7 @@ const Footer = () => {
             We have popular genres like Literature & Fiction, Children's Books,
             Mystery & Thrillers, Cooking, Comics & Graphic Novels, Romance,
             Science Fiction & Fantasy, and Amazon programs such as Best Books of
-            the Month, the Amazon Book Review, and Amazon Charts to help you
-            discover your next great read.
+            the Month
           </p>
         </div>
       </div>
