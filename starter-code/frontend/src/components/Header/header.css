@@ -80,6 +80,7 @@
 }
 .header-middle-cart-wrapper {
   position: relative;
+  text-decoration: none;
 }
 .cart-notificatiion {
   position: absolute;
@@ -94,11 +95,15 @@
   align-items: center;
   justify-content: center;
   font-size: 18px;
+  text-decoration: none;
+
 }
 .header-middle-cart-wrapper i {
   font-size: 44px;
   color: white;
   cursor: pointer;
+  text-decoration: none;
+
 }
 .navbar {
   background-color: var(--main-color);

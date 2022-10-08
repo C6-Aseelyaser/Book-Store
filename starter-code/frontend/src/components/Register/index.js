@@ -10,7 +10,7 @@ const Register = () => {
   const [country, setCountry] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("6336a074755caeb97c2afab3");
+  const [role, setRole] = useState("6341260be91e48ce0f026f44");
   const [message, setMessage] = useState("");
   
   const navigate = useNavigate();

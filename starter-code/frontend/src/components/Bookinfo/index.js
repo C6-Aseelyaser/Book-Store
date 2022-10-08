@@ -51,15 +51,19 @@ function BookInfo() {
         }
       )
       .then((results) => {
-        console.log(results);
-        // setAddtoCart(results.data.cart)
+        console.log(results.data);
+        setAddtoCart(results.data.cart)
+        setAddtoCart([...addtoCart, results.data.cart ]);
+
       })
       .catch((err) => {
         console.log(err);
       });
   };
   useEffect(() => {
+    createNewCart()
   }, []);
+  console.log(addtoCart)
   // -------------return-------------
   return (
     <div className="book">
@@ -75,12 +79,18 @@ function BookInfo() {
             by <span>{books.author}</span> (Author)
           </div>
           <Rating rating={books.rating} />
-          <div className="book-add-to-cart">
-            <button className="book-add-to-cart-btn" onClick={createNewCart}>
+         
+    
+
+       
+              <div className="book-add-to-cart">
+                    <button className="book-add-to-cart-btn" onClick={createNewCart}>
               <i className="bi bi-cart-plus"></i>
               Add To Cart
             </button>
           </div>
+   
+        
         </div>
       </div>
       <p className="book-description">{books.description}</p>

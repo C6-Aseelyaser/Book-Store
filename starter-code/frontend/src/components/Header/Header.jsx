@@ -102,7 +102,7 @@ const Header = ({ setBookdata }) => {
           ></i>
         </div>
         <Link to="/cart/:id" className="header-middle-cart-wrapper">
-          <b className="cart-notificatiion">{user.cart.length}</b>
+          <b className="cart-notificatiion">{user.cart && user.cart.length}</b> 
           <i className="bi bi-cart2"></i>
         </Link>
       </div>

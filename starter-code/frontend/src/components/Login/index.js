@@ -61,12 +61,13 @@ const Login = () => {
         {showPassword ? (
           <i
             onClick={showHidePassword}
-            className="bi bi-eye-slash-fill show-password-icon"
+            className="bi bi-eye-fill show-password-icon"
+            
           ></i>
         ) : (
           <i
             onClick={showHidePassword}
-            className="bi bi-eye-fill show-password-icon"
+            className="bi bi-eye-slash-fill show-password-icon"
           ></i>
         )}
 

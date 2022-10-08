@@ -9,27 +9,27 @@ function Cart() {
   // console.log(user)
   const { id } = useParams();
   // -------------get User Cart by Id-------------
-  // const [cart, setCart] = useState([]);
-  // const getUserCartbyId = () => {
-  //   axios
-  //     .get(`http://localhost:5000/cart/${id}`, {
-  //       headers: {
-  //         Authorization: `Bearer ${user.token}`,
-  //       },
-  //     })
-  //     .then((results) => {
-
-  //     user.setCart(results.data.cart)
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-  // // console.log("cart2:",cart);
-  // useEffect(() => {
-  //   getUserCartbyId();
-  // }, []);
-  // -------------update cart by id------------- //fillter + total
+  const [cart, setCart] = useState([]);
+  const getUserCartbyId = () => {
+    axios
+      .get(`http://localhost:5000/cart/${id}`, {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      })
+      .then((results) => {
+      user.setCart(results.data.cart)
+      
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  // console.log("cart2:",cart);
+  useEffect(() => {
+    getUserCartbyId();
+  }, []);
+  //-------------update cart by id------------- //fillter + total
   const [updatequantity, setupdatequantity] = useState(1); //?
   //console.log(37);
   const updateCartById = (_id, quantity) => {
