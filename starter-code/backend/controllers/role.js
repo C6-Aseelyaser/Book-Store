@@ -1,10 +1,7 @@
 let roleModel = require("../models/roleSchema");
-
-
 //------------create role -----------------
 // console.log(5)
 const role = (req, res) => {
-  
   const roleId = req.params.roleId;
   // console.log(roleId);
   const { role, permissions } = req.body;
@@ -21,7 +18,6 @@ const role = (req, res) => {
         success: true,
         massage: "Success role created",
         role: result,
-
       });
     })
     .catch((err) => {

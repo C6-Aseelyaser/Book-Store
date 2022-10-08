@@ -6,8 +6,3 @@ const catogorySchema = new mongoose.Schema({
 
 module.exports = mongoose.model("category", catogorySchema);
 
-// history:{type:String},
-// business:{type:String},
-// religion:{type:String},
-// science:{type:String},
-// math:{type:String}

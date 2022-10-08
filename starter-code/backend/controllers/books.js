@@ -73,12 +73,9 @@ const getAllBooks = (req, res) => {
       });
     });
 };
-//-------------search Books-------------
-//search on title of the book
+//-------------search Books-------------search on title of the book
 const searchBooks = (req, res) => {
   let bookTitle = req.query.title
-  // const regex =new RegExp(title /abc/ ,"gi"  /Flags/ [^A-Za-z_0-9])
- 
   const regex = new RegExp(bookTitle, 'gi');
   console.log(regex)
   booksModel
@@ -113,7 +110,6 @@ const getBookByCategory = (req, res) => {
           message: `The category: ${categoryId} has no books`,
         });
       }
-
       res.status(200).json({
         success: true,
         message: `All the books for the category: ${categoryId}`,
@@ -230,7 +226,6 @@ const createComment = (req, res) => {
       booksModel
         .findOneAndUpdate({ _id: bookId }, { $push: { comments: result._id } })
         .then(() => {
-          // console.log(202);
           res.status(201);
           res.json({
             success: true,
@@ -267,16 +262,4 @@ module.exports = {
   createComment,
   searchBooks
 };
-// pt1
-// NewBook,
-// getAllBooks,
-// getBookByCategory
-// getBookById,
-// updateBookById,
-// deleteBookById,
-// pt2
-// getBooksByAuthor,
-// deleteBookByAuthor,
-// newComment
 
-//const bookId = req.params.bookId;

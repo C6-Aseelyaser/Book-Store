@@ -9,5 +9,4 @@ const authorization = (string) => {
     next();
   };
 };
-
 module.exports = authorization;

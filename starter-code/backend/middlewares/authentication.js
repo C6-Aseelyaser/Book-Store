@@ -12,7 +12,6 @@ const authentication = (req, res, next) => {
   }
 
   const token = req.headers.authorization.split(" ").pop();
-
   const secretKey = process.env.SECERT;
 
   //console.log(authentication);

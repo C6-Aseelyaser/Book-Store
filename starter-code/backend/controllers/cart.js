@@ -3,7 +3,6 @@ const cartModel = require("../models/cartSchema");
 //------------- create new cart -------------
 const createNewCart = (req, res) => {
   const {  book, quantity } = req.body;
-  
   // console.log(req.token)
   const cartModelInstance = new cartModel({
     user:req.token.userId,
@@ -33,10 +32,7 @@ const createNewCart = (req, res) => {
       });
     });
 };
-
-
-
-//------------- get all cart -------------..>dont need get all cart ..jsut getById
+//------------- get all cart -------------
 const getAllCart = (req, res) => {
   cartModel
     .find()
@@ -58,7 +54,6 @@ const getAllCart = (req, res) => {
         });
       });
     })
- 
 };
 //------------- update cart by id-------------
 const updateCartById = (req, res) => {
@@ -144,7 +139,6 @@ const getCartById = (req, res) => {
       });
     });
 };
-//here we need to getAllUserCartbyId
 //-------------getUserCartbyId -------------
 const getUserCartbyId = (req, res) => {
   const userId = req.token.userId;
@@ -178,7 +172,6 @@ const getUserCartbyId = (req, res) => {
       });
     });
 };
-
 //------------------------------------------
 module.exports = {
   createNewCart,

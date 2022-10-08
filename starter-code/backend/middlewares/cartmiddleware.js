@@ -4,7 +4,6 @@ const checkCart = (req, res, next) => {
   console.log("5dsfsdsdsfsd");
   let user = req.token.userId;
   // console.log(user)
-
   let book = req.body.book;
   cartModel
     .findOne({ user, book })
