@@ -1,98 +1,170 @@
-<p align="center">
+## --------------------------------------------------------------
+
+# 1. logo:
+
+<p>
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJaSnLF3SVM4xUBfDH1Vis66f6S6PsXg2SOg&usqp=CAU" alt="Project logo"></a>
+ <img width=200px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665159917/images_1_falwu8.png" alt="Project logo"></a>
+ <link rel="icon" href="https://cloudinary.com/console/c-9bb82f24be19e62c3de4ec05659a4b/media_library/folders/home" />
 </p>
 
-<h3 align="center">Book Store</h3>
+## --------------------------------------------------------------
 
----
+# 2. Project Name:
 
-<p align="center"> the project is about "Online BookStore App". this app displays books as an online products. app features :provides information about the book [Rating , Year , Puplish , price , description , image ,authors ], User search capability, purchasing possibilities and Services [SAME DAY FREE DELIVERY,Gift Card,CASH & CARD ON DELIVERY,7 Days Return]. all tihs features give the user facilities to saving time , easy to search & purchase.
-    <br> 
-<a href=''>Demo</a>
-    <br> 
+<h4 >Book Store</h4>
+
+
+## --------------------------------------------------------------
+
+# 3. Deploy Link:
+<br>
+<a href='http://localhost:3000/home'>online bookstore .. Here we offer and sell books online</a>
+
+<img width=700px height=350px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665249016/home_page_afgqau.png" alt="Project logo"></a>
+<br>
+
+
+## --------------------------------------------------------------
+
+# 4. About:
+
+<link rel="icon" href="%PUBLIC_URL%/images (1).png" />
+<p >
+What is the importance of books in our life? Books play a quintessential role in every student’s life by introducing them to a world 
+of imagination, providing knowledge of the outside world, improving their reading, writing and speaking skills as well as boosting.
+
+memory and intelligence. The importance of books in our life cannot be undermined for they not only help in broadening our horizons but also act as doorways of connecting us with the world around us. They function as survival kits, they influence us and leave an
+impact on us. and for that .we work on this project . the project is about the "Online BookStore App". this app displays books as
+an online products.this app has many features :
+1. Ability to search about the books you want .
+2. Provides information on books [description ,year ,rating ,image, price].
+3. Possibility to buy books .
+4. Delivery possibility.
+5. Services [SAME DAY FREE DELIVERY,Gift Card,CASH & CARD ON DELIVERY,7 Days Return]. 
+and all tihs features give the user facilities
+1. easy to search & purchase. 
+2. easy to find book.
+3. saving time. 
 </p>
 
-## 📝 Table of Contents
+## --------------------------------------------------------------
 
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [User Story](#user_story)
-- [Data Flow](#data_flow)
-- [Guided By](#guided_by)
-
-## 🧐 About <a name = "about"></a>
-
-Write about 1-2 paragraphs describing the purpose of your project.
-
-Ex. Are you looking for a quick and easy way to action, action, and action? The **(name of application)** is the greatest and most accurate application to do this for you. It helps you to **(list of activities)**. The **(name of application)** provides a simple design to ensure having the best user experience.
-
-## 🏁 Getting Started <a name = "getting_started"></a>
+# 5. Getting Started :
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
+- Visual Studio Code follow this link (https://code.visualstudio.com/) to install
+- Git bash follow this link (https://git-scm.com/) to install
+- Github follow this link (https://github.com/)
+- mongo DB Compass follow this link (https://www.mongodb.com/) to install
+- Express JS follow this link (https://expressjs.com/) to install
+- node js follow this link (https://nodejs.org/en/) to install
+- Postman follow this link (https://www.postman.com/) to install
 
-- Visual Studio Code follow this <a href=''>link</a> to install.
-- Git Bash follow this <a href=''>link</a> to install.
-- MongoDB follow this <a href=''>link</a> to install.
-- Node.js follow this <a href=''>link</a> to install.
+## --------------------------------------------------------------
 
-### Installing:
+# 6. Usage :
 
-1. Clone the repo to your local machine using git bash.
+## register the users have to register to be a member of this app .
+<a href="" rel="noopener">
+<img width=300px height=400px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227709/Screenshot_1_uj2xxl.png" alt="Project logo"></a>
 
-```
-git clone https://github.com/your_username_/Project-Name.git
-```
+## login the users have to log in to authenticate .
+<a href="" rel="noopener">
+<img width=300px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227724/Screenshot_2_qqjja6.png" alt="Project logo"></a>
 
-2. Install packeges repeat this step in backend and frontend folder
+## header phone number, searchbar , login logut , the cart .
+<a href="" rel="noopener">
+<img width=700px height=100px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227770/sesrch_bar_fu3dqh.png" alt="Project logo"></a>
+<a href="" rel="noopener">
 
-```
-npm i
-```
+## category.
 
-3. Run server using git bash inside backend folder
+<a href="" rel="noopener">
+<img width=700px height=100px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227782/nav_bar_sbaluy.png" alt="Project logo"></a>
 
-```
-npm run dev
-```
+## home slider.
 
-4. Run application using git bash inside frontend folder
+<a href="" rel="noopener">
+<img width=700px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227807/slider_tvdi5l.png" alt="Project logo"></a>
+<a href="" rel="noopener">
 
-```
-npm run start
-```
+## books slider.
 
-Now app ready to use
+<img width=700px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227820/book_slider_zm8pnh.png" alt="Project logo"></a>
+<a href="" rel="noopener">
 
-## 🎈 Usage <a name="usage"></a>
+## services.
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+<img width=700px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227829/services_t5ol3z.png" alt="Project logo"></a>
+<a href="" rel="noopener">
 
-Ex.
-- You don't have to register to navigate our web app
-- You can click on the **Home** tab provided in the navigation bar to view the home section
-- You can click on the **Add to cart** button to add this product to your cart but you have to be one of our users, so you should create an account 
+## footer.
 
-## ⛏️ Built Using <a name = "built_using"></a>
+<img width=700px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227837/footer_avvas7.png" alt="Project logo"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
+## book info : show info about the book, the ability to add the book to the cart, and show the cart .
+<a href="" rel="noopener">
+<img width=500px height=400px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227849/book_info_d1ggcv.png" alt="Project logo"></a>
+
+## cart & order: shows the chosen book by the user with the quantity, the price, and the ability to update and delete the book from the cart.
+<a href="" rel="noopener">
+<img width=500px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227861/cart_oreder_cxh9og.png" alt="Project logo"></a>
+
+## category : shows specific category
+<a href="" rel="noopener">
+<img width=500px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227869/category_in_book_ah2x4r.png"></a>
+
+## --------------------------------------------------------------
+
+# 7. Built Using :
+
+## A : Prerequisites
+
+- [Visual Studio Code](https://code.visualstudio.com/) -VS code
+- [Mongo DB Compass](https://www.mongodb.com/) - Database
 - [Express JS](https://expressjs.com/) - Server Framework
 - [React JS](https://https://reactjs.org/) - Web Framework
 - [Node JS](https://nodejs.org/en/) - Server Environment
+- [Postman](https://www.postman.com/)
 
-## User Story <a name = "#user_story"></a>
+## B : Installing:
 
-Your trello board link
-<a href=''>Trello</a>
+- Clone the repo to your local machine using git bash. ~~> https://github.com/C6-Aseelyaser/MERAKI_Academy_Project_4
+- Install packeges repeat this step in backend and frontend folder ~~> npm i
+- Run server using git bash inside backend folder ~~> npm run dev
+- Run application using git bash inside frontend folder ~~> npm run start
+- Installing packages
+```
+npm i axios
+npm i react-router-dom
+npm i bcrybt
+npm i dotenv
+npm i express
+npm i jsonwebtoken
+npm i mongoose
 
-## Data Flow <a name = "#data_flow"></a>
+```
+**now the app is ready to use**
 
-<img width=200px height=200px src="https://cacoo.com/assets/site/img/templates/screenshots/er-database-diagram.png" alt="Diagram"></a>
+## --------------------------------------------------------------
 
-## ⚠️ Guided By <a name = "guided_by"></a>
+# 8. User Story:
+
+<a href='https://trello.com/c/lzuZ41V1/27-imagepng
+'>Trello</a>
+
+## --------------------------------------------------------------
+
+# 9. Data Flow:
+
+<img width=600px height=400px src='https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665170196/digram_hwri6a.png' alt="Diagram"></a>
+
+## --------------------------------------------------------------
+
+# 10. Guided By:
 
 This project is guided by ©️ **[MERAKI Academy](https://www.meraki-academy.org)**
+
+## --------------------------------------------------------------

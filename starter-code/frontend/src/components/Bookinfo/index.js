@@ -4,7 +4,9 @@ import { useState, useEffect, useContext } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { usertoken } from "../../App";
 import Rating from "../Home/Rating";
+
 function BookInfo() {
+
   const user = useContext(usertoken);
   const { id } = useParams();
   // console.log(id);
@@ -52,16 +54,15 @@ function BookInfo() {
       )
       .then((results) => {
         console.log(results.data);
-        setAddtoCart(results.data.cart)
-        setAddtoCart([...addtoCart, results.data.cart ]);
-
+        // setAddtoCart(results.data.cart)
+        const newcart = [...user.cart, ...results.data.cart];
+        user.setCart(newcart);
       })
       .catch((err) => {
         console.log(err);
       });
   };
   useEffect(() => {
-    createNewCart()
   }, []);
   console.log(addtoCart)
   // -------------return-------------

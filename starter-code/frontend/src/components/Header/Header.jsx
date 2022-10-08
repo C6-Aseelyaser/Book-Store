@@ -36,6 +36,7 @@ const Header = ({ setBookdata }) => {
       })
       .then((results) => {
         user.setCart(results.data.cart);
+        
       })
       .catch((err) => {
         console.log(err);

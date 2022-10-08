@@ -12,15 +12,18 @@
 
 # 2. Project Name:
 
-<h3 >Book Store</h3>
+<h4 >Book Store</h4>
+
 
 ## --------------------------------------------------------------
 
 # 3. Deploy Link:
+<br>
+<a href='http://localhost:3000/home'>online bookstore .. Here we offer and sell books online</a>
 
+<img width=700px height=350px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665249016/home_page_afgqau.png" alt="Project logo"></a>
 <br>
-<a href=''>online bookstore .. Here we offer and sell books online</a>
-<br>
+
 
 ## --------------------------------------------------------------
 
@@ -56,58 +59,66 @@ These instructions will get you a copy of the project up and running on your loc
 - Github follow this link (https://github.com/)
 - mongo DB Compass follow this link (https://www.mongodb.com/) to install
 - Express JS follow this link (https://expressjs.com/) to install
--node js follow this link (https://nodejs.org/en/) to install
--Postman follow this link (https://www.postman.com/) to install
+- node js follow this link (https://nodejs.org/en/) to install
+- Postman follow this link (https://www.postman.com/) to install
 
 ## --------------------------------------------------------------
 
 # 6. Usage :
 
-1- [register] the users have to register to be a member of this app .
+## register the users have to register to be a member of this app .
 <a href="" rel="noopener">
-<img width=200px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227709/Screenshot_1_uj2xxl.png" alt="Project logo"></a>
+<img width=300px height=400px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227709/Screenshot_1_uj2xxl.png" alt="Project logo"></a>
 
-2- [login] the users have to log in to authenticate .
+## login the users have to log in to authenticate .
 <a href="" rel="noopener">
-<img width=200px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227724/Screenshot_2_qqjja6.png" alt="Project logo"></a>
+<img width=300px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227724/Screenshot_2_qqjja6.png" alt="Project logo"></a>
 
-3- [header] phone number, searchbar , login logut , the cart .
+## header phone number, searchbar , login logut , the cart .
 <a href="" rel="noopener">
-<img width=200px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227770/sesrch_bar_fu3dqh.png" alt="Project logo"></a>
+<img width=700px height=100px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227770/sesrch_bar_fu3dqh.png" alt="Project logo"></a>
 <a href="" rel="noopener">
-<img width=200px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227782/nav_bar_sbaluy.png" alt="Project logo"></a>
 
-4- [navbar] category ~~> history , business ,math , science & religion .
-<a href="" rel="noopener">
-<img width=200px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227782/nav_bar_sbaluy.png" alt="Project logo"></a>
-
-### home slider info and book slider.
-
-
+## category.
 
 <a href="" rel="noopener">
-<img width=400px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227807/slider_tvdi5l.png" alt="Project logo"></a>
-<a href="" rel="noopener">
-<img width=400px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227820/book_slider_zm8pnh.png" alt="Project logo"></a>
-<a href="" rel="noopener">
-<img width=200px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227829/services_t5ol3z.png" alt="Project logo"></a>
-<a href="" rel="noopener">
-<img width=200px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227837/footer_avvas7.png" alt="Project logo"></a>
+<img width=700px height=100px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227782/nav_bar_sbaluy.png" alt="Project logo"></a>
 
-6- [book info] show info about the book, the ability to add the book to the cart, and show the cart .
-<a href="" rel="noopener">
-<img width=200px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227849/book_info_d1ggcv.png" alt="Project logo"></a>
+## home slider.
 
-7- [cart & order] shows the chosen book by the user with the quantity, the price, and the ability to update and delete the book from the cart.
 <a href="" rel="noopener">
-<img width=200px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227861/cart_oreder_cxh9og.png" alt="Project logo"></a>
-8- [category]shows specific category
+<img width=700px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227807/slider_tvdi5l.png" alt="Project logo"></a>
 <a href="" rel="noopener">
-<img width=200px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227869/category_in_book_ah2x4r.png"></a>
+
+## books slider.
+
+<img width=700px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227820/book_slider_zm8pnh.png" alt="Project logo"></a>
+<a href="" rel="noopener">
+
+## services.
+
+<img width=700px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227829/services_t5ol3z.png" alt="Project logo"></a>
+<a href="" rel="noopener">
+
+## footer.
+
+<img width=700px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227837/footer_avvas7.png" alt="Project logo"></a>
+
+## book info : show info about the book, the ability to add the book to the cart, and show the cart .
+<a href="" rel="noopener">
+<img width=500px height=400px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227849/book_info_d1ggcv.png" alt="Project logo"></a>
+
+## cart & order: shows the chosen book by the user with the quantity, the price, and the ability to update and delete the book from the cart.
+<a href="" rel="noopener">
+<img width=500px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227861/cart_oreder_cxh9og.png" alt="Project logo"></a>
+
+## category : shows specific category
+<a href="" rel="noopener">
+<img width=500px height=200px src="https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665227869/category_in_book_ah2x4r.png"></a>
 
 ## --------------------------------------------------------------
 
-# 7. Built Using 8:
+# 7. Built Using :
 
 ## A : Prerequisites
 
@@ -120,22 +131,22 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## B : Installing:
 
+- Clone the repo to your local machine using git bash. ~~> https://github.com/C6-Aseelyaser/MERAKI_Academy_Project_4
+- Install packeges repeat this step in backend and frontend folder ~~> npm i
+- Run server using git bash inside backend folder ~~> npm run dev
+- Run application using git bash inside frontend folder ~~> npm run start
+- Installing packages
+```
+npm i axios
+npm i react-router-dom
+npm i bcrybt
+npm i dotenv
+npm i express
+npm i jsonwebtoken
+npm i mongoose
 
-
-
-1. Clone the repo to your local machine using git bash. ~~> https://github.com/C6-Aseelyaser/MERAKI_Academy_Project_4
-2.Install packeges repeat this step in backend and frontend folder ~~> npm i
-3.Run server using git bash inside backend folder ~~> npm run dev
-4.Run application using git bash inside frontend folder ~~> npm run start
-5.Installing packages
--axios ~~> npm i axios
--Route ~~> npm i react-router-dom
--bcrypt ~~> npm i bcrybt
--dotenv ~~> npm i dotenv
--express ~~> npm i express
--jsonwebtoken ~~> npm i jsonwebtoken
--mongoose ~~> npm i mongoose
-_now the app is ready to use_
+```
+**now the app is ready to use**
 
 ## --------------------------------------------------------------
 
@@ -148,7 +159,7 @@ _now the app is ready to use_
 
 # 9. Data Flow:
 
-<img width=200px height=200px src='https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665170196/digram_hwri6a.png' alt="Diagram"></a>
+<img width=600px height=400px src='https://res.cloudinary.com/dv3wzcjeh/image/upload/v1665170196/digram_hwri6a.png' alt="Diagram"></a>
 
 ## --------------------------------------------------------------
 
