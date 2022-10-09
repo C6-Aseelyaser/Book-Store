@@ -129,22 +129,29 @@ These instructions will get you a copy of the project up and running on your loc
 - [Express JS](https://expressjs.com/) - Server Framework
 - [React JS](https://https://reactjs.org/) - Web Framework
 - [Node JS](https://nodejs.org/en/) - Server Environment
-- [Postman](https://www.postman.com/)
+- [Postman](https://www.postman.com/) 
 
 ## B : Installing:
 
 - Clone the repo to your local machine using git bash. ~~> https://github.com/C6-Aseelyaser/MERAKI_Academy_Project_4
-- Install packeges repeat this step in backend and frontend folder ~~> ```
+- Install packeges repeat this step in backend and frontend folder ~~> 
+
+```
 npm i
 ```
+
 - Run server using git bash inside backend folder ~~> 
+
 ```
 npm run dev
 ```
+
 - Run application using git bash inside frontend folder ~~> 
+
 ```
 npm run start
 ```
+
 - Installing packages
 ```
 **axios**
