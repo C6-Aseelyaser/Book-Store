@@ -30,7 +30,7 @@ const Register = () => {
       .then((results) => {
         console.log(results);
         setMessage(results.data.message);
-        navigate("/home");
+        navigate("/login");
       })
       .catch((error) => {
         console.log(error);
