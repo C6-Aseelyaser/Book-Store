@@ -154,37 +154,29 @@ npm run start
 
 - Installing packages
 ```
-**axios**
-```
 npm i axios
 ```
-**react-router-dom**
 ```
 npm i react-router-dom
 ```
-**bcrybt**
 ```
 npm i bcrybt
 ```
-**dotenv**
 ```
 npm i dotenv
 ```
-**express**
 ```
 npm i express
 ```
-**jsonwebtoken**
 ```
 npm i jsonwebtoken
 ```
-**mongoose**
 ```
 npm i mongoose
 ```
 
 
-**now the app is ready to use**
+now the app is ready to use
 
 
 
