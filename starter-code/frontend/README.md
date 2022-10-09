@@ -31,21 +31,23 @@
 
 <link rel="icon" href="%PUBLIC_URL%/images (1).png" />
 <p >
-What is the importance of books in our life? Books play a quintessential role in every student’s life by introducing them to a world 
-of imagination, providing knowledge of the outside world, improving their reading, writing and speaking skills as well as boosting.
+What is the importance of books in our lives? Books play an essential role in everyone's life by introducing them to the world
+of imagination, providing knowledge of the outside world, and improving as well as enhancing their reading, writing, 
+and speaking skills. memory and intelligence. The importance of books in our life cannot be undermined for they not only help in broadening our horizons but also act as doorways to connecting us with the world around us. They function as survival kits, they influence us and leave an impact on us. and for that. we work on this project. the project is about the "Online BookStore App". this app displays books as an online product. 
 
-memory and intelligence. The importance of books in our life cannot be undermined for they not only help in broadening our horizons but also act as doorways of connecting us with the world around us. They function as survival kits, they influence us and leave an
-impact on us. and for that .we work on this project . the project is about the "Online BookStore App". this app displays books as
-an online products.this app has many features :
-1. Ability to search about the books you want .
-2. Provides information on books [description ,year ,rating ,image, price].
-3. Possibility to buy books .
-4. Delivery possibility.
-5. Services [SAME DAY FREE DELIVERY,Gift Card,CASH & CARD ON DELIVERY,7 Days Return]. 
-and all tihs features give the user facilities
-1. easy to search & purchase. 
-2. easy to find book.
-3. saving time. 
+**this app has many features :**
+
+- Ability to search for the books you want.
+- Provides information on books [description ,year ,rating ,image, price].
+- Possibility to buy books.
+- Delivery possibility.
+- Services [SAME DAY FREE DELIVERY, Gift Card, CASH & CARD ON DELIVERY,7 Days Return]. 
+
+
+**and all these features give the user facilities**
+- easy to search & purchase. 
+- easy to find the book.
+- saving time.  
 </p>
 
 
